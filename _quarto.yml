@@ -3,18 +3,20 @@ project:
   output-dir: docs
 
 website:
-  title: "THSwebsitenew"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+  title: "ThomasHSimm"
+  favicon: /posts/Picture3.png
+  body-header: <img src="/posts/header2.png" height=200>
 
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/ThomasHSimm
+      - icon: mortarboard-fill
+        href: https://scholar.google.com/citations?hl=en&user=HdPDn1sAAAAJ
 format:
   html:
-    theme: cosmo
+    theme: 
+      light: flatly
+      dark: darkly
     css: styles.css
-    toc: true
-
-
-
