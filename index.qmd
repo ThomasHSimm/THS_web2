@@ -4,4 +4,7 @@ title: "THSwebsitenew"
 
 This is a Quarto website.
 
+
+- [Communicating code and data](https://thomashsimm.quarto.pub/thomashsimm/posts/Communicating_Code/PresentationOfCommunicatingCode.html#/title-slide)
+
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
