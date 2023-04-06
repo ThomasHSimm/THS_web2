@@ -933,127 +933,260 @@
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#general",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#general",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "General",
     "text": "General\nLibrary websites:\nkeras.io\ntensorflow.org"
   },
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#courses",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#courses",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "Courses",
     "text": "Courses\nI have tried both of the following courses: DeepLearning.AI TensorFlow Developer Professional Certificate and TensorFlow 2 for Deep Learning Specialization.\n\nDeepLearning.AI TensorFlow Developer Professional Certificate\nTensorFlow 2 for Deep Learning Specialization\n\nThe Tensorflow2 course is a bit longer and goes into more depth, although there are additional extended courses for the deeplearning one. The deeplearning one can be done within the current 7 days trail period of coursera. The Tensorflow2 course is tricky to do in this timeframe. This is due to more material, the harder coursework, and waiting for capstone projects to be marked.\nIn the end I only did the first course of Tensorflow2 as I found the tests had material that wasn’t explained within the course and I found the lectures lacking in detail and the instructors became increasingly boring. I gave up after getting to the capstone in course 2 (of 3) when they asked a question about an NLP network that was never explained anywhere. However, the coursework is a good challenge, so it may be worth doing the course for this alone and learning from other sources in addition to this one.\nI prefered the DeepLearning courses as they were more in depth and didn’t assume as much prior knowledge, and the presentation was better. I am currently working through the follow-up course TensorFlow: Advanced Techniques Specialization and given time will do the NLP and MLOps courses.\nSome Others:\nOne by Udacity Intro to TensorFlow for Deep Learning is being offered for free and looks okay too.\nTensorFlow example tutorials written as Jupyter notebooks and run directly in Google Colab—a hosted notebook environment that requires no setup. Click the Run in Google Colab button. Part of the TensorFlow resources."
   },
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#resources",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#resources",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "Resources",
     "text": "Resources\n\nTensorFlow’s website recommendations\nFrançois Chollet\n\nHis book Deep Learning with Python, Second Edition can be read online.\n\nDeep learning book by Ian Goodfellow and Yoshua Bengio and Aaron Courville\n\navailable free online\n\nProbabilistic Programming & Bayesian Methods for Hackers\n\navailable online"
   },
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#model-creations",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#model-creations",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "Model creations",
     "text": "Model creations\nThe easiest way to create a model in Keras is through keras.Sequential, which creates a neural network as a stack of layers.\nSo in the examplel below - the 1st layer has units = 4 and input_shape=2 with a relu activation function - the 2nd layer has units = 3 with a relu activation function - the 3rd layer has units = 1\nThe 3rd layer is the output layer. Since there is no activation function this would be a regression problem to predict one value.\n\nFor non sequential models or with multiple inputs/outputs see functional API\n\nTabular Data\nhttps://www.kaggle.com/code/thomassimm/premier-league-predictions-using-tensorflow\n\nmodel = tf.keras.Sequential([\n        tf.keras.layers.Dense(512//8,activation='relu',input_shape=[input_shape]),\n        tf.keras.layers.Dense(512//8,activation='relu'),\n        tf.keras.layers.Dense(1,activation='sigmoid')        \n    ])\n\n\n\nImage Data\n\nmodel = tf.keras.models.Sequential([ \n          tf.keras.layers.Convolution2D( 64,(3,3),activation='relu',input_shape=(28,28,1) ),\n          tf.keras.layers.MaxPool2D(2,2),\n          tf.keras.layers.Flatten(),\n          tf.keras.layers.Dense(256//2,activation='relu'),\n          tf.keras.layers.Dense(1,activation='sigmoid') ])\n\n\n\nLanguage Data\nThe standard language model starts with an embedding layer, this then needs to be flattened to a vector, then we can add a dense layer before an output layer.\nThe Embedding layer creates a vector-space for the text data. So for example, the words beautiful and ugly may be in opposite directions. And words such as cat and kitten may be close together in vector space.\nGlobalAveragePooling1Dcan be replaced by Flatten()\n\nmodel = tf.keras.Sequential([ \n    tf.keras.layers.Embedding(num_words,embedding_dim,input_length=maxlen),\n    tf.keras.layers.GlobalAveragePooling1D(),\n    tf.keras.layers.Dense(24,activation='relu'),\n    tf.keras.layers.Dense(5,'softmax')\n])\n\nThe model above does not take account for the order of words,\nIf we want to do this we can insert an additional layer after the embedding layer. For example, by using the LSTM model as below\n\nmodel_lstm= tf.keras.Sequential([\n    tf.keras.layers.Embedding(VOCAB_SIZE,EMBEDDING_DIM,input_length=MAXLEN),\n    tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(32)),\n    tf.keras.layers.Dense(24,activation='relu'),\n    tf.keras.layers.Dense(NUM_CLASSES,activation='softmax')   \n])\n\nWe can even insert a conolution layer after the embedding instead\ntf.keras.layers.Conv1D(128,5,activation='relu')\nFor two consecutive layers of RNNs use return_sequences=True\n\ntf.keras.layers.Bidirectional(tf.keras.layers.LSTM(lstm1_dim, return_sequences=True)),\ntf.keras.layers.Bidirectional(tf.keras.layers.LSTM(lstm2_dim)),"
   },
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#compile-the-model",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#compile-the-model",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "Compile the model",
     "text": "Compile the model\nTo compile the model, need to define the following:\n\nthe optimizer to use, i.e. how to update the parameters to improve model during fitting\nthe loss, i.e. what defines the goodness of the fit\nany metrics to record\n\n\nopt = keras.optimizers.Adam(learning_rate=0.0001)\nmodel.compile(\n    optimizer=opt,\n    loss='binary_crossentropy',\n    metrics=['binary_accuracy'],\n)"
   },
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#evaluate-predict-the-model",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#evaluate-predict-the-model",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "Evaluate / Predict the model",
     "text": "Evaluate / Predict the model\ntest_loss, test_accuracy = model.evaluate(scaled_test_images,\ntf.keras.utils.to_categorical(test_labels),\nverbose=0)\nand more or less outputs depending on metrics used\npred = model.predict(X_sample)"
   },
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#saving-and-loading",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#saving-and-loading",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "Saving and Loading",
     "text": "Saving and Loading\n\nSaving / Loading weights\n\nmodel_weights_file='my_file'\n\nmodel.save_weights(model_weights_file)\n\nmodel.load_weights(model_weights_file)\n\n\n# All the model\n\nmodel.save('saved_model/my_model')\n\nnew_model = tf.keras.models.load_model('saved_model/my_model')"
   },
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#callbacks",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#callbacks",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "Callbacks",
     "text": "Callbacks\nwithin model.fit(....)\ncallbacks=[callback_function]\nhttps://www.tensorflow.org/api_docs/python/tf/keras/callbacks\n\nEarlyStopping\n\nto stop the model early if some conditions are met\n\nModelCheckpoint\n\nsave the model/model weights (https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ModelCheckpoint)\nmain data stored similar to ‘.data-00000-of-00001’\nhttps://www.tensorflow.org/tutorials/keras/save_and_load#what_are_these_files\nCan give file names with variables using {}\n\nval_loss\nval_accuracy\nbatch\nepoch\n\n\nearly_stopping = tf.keras.callbacks.EarlyStopping(\n    min_delta=0.0001, # minimium amount of change to count as an improvement\n    patience=20, # how many epochs to wait before stopping\n    restore_best_weights=True,\n    monitor='val_binary_accuracy',\n)\n\nfilepath = os.path.join(cwd,'checkpoints_every_epoch/checkpoint.{epoch}.{batch}')\ncheckpoint = tf.keras.callbacks.ModelCheckpoint(\n        save_weights_only=True,\n        save_best_only=True,\n        filepath=filepath,\n    )"
   },
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#overfitting-strategies",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#overfitting-strategies",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "Overfitting strategies",
     "text": "Overfitting strategies\n\nDropout\nThe idea behind dropout is to randomly drop out some fraction of a layer’s input units every step of training, making it much harder for the network to learn those spurious patterns in the training data that leads to overfitting.\nInstead, it has to search for broad, general patterns, whose weight patterns tend to be more robust.\nYou could also think about dropout as creating a kind of ensemble of networks like with RandomForests.\nExample useage, apply 30% dropout to the next layer\nlayers.Dropout(rate=0.3),\nlayers.Dense(16)\nExample taken from kaggle https://www.kaggle.com/code/ryanholbrook/dropout-and-batch-normalization\n\n\n\nBatch Normalization\nNormalization is important in neural networks, it can really significantly improve the results of the values of the input and output are between 0 and 1.\nIn contrast, it is not important in other models such as random forests. Hence, the input data is often normalised such as train_datagen = ImageDataGenerator(rescale=1./255.) in image models.\nSo if it is good to normalize the input data it can also be good to normalize the layers of the network. This can be done with a BatchNormalization layer.A batch normalization layer looks at each batch as it comes in, first normalizing the batch with its own mean and standard deviation, and then also putting the data on a new scale with two trainable rescaling parameters. Batchnorm, in effect, performs a kind of coordinated rescaling of its inputs.\nAs stated in https://www.kaggle.com/code/ryanholbrook/dropout-and-batch-normalization batchnorm: - batchnorm is most often added as an aid to the optimization process - but it can sometimes also help prediction performance - Models with batchnorm tend to need fewer epochs to complete training. - And can fix various problems that can cause the training to get “stuck”. - it can be used at almost any point in a network.\nlayers.Dense(16, activation='relu'),\nlayers.BatchNormalization(),\n… or between a layer and its activation function:\nlayers.Dense(16),\nlayers.BatchNormalization(),\nlayers.Activation('relu'),\n… Or if you add it as the first layer of your network it can act as a kind of adaptive preprocessor like Sci-Kit Learn’s StandardScaler."
   },
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#multiple-inputs-and-outputs",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#multiple-inputs-and-outputs",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "Multiple inputs and outputs",
     "text": "Multiple inputs and outputs\n3 inputs and 2 outputs. Simple model\nInputs: - temp_train - nocc_train - lumbp_train\nOutputs: - out1_train - out2_train\nThings to note: - inputs in the model is a list of the Input() parts - concatentate is used with the input list to provide input to the next layers of the model - outputs in the model is a list of the output layers - When compiling use dictionary to set loss and metrics to each output - or lists ['binary_crossentropy','binary_crossentropy'] - When fitting, for the inputs/outputs either: - provide a list of the inputs [temp_train,nocc_train, lumbp_train] - give as a dict {'layer_name':variable_name}\n\n## Functional: multiple inputs\n# N.B. lowercase 'c' concatenate\nimport tensorflow as tf \nfrom tensorflow.keras.layers import Input, Dense, concatenate\ninput_shape=(1,)\n\n# get individual inputs\ninputs_temp = Input(shape=input_shape,name='temp')\ninputs_nocc = Input(shape=input_shape,name='nocc')\ninputs_lumbp = Input(shape=input_shape,name='lumbp')\n\n# combine them\ninput_list = [inputs_temp,inputs_nocc,inputs_lumbp]\ninput_layer =concatenate(input_list)\n\n# add inputs to the model for two outputs\noutput_pred1  = Dense(2,activation='sigmoid',name='out_1')(input_layer)\noutput_pred2 = Dense(2,activation='sigmoid',name='out_2')(input_layer)\n\n# output layer\noutput_list = [output_pred1, output_pred2]\n\n# create the model object\nmodel = tf.keras.Model(inputs=input_list, outputs=output_list )\n\n# show the model\nmodel.summary()\n\n# Compile\nmodel.compile(\n        optimizer='SGD',\n        loss={'out_1':'binary_crossentropy',\n              'out_2':'binary_crossentropy'},\n        metrics={'out_1':['accuracy'],\n                 'out_2':['accuracy']},\n        loss_weights=[1,0.2]\n        )\n\ntf.keras.utils.plot_model(model)\n\n\n# Define training inputs and outputs\ninputs_train = {'temp': temp_train, 'nocc': nocc_train, 'lumbp': lumbp_train}\noutputs_train = {'out_1': out1_train, 'out_2': out2_train}\n\n# fit the model\nmodel.fit(inputs_train,outputs_train)"
   },
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#inception-images",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#inception-images",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "Inception (images)",
     "text": "Inception (images)\n\nLoad the model pre-trained weights\nImport the model architecture\nGive the model the input shape for data\nLoad the weights into the model\nFreeze all the layers\nPick out the front part of the model, as the layers to the end are more specialized\nAdd extra layers to the model that can be fitted to\n\n\n# 1- Download the inception v3 weights\n!wget --no-check-certificate \\\n    https://storage.googleapis.com/mledu-datasets/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5 \\\n    -O /tmp/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5\n\n# 2- Import the inception model  \nfrom tensorflow.keras.applications.inception_v3 import InceptionV3\n\n# Create an instance of the inception model from the local pre-trained weights\nlocal_weights_file = '/tmp/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5'\n\n# 3- create the model and load in the weights\npre_trained_model = InceptionV3(input_shape = (150, 150, 3),\n                                  include_top = False, \n                                  weights = None) \n\n# 4- load weights into the model\npre_trained_model.load_weights(local_weights_file)\n\n# 5- Make all the layers in the pre-trained model non-trainable\nfor layers in pre_trained_model.layers:\n    layers.trainable = False\n    \n# 6- Pick out part of the model\nlast_desired_layer = pre_trained_model.get_layer('mixed7')    \nlast_output = last_desired_layer.output\n\n# 7- Add extra layers to the model\n\n# Flatten the output layer to 1 dimension\nx = layers.Flatten()(last_output)  \n\n# Add a fully connected layer with 1024 hidden units and ReLU activation\nx = layers.Dense(1024,activation='relu')(x)\n# Add a dropout rate of 0.2\nx = layers.Dropout(0.2)(x)  \n# Add a final sigmoid layer for classification\nx = layers.Dense(1,activation='sigmoid')(x) \n\n# Create the complete model by using the Model class\nmodel = Model(inputs=pre_trained_model.input, outputs=x)\n\n# Compile the model\nmodel.compile(optimizer = RMSprop(learning_rate=0.0001), \n            loss = 'binary_crossentropy',\n            metrics = ['accuracy'])"
   },
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#summary-info-of-model",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#summary-info-of-model",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "Summary / info of model",
     "text": "Summary / info of model\nmodel.summary()\nGet summary of the model"
   },
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#class-or-function---metrics-and-losses",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#class-or-function---metrics-and-losses",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "Class or Function - Metrics and Losses",
     "text": "Class or Function - Metrics and Losses\nIn general, classes use camel formatting CategoricalAccuracy whereas function use underscores and lower case categorical_accuracy and sometimes initials MAE\n\nhttps://www.tensorflow.org/api_docs/python/tf/keras/losses\nhttps://www.tensorflow.org/api_docs/python/tf/keras/metrics"
   },
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#low-level-handling-of-metrics",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#low-level-handling-of-metrics",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "Low level handling of metrics",
     "text": "Low level handling of metrics\n\nmetric.update_state() to accumulate metric stats after each batch\nmetric.result get current value of metric to display\nmetric.reset_state() to reset metric value typically at the end of epoch"
   },
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#categorical-binary-versus-multiple",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#categorical-binary-versus-multiple",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "Categorical: Binary versus Multiple",
     "text": "Categorical: Binary versus Multiple\nFor categorical data there is a slight difference between if there are only 2 categories or more.\nGoing from binary to multiple: - We need to change activation in model from sigmoid to softmax in final Dense layer - Change loss function from binary_crossentropy to categorical_crossentropy in compile - Making data one-hot encoded, i.e. columns for each outcome - Or use SparseCategoricalCrossentropy\n\nmodel_binary = tf.keras.Sequential([\n        tf.keras.layers.Dense(512//8,activation='relu',input_shape=[input_shape]),\n        tf.keras.layers.Dense(1,activation='sigmoid')        \n    ])\n\nmodel_multi = tf.keras.Sequential([\n        tf.keras.layers.Dense(512//8,activation='relu',input_shape=[input_shape]),\n        tf.keras.layers.Dense(4,activation='softmax')        \n    ])\n\n\nmodel_binary.compile(loss='binary_crossentropy',\n                  optimizer='adam',\n                  metrics=['accuracy'])\n\n\nmodel_multi.compile(loss='categorical_crossentropy',\n                  optimizer='adam',\n                  metrics=['accuracy'])\n\n\n\n# One-hot encoding method\n\ny_binary =[1,0,0,0,0,0,1,1,1,1,0,1,0,1]\n\ny_multi=[1,2,4,6,1,3,4,2,4,2,5,2,1,4,2,1]\ny_multi=tf.keras.utils.to_categorical(y_multi)\ny_multi\n\narray([[0., 1., 0., 0., 0., 0., 0.],\n       [0., 0., 1., 0., 0., 0., 0.],\n       [0., 0., 0., 0., 1., 0., 0.],\n       [0., 0., 0., 0., 0., 0., 1.],\n       [0., 1., 0., 0., 0., 0., 0.],\n       [0., 0., 0., 1., 0., 0., 0.],\n       [0., 0., 0., 0., 1., 0., 0.],\n       [0., 0., 1., 0., 0., 0., 0.],\n       [0., 0., 0., 0., 1., 0., 0.],\n       [0., 0., 1., 0., 0., 0., 0.],\n       [0., 0., 0., 0., 0., 1., 0.],\n       [0., 0., 1., 0., 0., 0., 0.],\n       [0., 1., 0., 0., 0., 0., 0.],\n       [0., 0., 0., 0., 1., 0., 0.],\n       [0., 0., 1., 0., 0., 0., 0.],\n       [0., 1., 0., 0., 0., 0., 0.]], dtype=float32)\n\n\nAlternatively, with output data like [0, 1, 4, 0, 2, 3, 3, 0, …]\nuse: - SparseCategoricalCrossentropy(from_logits=True)\n\nmodel.compile(\n                 loss=tf.keras.losses.SparseCategoricalCrossentropy(),\n                 optimizer='adam',\n                 metrics=['accuracy'])"
   },
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#learning-rate",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#learning-rate",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "Learning rate",
     "text": "Learning rate\nFind the best learning rate by using callbacks\nThe learning rate to use on the data below would be where the loss is low (y-axis) but not too close to where it increases or is unstable.\nSo for this on the downward part of the curve between 10E-6 and 10E-5\n\n# Set the learning rate scheduler\nlr_schedule = tf.keras.callbacks.LearningRateScheduler(\n    lambda epoch: 1e-8 * 10**(epoch / 20) )\n    \n# Set the training parameters\nmodel_tune.compile(loss=\"mse\", optimizer=optimizer)\n    \n# train the model\nhistory = model_tune.fit(dataset, epochs=100, callbacks=[lr_schedule])\n\n# plot the results\n# Define the learning rate array\nlrs = 1e-8 * (10 ** (np.arange(100) / 20))\n\n# Plot the loss in log scale\nplt.semilogx(lrs, history.history[\"loss\"])"
   },
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#lambda-functions",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#lambda-functions",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "lambda functions",
     "text": "lambda functions\nhttps://www.tensorflow.org/api_docs/python/tf/keras/layers/Lambda\ntf.keras.layers.Lambda(     function, output_shape=None, mask=None, arguments=None, **kwargs )\nAdd a function that works on the data within the model\n\n# expand the dimensions\ntf.keras.layers.Lambda(lambda x: tf.expand_dims(x, axis=-1),\n                      input_shape=[window_size])\n\n# make the output larger (can be useful if predicting to large values, but previous layer have activation function so values are close to 1)\ntf.keras.layers.Lambda(lambda x: x * 100.0)"
   },
   {
     "objectID": "posts/tensorflow/2022-09-28-Tensorflow.html#force-cpugpu",
     "href": "posts/tensorflow/2022-09-28-Tensorflow.html#force-cpugpu",
-    "title": "ThomasHSimm",
+    "title": "TensorFlow cheat sheet",
     "section": "Force CPU/GPU",
     "text": "Force CPU/GPU\nhttps://www.tensorflow.org/tutorials/distribute/multi_worker_with_keras\n\n# Check available CPU/GPU devices\n\nprint(tf.config.list_physical_devices('CPU'))\n\nprint(tf.config.list_physical_devices('GPU'))\n\nwith tf.device(\"CPU:0\"):\n    model.fit(....)\n    \nwith tf.device(\"GPU:0\"):\n    model.fit(....)"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-07-Tensorflow-2.html#dataset-generators",
+    "href": "posts/tensorflow/2022-10-07-Tensorflow-2.html#dataset-generators",
+    "title": "TensorFlow cheat sheet 2",
+    "section": "Dataset generators",
+    "text": "Dataset generators\nHave you ever had to work with a dataset so large that it overwhelmed your machine’s memory? Or maybe you have a complex function that needs to maintain an internal state every time it’s called, but the function is too small to justify creating its own class. In these cases and more, generators and the Python yield statement are here to help\nhttps://realpython.com/introduction-to-python-generators/\nHow yield works:\n\ndef do_yield():\n    for i in range(20):\n        yield i\n        \ngot_yield =  do_yield()\n\nprint(got_yield)\nprint(next(got_yield))\nprint(next(got_yield))\n\nnext(got_yield)\n\nprint(next(got_yield))\ngot_yield\nprint(next(got_yield))\n\nWhen datasets are large and won’t fit into memory, a way to handle this is to use detaset generators. Where data is fed into the model without loading it into memory at once.Each time we iterate the generator, it yields the next value in the series.\nAn example is below. The function takes a path to a file but returns a yield statement, or a data generator, and not a line of the data.\nAs above x,y = next(text_datagen) gets the next line of the text.\nThis can be used when fitting to the model using model.fit_generator(text_datagen)\nSee also load images.\n\ndef get_data(filepath):\n    with open(filepath,'r') as f:\n        for row in f:\n            x=row[0]\n            y=row[1]\n            yield (x,y)\n            \ntext_datagen = get_data('file.txt')\n\nmodel.fit_generator(text_datagen, steps_per_epoch=1000, epochs=5)\n\n\n# or something more practical:\ndef get_generator(features, labels, batch_size=1):\n    for n in range(int(len(features)/batch_size)):\n        x = features[n*batch_size: (n+1)*batch_size]\n        y = labels[n*batch_size: (n+1)*batch_size]\n        yield (x,y)"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-07-Tensorflow-2.html#the-dataset-class",
+    "href": "posts/tensorflow/2022-10-07-Tensorflow-2.html#the-dataset-class",
+    "title": "TensorFlow cheat sheet 2",
+    "section": "The dataset Class",
+    "text": "The dataset Class\n\nx=np.random.randint(0,255,(100,20,2,2))\ny=np.random.randint(0,4,size=(100,1))\n\ndataset_1 = tf.data.Dataset.from_tensor_slices(x)\n\nprint(\">>\",dataset_1.element_spec)\nprint('>> N.B. first dimension inetrpreted as batch size')\n\ndataset_2 = tf.data.Dataset.from_tensor_slices(y)\nprint(\">>\",dataset_2.element_spec)\n\ndataset_zipped = tf.data.Dataset.zip((dataset_1,dataset_2))\nprint(\">>\",dataset_zipped.element_spec)\n\ndataset_comb = tf.data.Dataset.from_tensor_slices((x,y))\nprint(\">>\",dataset_comb.element_spec)\n\n>> TensorSpec(shape=(20, 2, 2), dtype=tf.int32, name=None)\n>> N.B. first dimension inetrpreted as batch size\n>> TensorSpec(shape=(1,), dtype=tf.int32, name=None)\n>> (TensorSpec(shape=(20, 2, 2), dtype=tf.int32, name=None), TensorSpec(shape=(1,), dtype=tf.int32, name=None))\n>> (TensorSpec(shape=(20, 2, 2), dtype=tf.int32, name=None), TensorSpec(shape=(1,), dtype=tf.int32, name=None))\n\n\nCan access the values by iterating\n\ndef check3s(dataset_comb):\n    dataset_iter = iter(dataset_comb)\n    for i,x in enumerate(dataset_iter):\n        if tf.squeeze(x[1])==3:\n            print('Has 3s')\n            return\n    return 'no 3s'\ncheck3s(dataset_comb)\n\nHas 3s\n\n\n\nFilter\nFilter certain values\n\ndef label_func(image,label):\n    return tf.squeeze(label) != 3\n\ndataset_comb = dataset_comb.filter(label_func)\n\ncheck3s(dataset_comb)\n\n'no 3s'\n\n\n\n\nMap\nModify values. Below creates one-hot encoding\n\ndef map_func(image, x):\n    return (image,tf.one_hot(x,depth=3) )\ndataset_comb_2=dataset_comb.map(map_func)\n\nfor i,x in enumerate(dataset_comb):\n    if i<5:\n        print(i,x[1].numpy())    \n    else:\n        break\n        \nfor i,x in enumerate(dataset_comb_2):\n    if i<5:\n        print(i,x[1].numpy())    \n    else:\n        break\n\n0 [0]\n1 [1]\n2 [2]\n3 [2]\n4 [2]\n0 [[1. 0. 0.]]\n1 [[0. 1. 0.]]\n2 [[0. 0. 1.]]\n3 [[0. 0. 1.]]\n4 [[0. 0. 1.]]\n\n\n\ndataset.batch(20), drop_remainder=True set batch size to 16 and remove any remaining samples if not divisible\ndataset.repeat(10) set the number of epochs. No value inside is indefinitely\ndataset.shuffle(100) shuffle the data, no of sample in the buffer\ndataset.filter(function_name) filter the values use lambda or a function that returns a boolean\ndataset.map(func_name) transform the values\n\ne.g. dataset.map(lambda x:x*2) doubles all values\n\ndataset.take(1) take a value from the dataset"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-07-Tensorflow-2.html#tensor-math",
+    "href": "posts/tensorflow/2022-10-07-Tensorflow-2.html#tensor-math",
+    "title": "TensorFlow cheat sheet 2",
+    "section": "Tensor Math",
+    "text": "Tensor Math\n\nimport tensorflow.keras.backend as K\n\nx = K.arange(0,10)\ny = K.square(x)\ny_mean = K.mean(y)\n\nprint(f\"x = {x},\\ny = {y},\\ny_mean = {y_mean}\")\n\nx = [0 1 2 3 4 5 6 7 8 9],\ny = [ 0  1  4  9 16 25 36 49 64 81],\ny_mean = 28\n\n\n\n#hide-input\nprint(f\"tf.add([1,2],[3,4]) = {tf.add([1,2],[3,4])}\\n\")\nprint(\"Or with operator overloading\")\nprint(f\"tf.Variable([1,2])+tf.Variable([3,4]) = {tf.Variable([1,2])+tf.Variable([3,4])}\\n\")\nprint(f\"x = tf.Variable([[1,2],[3,4]])\\n\")\nx=tf.Variable([[1,2],[3,4]])\nprint(f\"tf.square(x) = {tf.square(x)}\\n\")\nprint(\"Reduces dimension by adding up components\")\nprint(f\"tf.reduce_sum(x) = {tf.reduce_sum(x)}\\n\")\n      \n\ntf.add([1,2],[3,4]) = [4 6]\n\nOr with operator overloading\ntf.Variable([1,2])+tf.Variable([3,4]) = [4 6]\n\nx = tf.Variable([[1,2],[3,4]])\n\ntf.square(x) = [[ 1  4]\n [ 9 16]]\n\nReduces dimension by adding up components\ntf.reduce_sum(x) = 10"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-07-Tensorflow-2.html#tensor-operations",
+    "href": "posts/tensorflow/2022-10-07-Tensorflow-2.html#tensor-operations",
+    "title": "TensorFlow cheat sheet 2",
+    "section": "Tensor Operations",
+    "text": "Tensor Operations\n\nEvaluated immediately\nTensorFlow supports two types of code execution, graph-based where all of the data and ops are loaded into a graph before evaluating them within a session, or eager based where all of the code is executed line by line.\nIf eager mode was off, tensor would not be evaluated so\nx_sq = tf.square(2)\nprint(x_sq)\nthe print statement would just show details of the tensor object, such as its name, shape, data type and all that but it would not yet store the number 4 as a value.\nOtherwise values are evaluated immediately in custom eager mode = On\n\n\nBroadcasting\nBroadcasting is where adding or subtracting two tensors of different dimensions is handled in a way where the tensor with fewer dimensions is replicated to match the dimensions of the tensor with more dimensions.\na = tf.constant([[1,2],[3,4]])\n>>tf.add(a,1)\n=tf.Tensor([[2,3],[4,5]])\nOr overloading can utilise Python syntax such as\n>>a ** 2\n=tf.Tensor([[1,4],[9,16]])\nOr using numpy math operations. TensorFlow will convert the tensor objects a and b into ndarrays, and then pass those ndarrays to the np.cos function.\n>>np.cos(a)\n=array([[ 0.54030231, -0.41614684],        [-0.9899925 , -0.65364362]])\nDon’t need to preconvert from the ndarray data type into a tensor data type. TensorFlow handles this automatically.\nndarray = np.ones([3,3])\n=[[1. 1. 1.] [1. 1. 1.] [1. 1. 1.]]\ntf.multiply(ndarray,3)\n=tf.Tensor( [[1. 1. 1.] [1. 1. 1.] [1. 1. 1.]], shape=(3,3), dtype=float64)\nTensors can be easily converted back to numpy arrays using tensor.numpy()"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-07-Tensorflow-2.html#simple-example-of-using-gradient-tape-to-calculate-gradient-of-a-function",
+    "href": "posts/tensorflow/2022-10-07-Tensorflow-2.html#simple-example-of-using-gradient-tape-to-calculate-gradient-of-a-function",
+    "title": "TensorFlow cheat sheet 2",
+    "section": "Simple example of using gradient tape to calculate gradient of a function",
+    "text": "Simple example of using gradient tape to calculate gradient of a function\n\ndef myfunc(x):\n    return tf.math.sin(x) + tf.math.exp(x/3)\n\nw = tf.Variable(np.arange(0, np.pi*2,.2))\nwith tf.GradientTape() as tape:\n    loss = myfunc(w)\ngradient = tape.gradient(loss, w).numpy()\n\nplt.plot(w.numpy(), loss,'.-')\nplt.grid(True)\nplt.plot(w.numpy(), gradient,'x--');\nplt.legend(['Loss','Gradient of Loss']);"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-07-Tensorflow-2.html#using-watch",
+    "href": "posts/tensorflow/2022-10-07-Tensorflow-2.html#using-watch",
+    "title": "TensorFlow cheat sheet 2",
+    "section": "Using watch",
+    "text": "Using watch\nIf use watch on a variable the following variables referencing that variable are also watched\nBut the calls to new functions need to be within the with statement, but the gradient getting doesn’t\n\nx = tf.Variable(np.arange(0, np.pi*2,.2))\n\nwith tf.GradientTape() as t:\n    t.watch(x)\n    \n    y = tf.sin(x)\n    z = tf.exp(y)\ndz_dx = t.gradient(z,x)\n\nplt.plot(x.numpy(),z.numpy())\nplt.plot(x.numpy(),dz_dx.numpy(),'--')\nplt.legend(['z','dz/dx'])\nplt.grid(True)"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html#coding-custom-layer",
+    "href": "posts/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html#coding-custom-layer",
+    "title": "TensorFlow Low-Level cheat sheet",
+    "section": "Coding custom layer",
+    "text": "Coding custom layer\nA layer class is inherited from Kera’s Layer class. Hence, MyLayer(Layer):\n\ndef __init__(self, units=32):\n\nInitializes the class, accepts parameters and sets up internal variables.\nsuper().__init__() returns a temporary object of the superclass (proxy object) the Layer class. This allows us to acces methods of the base class. - make sure to pass class name and self in super() - or **kwargs\nThen build and call functions can be added to create the layer and when it is called. N.B. build can often be moved to __init__.\n\ndef build(self, input_shape):\n\nruns when instance is created\ncreates state of layers (weights)\n\ndef call(self, inputs):\n\ncall does the computation\n\n\nThe values for the parameters can be explicitly set using functions like tf.random_normal_initializer() and sepcifying a shape.\nThe key to call is defining how the parts in build and __init__ are put together to create the computation of the layer.\nAlso note that in the call the format is the same as for the functional API, where the previous layer is added at the end of the next layer.\nAll the variables (weights and biases) can also be accesed with layer_class.variables.\n\n# Create a custom layer\nfrom tensorflow.keras.layers import Layer\nimport tensorflow as tf\n\nclass SimpleDense(Layer):\n    \n    def __init__(self,units=32):\n        super(SimpleDense, self).__init__()\n        self.units = units\n        \n    def build(self, input_shape):\n        w_init = tf.random_normal_initializer()\n        self.w = tf.Variable(\n                initial_value=w_init(shape=(input_shape[-1], self.units), dtype='float32'),\n                trainable=True,name='kernel',\n                                )\n        b_init = tf.zeros_initializer()\n        self.b = tf.Variable(\n                initial_value=b_init(shape=(self.units), dtype='float32'),\n                trainable=True, name='bias',\n                                )\n    def call(self, inputs):\n        return tf.matmul(inputs, self.w)+self.b\n    \ndense_layer = SimpleDense(units=32)\n\nx = tf.ones((1,1))\n\nprint(dense_layer(x) )\nprint()\nprint(f\"Weights = {dense_layer.weights[0].numpy()} \\n\\nand biases {dense_layer.weights[1].numpy()}\")\nprint()\nprint([ var.numpy() for var in dense_layer.variables])\n\ntf.Tensor(\n[[-0.07436698 -0.02011585  0.05582675  0.05404044  0.02519816  0.02855827\n   0.00046192  0.01360966  0.04663334  0.04556176  0.04592257  0.04647708\n  -0.03950281 -0.00014847 -0.03248019  0.08354251  0.07218082 -0.01156685\n   0.04577427 -0.06801199 -0.02725383 -0.02071865  0.08600459 -0.00035707\n  -0.03410981  0.00493511 -0.05133317 -0.12937713 -0.13792662 -0.01709494\n  -0.05110807 -0.01718794]], shape=(1, 32), dtype=float32)\n\nWeights = [[-0.07436698 -0.02011585  0.05582675  0.05404044  0.02519816  0.02855827\n   0.00046192  0.01360966  0.04663334  0.04556176  0.04592257  0.04647708\n  -0.03950281 -0.00014847 -0.03248019  0.08354251  0.07218082 -0.01156685\n   0.04577427 -0.06801199 -0.02725383 -0.02071865  0.08600459 -0.00035707\n  -0.03410981  0.00493511 -0.05133317 -0.12937713 -0.13792662 -0.01709494\n  -0.05110807 -0.01718794]] \n\nand biases [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.\n 0. 0. 0. 0. 0. 0. 0. 0.]\n\n[array([[-0.07436698, -0.02011585,  0.05582675,  0.05404044,  0.02519816,\n         0.02855827,  0.00046192,  0.01360966,  0.04663334,  0.04556176,\n         0.04592257,  0.04647708, -0.03950281, -0.00014847, -0.03248019,\n         0.08354251,  0.07218082, -0.01156685,  0.04577427, -0.06801199,\n        -0.02725383, -0.02071865,  0.08600459, -0.00035707, -0.03410981,\n         0.00493511, -0.05133317, -0.12937713, -0.13792662, -0.01709494,\n        -0.05110807, -0.01718794]], dtype=float32), array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,\n       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],\n      dtype=float32)]\n\n\nOr equivalently…\n\n# Create a custom layer\nfrom tensorflow.keras.layers import Layer\nimport tensorflow as tf\n\nclass MyLayer(Layer):\n    \n    def __init__(self,units,input_dim):\n        super(MyLayer, self).__init__()\n        self.w = self.add_weight(shape=(input_dim,units),\n                                initializer='random_normal',\n                                trainable=True)\n        self.b = self.add_weight(shape=(units,),\n                                 initializer='zeros',\n                                trainable=True)\n    def call(self, inputs):\n        return tf.matmul(inputs, self.w)+self.b\n    \ndense_layer = MyLayer(3,5)\n\nx = tf.ones((1,5))\n\nprint(dense_layer(x) )\nprint()\nprint(f\"Weights = {dense_layer.weights[0].numpy()} \\n\\nand biases {dense_layer.weights[1].numpy()}\")"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html#create-a-dropout-layer-as-a-custom-layer",
+    "href": "posts/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html#create-a-dropout-layer-as-a-custom-layer",
+    "title": "TensorFlow Low-Level cheat sheet",
+    "section": "Create a Dropout layer as a custom layer",
+    "text": "Create a Dropout layer as a custom layer\nN.B. uses tf.nn primitive Neural Net (NN) Operations.\n\nclass MyDropout(Layer):\n\n    def __init__(self, rate):\n        super(MyDropout, self).__init__()\n        self.rate = rate\n        \n    def call(self, inputs):\n        # Define forward pass for dropout layer\n        return tf.nn.dropout(inputs, rate=self.rate)"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html#add-activation-functions",
+    "href": "posts/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html#add-activation-functions",
+    "title": "TensorFlow Low-Level cheat sheet",
+    "section": "Add activation functions",
+    "text": "Add activation functions\nTo add activation functions in the layer\n\nadd activation=None to the __init__ inputs so it accepts an activation but defaults to None if doesn’t recieve one\nadd the activation to the self variable\n\nuse self.activation = tf.keras.activations.get(activation)\ni.e. so we can pass a string or a function\n\ncall the activation function within the call\n\ni.e. return  self.activation(tf.matmul(inputs, self.w)+self.b)"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html#custom-layers-in-a-model",
+    "href": "posts/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html#custom-layers-in-a-model",
+    "title": "TensorFlow Low-Level cheat sheet",
+    "section": "Custom layers in a model",
+    "text": "Custom layers in a model\nCan create the model by passing the layer into keras.Sequential as a list. In the same way as done with other layer elements.\n\nxs = np.arange(-1,5,dtype=float)\nys = xs*2 -1\n\nmodel = tf.keras.Sequential([SimpleDense(units=1)])\n\nmodel.compile(optimizer='sgd',loss='mse')\nmodel.fit(xs,ys,epochs=500,verbose=0)\nprint(model.predict([10.]))\n\n[[18.981386]]"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html#model-example-residual-networks",
+    "href": "posts/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html#model-example-residual-networks",
+    "title": "TensorFlow Low-Level cheat sheet",
+    "section": "Model example Residual Networks",
+    "text": "Model example Residual Networks\n\n\nfrom tensorflow.keras.layers import Conv2D, Dense, Layer\nimport tensorflow as tf\nfrom tensorflow.keras.models import Model\n\nclass CNNResidual(Layer):\n    def __init__(self, layers, filters, **kwargs):\n        super(**kwargs).__init__()\n        self.hidden = [Conv2D(filters, (3,3), activation='relu') for _ in range(layers)]\n    def call(self, inputs):\n        x = inputs\n        for layer in self.hidden:\n            x = layer(x)\n        return inputs + x\n    \nclass DNNResidual(Layer):\n    def __init__(self, layers, neurons, **kwargs):\n        super(**kwargs).__init__()\n        self.hidden = [Dense(neurons, activation='relu') for _ in range(layers)]\n    def call(self, inputs):\n        x = inputs\n        for layer in self.hidden:\n            x = layer(x)\n        return inputs + x\n\nclass MyResidual(Model):\n    def __init(self, **kwargs):\n        self.hidden1 = Dense(30, activation='relu')\n        self.block1 = CNNResidual(2, 32)\n        self.block2 = DNNResidual(2, 64)\n        self.out = Dense(1)\n    def call(self, inputs):\n        x = self.hidden1(inputs)\n        x = self.block1(x)\n        for _ in range(1,4):\n            x = self.block2(x)\n        return self.out(x)"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-10-Tensorflow-Images.html#load-from-directory",
+    "href": "posts/tensorflow/2022-10-10-Tensorflow-Images.html#load-from-directory",
+    "title": "TensorFlow Images cheat sheet",
+    "section": "Load from directory",
+    "text": "Load from directory\nIf files are in folders can use flow_from_directory the files would need to be separated by class and training/validation as follows for a classification\ne.g. files in folders like this:\n\n/tmp/cats-v-dogs/validation/cats\n/tmp/cats-v-dogs/validation/dogs\n/tmp/cats-v-dogs/training/cats\n`/tmp/cats-v-dogs/training/dogs\n\n\ntrain_datagen = ImageDataGenerator()\n\ntrain_generator = train_datagen.flow_from_directory(directory=TRAINING_DIR,\n                                                      batch_size=256,\n                                                      class_mode='binary',\n                                                      target_size=(150, 150))\n# Test your generators\ntrain_generator, validation_generator = train_val_generators(TRAINING_DIR, VALIDATION_DIR)\n\n# Put in the fit\nmodel.fit(train_generator,\n                    epochs=15,\n                    verbose=1,\n                    validation_data=validation_generator)"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-10-Tensorflow-Images.html#an-example-of-transfer-learning-on-images-with-inception",
+    "href": "posts/tensorflow/2022-10-10-Tensorflow-Images.html#an-example-of-transfer-learning-on-images-with-inception",
+    "title": "TensorFlow Images cheat sheet",
+    "section": "An example of transfer learning on images with Inception",
+    "text": "An example of transfer learning on images with Inception\n\nLoad the model pre-trained weights\nImport the model architecture\nGive the model the input shape for data\n\npre_trained_model = InceptionV3(input_shape = (150, 150, 3),                                   include_top = False,                                    weights = None)\nBetter to keep the same shape as the model uses and change your data to match it than to change input_shape to match your data.\ninclude_top=False removes top most layer of the model- the output layer\nweights=None just uses the model architecture- note the weights are loaded on a later line\n\nLoad the weights into the model\nFreeze all the layers\nPick out the front part of the model, as the layers to the end are more specialized\nAdd extra layers to the model that can be fitted to\n\nNote this uses the functional API\n\nMatch the image size of our images to that needed by the model\n\nOur model expects 150X150X3 but our data is 50X50. So we need to multiply our image size by 3. This is done by the UpSampling2D layer\nmodel = tf.keras.layers.UpSampling2D(size=(3,3))(model)\nor use resize if image is bigger tf.image.resize(image, (150, 150,))\n\n# 1- Download the inception v3 weights\n!wget --no-check-certificate \\\n    https://storage.googleapis.com/mledu-datasets/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5 \\\n    -O /tmp/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5\n\n# 2- Import the inception model  \nfrom tensorflow.keras.applications.inception_v3 import InceptionV3\n\n# Create an instance of the inception model from the local pre-trained weights\nlocal_weights_file = '/tmp/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5'\n\n# 3- create the model and load in the weights\npre_trained_model = InceptionV3(input_shape = (150, 150, 3),\n                                  include_top = False, \n                                  weights = None) \n\n# 4- load weights into the model\npre_trained_model.load_weights(local_weights_file)\n\n# 5- Make all the layers in the pre-trained model non-trainable\nfor layers in pre_trained_model.layers:\n    layers.trainable = False\n    \n# 6- Pick out part of the model\nlast_desired_layer = pre_trained_model.get_layer('mixed7')    \nlast_output = last_desired_layer.output\n\n# 7- Add extra layers to the model\n\n# Flatten the output layer to 1 dimension\nx = layers.Flatten()(last_output)  \n\n# Add a fully connected layer with 1024 hidden units and ReLU activation\nx = layers.Dense(1024,activation='relu')(x)\n# Add a dropout rate of 0.2\nx = layers.Dropout(0.2)(x)  \n# Add a final sigmoid layer for classification\nx = layers.Dense(1,activation='sigmoid')(x) \n\n# 8. Increase input image sizes to match that needed by model using \n# a layer before the existing model starts\n\nmodel = tf.keras.layers.UpSampling2D(size=(3,3))(model)\n\n# Create the complete model by using the Model class\nmodel = Model(inputs=pre_trained_model.input, outputs=x)\n\n\n\n# Compile the model\nmodel.compile(optimizer = RMSprop(learning_rate=0.0001), \n            loss = 'binary_crossentropy',\n            metrics = ['accuracy'])"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-10-Tensorflow-Images.html#r-cnn",
+    "href": "posts/tensorflow/2022-10-10-Tensorflow-Images.html#r-cnn",
+    "title": "TensorFlow Images cheat sheet",
+    "section": "R-CNN",
+    "text": "R-CNN\nR-CNN (R=region) a region based CNN to implement selective search with neural networks.\n\nTakes input images\nExtract regions using selective search method (~2k)\nExtract features using CNN from each region\n\nwarped to match AlexNet inputs\n\nClassify with support vector machine (SVM) instead of dense layers\nPlus regression to get bounding box of images\nVery slow & computationally expensive\n\n\nRoss Girshick, Jeff Donahue, Trevor Darrell, Jitendra Malik, “Rich feature hierarchies for accurate object detection and semantic segmentation” 2014"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-10-Tensorflow-Images.html#fast-r-cnn",
+    "href": "posts/tensorflow/2022-10-10-Tensorflow-Images.html#fast-r-cnn",
+    "title": "TensorFlow Images cheat sheet",
+    "section": "Fast R-CNN",
+    "text": "Fast R-CNN\nThe aim was to improve issues above with RCNN.\n\nEntire image is fed into the ConvNet\n\nno selective search- computationally expensive\nthis Convnet is trained on finding features\nproduces a feature map of the image\n\nEach feature map can then be fed into fully connected dense layer\n\nget feature vector of image\n\nFeature vector fed into layers to do regression and classification\n\n\nRoss Girshick, Fast R-CNN, 2015"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-10-Tensorflow-Images.html#faster-r-cnn",
+    "href": "posts/tensorflow/2022-10-10-Tensorflow-Images.html#faster-r-cnn",
+    "title": "TensorFlow Images cheat sheet",
+    "section": "Faster R-CNN",
+    "text": "Faster R-CNN\n\nentire image into Convnet\nsliding window to find areas of interest\nsomething called a Region Proposed Network is used with data to find and create anchor boxes on image\nThe cropped and passed to Dense layers for classification and regression.\n\n Deep Learning for Computer Vision with Python"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-10-Tensorflow-Images.html#object-detection-in-tensorflow",
+    "href": "posts/tensorflow/2022-10-10-Tensorflow-Images.html#object-detection-in-tensorflow",
+    "title": "TensorFlow Images cheat sheet",
+    "section": "Object detection in TensorFlow",
+    "text": "Object detection in TensorFlow\nhttps://www.tensorflow.org/hub\n\nTensorFlow Hub is a repository of trained machine learning models ready for fine-tuning and deployable anywhere. Reuse trained models like BERT and Faster R-CNN with just a few lines of code.\n\nCopy url from hub page https://tfhub.dev/google/faster_rcnn/openimages_v4/inception_resnet_v2/1 page for faster rcnn. And copy url is “https://tfhub.dev/google/faster_rcnn/openimages_v4/inception_resnet_v2/1”\n\nimport tensorflow as tf\nimport tensorflow-hub as hub\n\nmodule_handle = \"https://tfhub.dev/google/faster_rcnn/openimages_v4/inception_resnet_v2/1\"\n\ndetector = hub.load(module_handle).signatures['default']\n\n\nAn example can be found here https://www.tensorflow.org/hub/tutorials/object_detection"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-10-Tensorflow-Images.html#object-detection-api",
+    "href": "posts/tensorflow/2022-10-10-Tensorflow-Images.html#object-detection-api",
+    "title": "TensorFlow Images cheat sheet",
+    "section": "Object Detection API",
+    "text": "Object Detection API\nhttps://colab.research.google.com/github/tensorflow/hub/blob/master/examples/colab/tf2_object_detection.ipynb\nhttps://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2.md https://github.com/tensorflow/models/tree/master/research/object_detection https://www.tensorflow.org/guide/checkpoint"
+  },
+  {
+    "objectID": "posts/tensorflow/2022-10-10-Tensorflow-NLP.html",
+    "href": "posts/tensorflow/2022-10-10-Tensorflow-NLP.html",
+    "title": "TensorFlow NLP cheat sheet",
+    "section": "",
+    "text": "Basic Implementation\nThe standard language model starts with an embedding layer, this then needs to be flattened to a vector, then we can add a dense layer before an output layer.\nThe Embedding layer creates a vector-space for the text data. So for example, the words beautiful and ugly may be in opposite directions. And words such as cat and kitten may be close together in vector space.\nGlobalAveragePooling1Dcan be replaced by Flatten()\n\nmodel = tf.keras.Sequential([ \n    tf.keras.layers.Embedding(num_words,embedding_dim,input_length=maxlen),\n    tf.keras.layers.GlobalAveragePooling1D(),\n    tf.keras.layers.Dense(24,activation='relu'),\n    tf.keras.layers.Dense(5,'softmax')\n])\n\nThe model above does not take account for the order of words,\nIf we want to do this we can insert an additional layer after the embedding layer. For example, by using the LSTM model as below\n\nmodel_lstm= tf.keras.Sequential([\n    tf.keras.layers.Embedding(VOCAB_SIZE,EMBEDDING_DIM,input_length=MAXLEN),\n    tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(32)),\n    tf.keras.layers.Dense(24,activation='relu'),\n    tf.keras.layers.Dense(NUM_CLASSES,activation='softmax')   \n])\n\nWe can even insert a conolution layer after the embedding instead\ntf.keras.layers.Conv1D(128,5,activation='relu')\nFor two consecutive layers of RNNs use return_sequences=True\n\ntf.keras.layers.Bidirectional(tf.keras.layers.LSTM(lstm1_dim, return_sequences=True)),\ntf.keras.layers.Bidirectional(tf.keras.layers.LSTM(lstm2_dim)),\n\n\n\nText data Tokenizer\n\nCreate a Tokenizer instance\nFit tokenizer to text data with tokenizer.fit_on_texts(text_data)\nConvert text to sequences with sequences = tokenizer.texts_to_sequences(text_data)\n\nFor example, the following words have the indices: apple->1, brain->2, cat->3, that->4, is->5\nAnd a sequence of text within the data can be converted to a sequence: “that cat apple is brain” -> (4, 3, 1, 5, 2)\n\nGet the word index word_index = tokenizer.word_index\nGet the text back from the sequences text = tokenizer.sequences_to_texts(sequences)\n\n\nfrom tensorflow.keras.preprocessing.text import Tokenizer\nfrom tensorflow.keras.preprocessing.sequence import pad_sequences\n\ntokenizer = Tokenizer(oov_token=\"<OOV>\",num_words=10_000)\ntokenizer.fit_on_texts(text_data)\n\nsequences = label_tokenizer.texts_to_sequences(text_data)"
   }
 ]

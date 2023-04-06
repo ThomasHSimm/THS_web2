@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Thomas H. Simm">
 
-<title>ThomasHSimm – tensorflow</title>
+<title>ThomasHSimm - TensorFlow cheat sheet</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -170,7 +171,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"></h1>
+      <h1 class="quarto-secondary-nav-title">TensorFlow cheat sheet</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -254,6 +255,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <a href="../../posts/tensorflow/2022-09-28-Tensorflow.html" class="sidebar-item-text sidebar-link active">TensorFlow cheat sheet</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/tensorflow/2022-10-07-Tensorflow-2.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet 2</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/tensorflow/2022-10-10-Tensorflow-Images.html" class="sidebar-item-text sidebar-link">TensorFlow Images cheat sheet</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html" class="sidebar-item-text sidebar-link">TensorFlow Low-Level cheat sheet</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/tensorflow/2022-10-10-Tensorflow-NLP.html" class="sidebar-item-text sidebar-link">TensorFlow NLP cheat sheet</a>
+  </div>
+</li>
       </ul>
   </li>
       </ul>
@@ -267,8 +288,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tensorflow-cheat-sheet" id="toc-tensorflow-cheat-sheet" class="nav-link active" data-scroll-target="#tensorflow-cheat-sheet">TensorFlow cheat sheet</a></li>
-  <li><a href="#contents" id="toc-contents" class="nav-link" data-scroll-target="#contents">Contents</a></li>
+  <li><a href="#contents" id="toc-contents" class="nav-link active" data-scroll-target="#contents">Contents</a></li>
   <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#useful-links-details" id="toc-useful-links-details" class="nav-link" data-scroll-target="#useful-links-details">Useful Links / Details</a>
   <ul class="collapse">
@@ -321,22 +341,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><p><img src="../../posts/header2.png" height="200"></p>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">TensorFlow cheat sheet</h1>
+<p class="subtitle lead">Some tips for tensorflow and keras</p>
+</div>
 
 
 
-<section id="tensorflow-cheat-sheet" class="level1">
-<h1>TensorFlow cheat sheet</h1>
-<blockquote class="blockquote">
-<p>Some tips for tensorflow and keras</p>
-</blockquote>
-<ul>
-<li>toc: false</li>
-<li>badges: true</li>
-<li>comments: true</li>
-<li>categories: [tensorflow]</li>
-</ul>
-</section>
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Thomas H. Simm </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+<p><img src="../../posts/header2.png" height="200"></p>
 <section id="contents" class="level1">
 <h1>Contents</h1>
 <ol type="1">
