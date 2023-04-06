@@ -12,5 +12,131 @@
     "title": "THSwebsitenew",
     "section": "",
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#general",
+    "href": "posts/2022-09-28-Tensorflow.html#general",
+    "title": "ThomasHSimm",
+    "section": "General",
+    "text": "General\nLibrary websites:\nhttps://keras.io/\nhttps://www.tensorflow.org/"
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#courses",
+    "href": "posts/2022-09-28-Tensorflow.html#courses",
+    "title": "ThomasHSimm",
+    "section": "Courses",
+    "text": "Courses\nI have tried both of the following courses: DeepLearning.AI TensorFlow Developer Professional Certificate and TensorFlow 2 for Deep Learning Specialization.\n\nDeepLearning.AI TensorFlow Developer Professional Certificate\nTensorFlow 2 for Deep Learning Specialization\n\nThe Tensorflow2 course is a bit longer and goes into more depth, although there are additional extended courses for the deeplearning one. The deeplearning one can be done within the current 7 days trail period of coursera. The Tensorflow2 course is tricky to do in this timeframe. This is due to more material, the harder coursework, and waiting for capstone projects to be marked.\nIn the end I only did the first course of Tensorflow2 as I found the tests had material that wasn’t explained within the course and I found the lectures lacking in detail and the instructors became increasingly boring. I gave up after getting to the capstone in course 2 (of 3) when they asked a question about an NLP network that was never explained anywhere. However, the coursework is a good challenge, so it may be worth doing the course for this alone and learning from other sources in addition to this one.\nI prefered the DeepLearning courses as they were more in depth and didn’t assume as much prior knowledge, and the presentation was better. I am currently working through the follow-up course TensorFlow: Advanced Techniques Specialization and given time will do the NLP and MLOps courses.\nSome Others:\nOne by Udacity Intro to TensorFlow for Deep Learning is being offered for free and looks okay too.\nTensorFlow example tutorials written as Jupyter notebooks and run directly in Google Colab—a hosted notebook environment that requires no setup. Click the Run in Google Colab button. Part of the TensorFlow resources."
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#resources",
+    "href": "posts/2022-09-28-Tensorflow.html#resources",
+    "title": "ThomasHSimm",
+    "section": "Resources",
+    "text": "Resources\n\nTensorFlow’s website recommendations\nFrançois Chollet\n\nHis book Deep Learning with Python, Second Edition can be read online.\n\nDeep learning book by Ian Goodfellow and Yoshua Bengio and Aaron Courville\n\navailable free online\n\nProbabilistic Programming & Bayesian Methods for Hackers\n\navailable online"
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#model-creations",
+    "href": "posts/2022-09-28-Tensorflow.html#model-creations",
+    "title": "ThomasHSimm",
+    "section": "Model creations",
+    "text": "Model creations\nThe easiest way to create a model in Keras is through keras.Sequential, which creates a neural network as a stack of layers.\nSo in the examplel below - the 1st layer has units = 4 and input_shape=2 with a relu activation function - the 2nd layer has units = 3 with a relu activation function - the 3rd layer has units = 1\nThe 3rd layer is the output layer. Since there is no activation function this would be a regression problem to predict one value.\n\nFor non sequential models or with multiple inputs/outputs see functional API\n\nTabular Data\nhttps://www.kaggle.com/code/thomassimm/premier-league-predictions-using-tensorflow\n\nmodel = tf.keras.Sequential([\n        tf.keras.layers.Dense(512//8,activation='relu',input_shape=[input_shape]),\n        tf.keras.layers.Dense(512//8,activation='relu'),\n        tf.keras.layers.Dense(1,activation='sigmoid')        \n    ])\n\n\n\nImage Data\n\nmodel = tf.keras.models.Sequential([ \n          tf.keras.layers.Convolution2D( 64,(3,3),activation='relu',input_shape=(28,28,1) ),\n          tf.keras.layers.MaxPool2D(2,2),\n          tf.keras.layers.Flatten(),\n          tf.keras.layers.Dense(256//2,activation='relu'),\n          tf.keras.layers.Dense(1,activation='sigmoid') ])\n\n\n\nLanguage Data\nThe standard language model starts with an embedding layer, this then needs to be flattened to a vector, then we can add a dense layer before an output layer.\nThe Embedding layer creates a vector-space for the text data. So for example, the words beautiful and ugly may be in opposite directions. And words such as cat and kitten may be close together in vector space.\nGlobalAveragePooling1Dcan be replaced by Flatten()\n\n    model = tf.keras.Sequential([ \n        tf.keras.layers.Embedding(num_words,embedding_dim,input_length=maxlen),\n        tf.keras.layers.GlobalAveragePooling1D(),\n        tf.keras.layers.Dense(24,activation='relu'),\n        tf.keras.layers.Dense(5,'softmax')\n    ])\n\nThe model above does not take account for the order of words,\nIf we want to do this we can insert an additional layer after the embedding layer. For example, by using the LSTM model as below\n\nmodel_lstm= tf.keras.Sequential([\n    tf.keras.layers.Embedding(VOCAB_SIZE,EMBEDDING_DIM,input_length=MAXLEN),\n    tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(32)),\n    tf.keras.layers.Dense(24,activation='relu'),\n    tf.keras.layers.Dense(NUM_CLASSES,activation='softmax')   \n])\n\nWe can even insert a conolution layer after the embedding instead\ntf.keras.layers.Conv1D(128,5,activation='relu')\nFor two consecutive layers of RNNs use return_sequences=True\n\ntf.keras.layers.Bidirectional(tf.keras.layers.LSTM(lstm1_dim, return_sequences=True)),\ntf.keras.layers.Bidirectional(tf.keras.layers.LSTM(lstm2_dim)),"
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#compile-the-model",
+    "href": "posts/2022-09-28-Tensorflow.html#compile-the-model",
+    "title": "ThomasHSimm",
+    "section": "Compile the model",
+    "text": "Compile the model\nTo compile the model, need to define the following:\n\nthe optimizer to use, i.e. how to update the parameters to improve model during fitting\nthe loss, i.e. what defines the goodness of the fit\nany metrics to record\n\n\nopt = keras.optimizers.Adam(learning_rate=0.0001)\nmodel.compile(\n    optimizer=opt,\n    loss='binary_crossentropy',\n    metrics=['binary_accuracy'],\n)"
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#evaluate-predict-the-model",
+    "href": "posts/2022-09-28-Tensorflow.html#evaluate-predict-the-model",
+    "title": "ThomasHSimm",
+    "section": "Evaluate / Predict the model",
+    "text": "Evaluate / Predict the model\ntest_loss, test_accuracy = model.evaluate(scaled_test_images,\ntf.keras.utils.to_categorical(test_labels),\nverbose=0)\nand more or less outputs depending on metrics used\npred = model.predict(X_sample)"
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#saving-and-loading",
+    "href": "posts/2022-09-28-Tensorflow.html#saving-and-loading",
+    "title": "ThomasHSimm",
+    "section": "Saving and Loading",
+    "text": "Saving and Loading\n\nSaving / Loading weights\n\nmodel_weights_file='my_file'\n\nmodel.save_weights(model_weights_file)\n\nmodel.load_weights(model_weights_file)\n\n\n# All the model\n\nmodel.save('saved_model/my_model')\n\nnew_model = tf.keras.models.load_model('saved_model/my_model')"
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#callbacks",
+    "href": "posts/2022-09-28-Tensorflow.html#callbacks",
+    "title": "ThomasHSimm",
+    "section": "Callbacks",
+    "text": "Callbacks\nwithin model.fit(....)\ncallbacks=[callback_function]\nhttps://www.tensorflow.org/api_docs/python/tf/keras/callbacks\n\nEarlyStopping\n\nto stop the model early if some conditions are met\n\nModelCheckpoint\n\nsave the model/model weights (https://www.tensorflow.org/api_docs/python/tf/keras/callbacks/ModelCheckpoint)\nmain data stored similar to ‘.data-00000-of-00001’\nhttps://www.tensorflow.org/tutorials/keras/save_and_load#what_are_these_files\nCan give file names with variables using {}\n\nval_loss\nval_accuracy\nbatch\nepoch\n\n\nearly_stopping = tf.keras.callbacks.EarlyStopping(\n    min_delta=0.0001, # minimium amount of change to count as an improvement\n    patience=20, # how many epochs to wait before stopping\n    restore_best_weights=True,\n    monitor='val_binary_accuracy',\n)\n\nfilepath = os.path.join(cwd,'checkpoints_every_epoch/checkpoint.{epoch}.{batch}')\ncheckpoint = tf.keras.callbacks.ModelCheckpoint(\n        save_weights_only=True,\n        save_best_only=True,\n        filepath=filepath,\n    )"
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#overfitting-strategies",
+    "href": "posts/2022-09-28-Tensorflow.html#overfitting-strategies",
+    "title": "ThomasHSimm",
+    "section": "Overfitting strategies",
+    "text": "Overfitting strategies\n\nDropout\nThe idea behind dropout is to randomly drop out some fraction of a layer’s input units every step of training, making it much harder for the network to learn those spurious patterns in the training data that leads to overfitting.\nInstead, it has to search for broad, general patterns, whose weight patterns tend to be more robust.\nYou could also think about dropout as creating a kind of ensemble of networks like with RandomForests.\nExample useage, apply 30% dropout to the next layer\nlayers.Dropout(rate=0.3),\nlayers.Dense(16)\nExample taken from kaggle https://www.kaggle.com/code/ryanholbrook/dropout-and-batch-normalization\n\n\n\nBatch Normalization\nNormalization is important in neural networks, it can really significantly improve the results of the values of the input and output are between 0 and 1.\nIn contrast, it is not important in other models such as random forests. Hence, the input data is often normalised such as train_datagen = ImageDataGenerator(rescale=1./255.) in image models.\nSo if it is good to normalize the input data it can also be good to normalize the layers of the network. This can be done with a BatchNormalization layer.A batch normalization layer looks at each batch as it comes in, first normalizing the batch with its own mean and standard deviation, and then also putting the data on a new scale with two trainable rescaling parameters. Batchnorm, in effect, performs a kind of coordinated rescaling of its inputs.\nAs stated in https://www.kaggle.com/code/ryanholbrook/dropout-and-batch-normalization batchnorm: - batchnorm is most often added as an aid to the optimization process - but it can sometimes also help prediction performance - Models with batchnorm tend to need fewer epochs to complete training. - And can fix various problems that can cause the training to get “stuck”. - it can be used at almost any point in a network.\nlayers.Dense(16, activation='relu'),\nlayers.BatchNormalization(),\n… or between a layer and its activation function:\nlayers.Dense(16),\nlayers.BatchNormalization(),\nlayers.Activation('relu'),\n… Or if you add it as the first layer of your network it can act as a kind of adaptive preprocessor like Sci-Kit Learn’s StandardScaler."
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#multiple-inputs-and-outputs",
+    "href": "posts/2022-09-28-Tensorflow.html#multiple-inputs-and-outputs",
+    "title": "ThomasHSimm",
+    "section": "Multiple inputs and outputs",
+    "text": "Multiple inputs and outputs\n3 inputs and 2 outputs. Simple model\nInputs: - temp_train - nocc_train - lumbp_train\nOutputs: - out1_train - out2_train\nThings to note: - inputs in the model is a list of the Input() parts - concatentate is used with the input list to provide input to the next layers of the model - outputs in the model is a list of the output layers - When compiling use dictionary to set loss and metrics to each output - or lists ['binary_crossentropy','binary_crossentropy'] - When fitting, for the inputs/outputs either: - provide a list of the inputs [temp_train,nocc_train, lumbp_train] - give as a dict {'layer_name':variable_name}\n\n## Functional: multiple inputs\n# N.B. lowercase 'c' concatenate\nimport tensorflow as tf \nfrom tensorflow.keras.layers import Input, Dense, concatenate\ninput_shape=(1,)\n\n# get individual inputs\ninputs_temp = Input(shape=input_shape,name='temp')\ninputs_nocc = Input(shape=input_shape,name='nocc')\ninputs_lumbp = Input(shape=input_shape,name='lumbp')\n\n# combine them\ninput_list = [inputs_temp,inputs_nocc,inputs_lumbp]\ninput_layer =concatenate(input_list)\n\n# add inputs to the model for two outputs\noutput_pred1  = Dense(2,activation='sigmoid',name='out_1')(input_layer)\noutput_pred2 = Dense(2,activation='sigmoid',name='out_2')(input_layer)\n\n# output layer\noutput_list = [output_pred1, output_pred2]\n\n# create the model object\nmodel = tf.keras.Model(inputs=input_list, outputs=output_list )\n\n# show the model\nmodel.summary()\n\n# Compile\nmodel.compile(\n        optimizer='SGD',\n        loss={'out_1':'binary_crossentropy',\n              'out_2':'binary_crossentropy'},\n        metrics={'out_1':['accuracy'],\n                 'out_2':['accuracy']},\n        loss_weights=[1,0.2]\n        )\n\ntf.keras.utils.plot_model(model)\n\n\n# Define training inputs and outputs\ninputs_train = {'temp': temp_train, 'nocc': nocc_train, 'lumbp': lumbp_train}\noutputs_train = {'out_1': out1_train, 'out_2': out2_train}\n\n# fit the model\nmodel.fit(inputs_train,outputs_train)"
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#inception-images",
+    "href": "posts/2022-09-28-Tensorflow.html#inception-images",
+    "title": "ThomasHSimm",
+    "section": "Inception (images)",
+    "text": "Inception (images)\n\nLoad the model pre-trained weights\nImport the model architecture\nGive the model the input shape for data\nLoad the weights into the model\nFreeze all the layers\nPick out the front part of the model, as the layers to the end are more specialized\nAdd extra layers to the model that can be fitted to\n\n\n# 1- Download the inception v3 weights\n!wget --no-check-certificate \\\n    https://storage.googleapis.com/mledu-datasets/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5 \\\n    -O /tmp/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5\n\n# 2- Import the inception model  \nfrom tensorflow.keras.applications.inception_v3 import InceptionV3\n\n# Create an instance of the inception model from the local pre-trained weights\nlocal_weights_file = '/tmp/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5'\n\n# 3- create the model and load in the weights\npre_trained_model = InceptionV3(input_shape = (150, 150, 3),\n                                  include_top = False, \n                                  weights = None) \n\n# 4- load weights into the model\npre_trained_model.load_weights(local_weights_file)\n\n# 5- Make all the layers in the pre-trained model non-trainable\nfor layers in pre_trained_model.layers:\n    layers.trainable = False\n    \n# 6- Pick out part of the model\nlast_desired_layer = pre_trained_model.get_layer('mixed7')    \nlast_output = last_desired_layer.output\n\n# 7- Add extra layers to the model\n\n# Flatten the output layer to 1 dimension\nx = layers.Flatten()(last_output)  \n\n# Add a fully connected layer with 1024 hidden units and ReLU activation\nx = layers.Dense(1024,activation='relu')(x)\n# Add a dropout rate of 0.2\nx = layers.Dropout(0.2)(x)  \n# Add a final sigmoid layer for classification\nx = layers.Dense(1,activation='sigmoid')(x) \n\n# Create the complete model by using the Model class\nmodel = Model(inputs=pre_trained_model.input, outputs=x)\n\n# Compile the model\nmodel.compile(optimizer = RMSprop(learning_rate=0.0001), \n            loss = 'binary_crossentropy',\n            metrics = ['accuracy'])"
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#summary-info-of-model",
+    "href": "posts/2022-09-28-Tensorflow.html#summary-info-of-model",
+    "title": "ThomasHSimm",
+    "section": "Summary / info of model",
+    "text": "Summary / info of model\nmodel.summary()\nGet summary of the model"
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#class-or-function---metrics-and-losses",
+    "href": "posts/2022-09-28-Tensorflow.html#class-or-function---metrics-and-losses",
+    "title": "ThomasHSimm",
+    "section": "Class or Function - Metrics and Losses",
+    "text": "Class or Function - Metrics and Losses\nIn general, classes use camel formatting CategoricalAccuracy whereas function use underscores and lower case categorical_accuracy and sometimes initials MAE\n\nhttps://www.tensorflow.org/api_docs/python/tf/keras/losses\nhttps://www.tensorflow.org/api_docs/python/tf/keras/metrics"
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#low-level-handling-of-metrics",
+    "href": "posts/2022-09-28-Tensorflow.html#low-level-handling-of-metrics",
+    "title": "ThomasHSimm",
+    "section": "Low level handling of metrics",
+    "text": "Low level handling of metrics\n\nmetric.update_state() to accumulate metric stats after each batch\nmetric.result get current value of metric to display\nmetric.reset_state() to reset metric value typically at the end of epoch"
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#categorical-binary-versus-multiple",
+    "href": "posts/2022-09-28-Tensorflow.html#categorical-binary-versus-multiple",
+    "title": "ThomasHSimm",
+    "section": "Categorical: Binary versus Multiple",
+    "text": "Categorical: Binary versus Multiple\nFor categorical data there is a slight difference between if there are only 2 categories or more.\nGoing from binary to multiple: - We need to change activation in model from sigmoid to softmax in final Dense layer - Change loss function from binary_crossentropy to categorical_crossentropy in compile - Making data one-hot encoded, i.e. columns for each outcome - Or use SparseCategoricalCrossentropy\n\nmodel_binary = tf.keras.Sequential([\n        tf.keras.layers.Dense(512//8,activation='relu',input_shape=[input_shape]),\n        tf.keras.layers.Dense(1,activation='sigmoid')        \n    ])\n\nmodel_multi = tf.keras.Sequential([\n        tf.keras.layers.Dense(512//8,activation='relu',input_shape=[input_shape]),\n        tf.keras.layers.Dense(4,activation='softmax')        \n    ])\n\n\nmodel_binary.compile(loss='binary_crossentropy',\n                  optimizer='adam',\n                  metrics=['accuracy'])\n\n\nmodel_multi.compile(loss='categorical_crossentropy',\n                  optimizer='adam',\n                  metrics=['accuracy'])\n\n\n\n# One-hot encoding method\n\ny_binary =[1,0,0,0,0,0,1,1,1,1,0,1,0,1]\n\ny_multi=[1,2,4,6,1,3,4,2,4,2,5,2,1,4,2,1]\ny_multi=tf.keras.utils.to_categorical(y_multi)\ny_multi\n\narray([[0., 1., 0., 0., 0., 0., 0.],\n       [0., 0., 1., 0., 0., 0., 0.],\n       [0., 0., 0., 0., 1., 0., 0.],\n       [0., 0., 0., 0., 0., 0., 1.],\n       [0., 1., 0., 0., 0., 0., 0.],\n       [0., 0., 0., 1., 0., 0., 0.],\n       [0., 0., 0., 0., 1., 0., 0.],\n       [0., 0., 1., 0., 0., 0., 0.],\n       [0., 0., 0., 0., 1., 0., 0.],\n       [0., 0., 1., 0., 0., 0., 0.],\n       [0., 0., 0., 0., 0., 1., 0.],\n       [0., 0., 1., 0., 0., 0., 0.],\n       [0., 1., 0., 0., 0., 0., 0.],\n       [0., 0., 0., 0., 1., 0., 0.],\n       [0., 0., 1., 0., 0., 0., 0.],\n       [0., 1., 0., 0., 0., 0., 0.]], dtype=float32)\n\n\nAlternatively, with output data like [0, 1, 4, 0, 2, 3, 3, 0, …]\nuse: - SparseCategoricalCrossentropy(from_logits=True)\n\nmodel.compile(\n                 loss=tf.keras.losses.SparseCategoricalCrossentropy(),\n                 optimizer='adam',\n                 metrics=['accuracy'])"
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#learning-rate",
+    "href": "posts/2022-09-28-Tensorflow.html#learning-rate",
+    "title": "ThomasHSimm",
+    "section": "Learning rate",
+    "text": "Learning rate\nFind the best learning rate by using callbacks\nThe learning rate to use on the data below would be where the loss is low (y-axis) but not too close to where it increases or is unstable.\nSo for this on the downward part of the curve between 10E-6 and 10E-5\n\n# Set the learning rate scheduler\nlr_schedule = tf.keras.callbacks.LearningRateScheduler(\n    lambda epoch: 1e-8 * 10**(epoch / 20) )\n    \n# Set the training parameters\nmodel_tune.compile(loss=\"mse\", optimizer=optimizer)\n    \n# train the model\nhistory = model_tune.fit(dataset, epochs=100, callbacks=[lr_schedule])\n\n# plot the results\n# Define the learning rate array\nlrs = 1e-8 * (10 ** (np.arange(100) / 20))\n\n# Plot the loss in log scale\nplt.semilogx(lrs, history.history[\"loss\"])"
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#lambda-functions",
+    "href": "posts/2022-09-28-Tensorflow.html#lambda-functions",
+    "title": "ThomasHSimm",
+    "section": "lambda functions",
+    "text": "lambda functions\nhttps://www.tensorflow.org/api_docs/python/tf/keras/layers/Lambda\ntf.keras.layers.Lambda(     function, output_shape=None, mask=None, arguments=None, **kwargs )\nAdd a function that works on the data within the model\n\n# expand the dimensions\ntf.keras.layers.Lambda(lambda x: tf.expand_dims(x, axis=-1),\n                      input_shape=[window_size])\n\n# make the output larger (can be useful if predicting to large values, but previous layer have activation function so values are close to 1)\ntf.keras.layers.Lambda(lambda x: x * 100.0)"
+  },
+  {
+    "objectID": "posts/2022-09-28-Tensorflow.html#force-cpugpu",
+    "href": "posts/2022-09-28-Tensorflow.html#force-cpugpu",
+    "title": "ThomasHSimm",
+    "section": "Force CPU/GPU",
+    "text": "Force CPU/GPU\nhttps://www.tensorflow.org/tutorials/distribute/multi_worker_with_keras\n\n# Check available CPU/GPU devices\n\nprint(tf.config.list_physical_devices('CPU'))\n\nprint(tf.config.list_physical_devices('GPU'))\n\nwith tf.device(\"CPU:0\"):\n    model.fit(....)\n    \nwith tf.device(\"GPU:0\"):\n    model.fit(....)"
   }
 ]
