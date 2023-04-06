@@ -244,12 +244,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Tensorflow</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Olympics</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/olympics/2022-07-31-OlympicsSQL.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/olympics/2022-07-29-OlympicsSQL_createDFs.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- create the tables</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/olympics/2022-07-29-OlympicsSQL_createCountryDF.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- creating a country table</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/olympics/2022-07-29-OlympicsSQL_GDPpopulation.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- GDP and population</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/olympics/2022-07-20-OlympicsSQL-HeightWeightAge.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- height weight and age</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/olympics/2022-07-29-Olympics_HomeEvent.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- home games</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/olympics/2022-07-31-OlympicsSQL-Presentation.html" class="sidebar-item-text sidebar-link">Presentation of Olympics data with SQL and pandas</a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Tensorflow</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/tensorflow/2022-09-28-Tensorflow.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet</a>
@@ -642,7 +687,7 @@ and biases [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>x_train <span class="op">=</span> tf.reshape(x_train,(<span class="bu">len</span>(x_train),<span class="dv">1</span>))</span>
 <span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>y_train <span class="op">=</span> tf.reshape(y_train,(<span class="bu">len</span>(x_train),<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2022-10-10-Tensorflow-CustomLayersModels_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
+<p><img src="2022-10-10-Tensorflow-CustomLayersModels_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <p>Define the model class (see also <a href="https://thomashsimm.com/tensorflow/low-level/2022/10/10/Tensorflow-CustomLayersModels.html">TensorFlow Low-Level cheat sheet</a>)</p>
@@ -833,7 +878,7 @@ Duration :37.492</code></pre>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Loss'</span>)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Epochs'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2022-10-10-Tensorflow-CustomLayersModels_files/figure-html/cell-18-output-1.png" class="img-fluid"></p>
+<p><img src="2022-10-10-Tensorflow-CustomLayersModels_files/figure-html/cell-17-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="12">
@@ -842,7 +887,7 @@ Duration :37.492</code></pre>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>plt.plot(x_train, y_train, <span class="st">'b.'</span>)</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>plt.plot(x_pred, y_pred, <span class="st">'k-'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2022-10-10-Tensorflow-CustomLayersModels_files/figure-html/cell-19-output-1.png" class="img-fluid"></p>
+<p><img src="2022-10-10-Tensorflow-CustomLayersModels_files/figure-html/cell-18-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 </section>
@@ -901,7 +946,7 @@ Duration :37.492</code></pre>
 <span id="cb24-40"><a href="#cb24-40" aria-hidden="true" tabindex="-1"></a>plt.legend([<span class="st">'y'</span>,<span class="st">'y_pred'</span>,<span class="st">'Loss def'</span>,<span class="st">'Loss class'</span>])</span>
 <span id="cb24-41"><a href="#cb24-41" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2022-10-10-Tensorflow-CustomLayersModels_files/figure-html/cell-21-output-1.png" class="img-fluid"></p>
+<p><img src="2022-10-10-Tensorflow-CustomLayersModels_files/figure-html/cell-20-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 

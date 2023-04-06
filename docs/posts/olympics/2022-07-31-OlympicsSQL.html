@@ -8,7 +8,7 @@
 
 <meta name="author" content="Thomas H. Simm">
 
-<title>ThomasHSimm - Communicating code: Presentations</title>
+<title>ThomasHSimm - Olympics data with SQL and pandas</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Communicating code: Presentations</h1>
+      <h1 class="quarto-secondary-nav-title">Olympics data with SQL and pandas</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -141,12 +141,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Communicating Code</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Communicating Code</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/Communicating_Code/CommCodePres_notebooks.html" class="sidebar-item-text sidebar-link">Communicating code: Notebooks</a>
@@ -154,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/Communicating_Code/CommCodePres_pres.html" class="sidebar-item-text sidebar-link active">Communicating code: Presentations</a>
+  <a href="../../posts/Communicating_Code/CommCodePres_pres.html" class="sidebar-item-text sidebar-link">Communicating code: Presentations</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -181,15 +181,15 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Olympics</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Olympics</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/olympics/2022-07-31-OlympicsSQL.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas</a>
+  <a href="../../posts/olympics/2022-07-31-OlympicsSQL.html" class="sidebar-item-text sidebar-link active">Olympics data with SQL and pandas</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -270,29 +270,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#content" id="toc-content" class="nav-link active" data-scroll-target="#content">Content</a></li>
-  <li><a href="#quarto-presentations" id="toc-quarto-presentations" class="nav-link" data-scroll-target="#quarto-presentations">Quarto Presentations</a></li>
-  <li><a href="#quarto-powerpoint-overview" id="toc-quarto-powerpoint-overview" class="nav-link" data-scroll-target="#quarto-powerpoint-overview">Quarto PowerPoint overview</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a>
   <ul class="collapse">
-  <li><a href="#creating-the-template" id="toc-creating-the-template" class="nav-link" data-scroll-target="#creating-the-template">Creating the template</a></li>
-  <li><a href="#load-the-template" id="toc-load-the-template" class="nav-link" data-scroll-target="#load-the-template">Load the template</a></li>
-  <li><a href="#check-the-slides" id="toc-check-the-slides" class="nav-link" data-scroll-target="#check-the-slides">Check the slides</a></li>
+  <li><a href="#athlete-analysis" id="toc-athlete-analysis" class="nav-link" data-scroll-target="#athlete-analysis">Athlete Analysis</a></li>
+  <li><a href="#nation-analysis" id="toc-nation-analysis" class="nav-link" data-scroll-target="#nation-analysis">Nation Analysis</a></li>
+  <li><a href="#games-analysis" id="toc-games-analysis" class="nav-link" data-scroll-target="#games-analysis">Games Analysis</a></li>
   </ul></li>
-  <li><a href="#quarto-html-overview" id="toc-quarto-html-overview" class="nav-link" data-scroll-target="#quarto-html-overview">Quarto HTML overview</a>
+  <li><a href="#presentation" id="toc-presentation" class="nav-link" data-scroll-target="#presentation">Presentation</a>
   <ul class="collapse">
-  <li><a href="#adding-style-to-revealjs" id="toc-adding-style-to-revealjs" class="nav-link" data-scroll-target="#adding-style-to-revealjs">Adding style to revealjs</a></li>
-  <li><a href="#what-the-revealjs-file-looks-like" id="toc-what-the-revealjs-file-looks-like" class="nav-link" data-scroll-target="#what-the-revealjs-file-looks-like">What the revealjs file looks like</a></li>
-  </ul></li>
-  <li><a href="#streamlit-presentations" id="toc-streamlit-presentations" class="nav-link" data-scroll-target="#streamlit-presentations">Streamlit Presentations</a>
-  <ul class="collapse">
-  <li><a href="#streamlit-functionality-overview" id="toc-streamlit-functionality-overview" class="nav-link" data-scroll-target="#streamlit-functionality-overview">Streamlit Functionality: overview</a></li>
-  <li><a href="#streamlit-functionality-streamlit_layout" id="toc-streamlit-functionality-streamlit_layout" class="nav-link" data-scroll-target="#streamlit-functionality-streamlit_layout">Streamlit Functionality: streamlit_layout</a></li>
-  <li><a href="#streamlit-functionality-columns-and-sidebar" id="toc-streamlit-functionality-columns-and-sidebar" class="nav-link" data-scroll-target="#streamlit-functionality-columns-and-sidebar">Streamlit Functionality: columns and sidebar</a></li>
-  <li><a href="#streamlit-functionality-html" id="toc-streamlit-functionality-html" class="nav-link" data-scroll-target="#streamlit-functionality-html">Streamlit Functionality: html</a></li>
-  <li><a href="#streamlit-functionality-html-examples" id="toc-streamlit-functionality-html-examples" class="nav-link" data-scroll-target="#streamlit-functionality-html-examples">Streamlit Functionality: html examples</a></li>
-  <li><a href="#streamlit-functionality-echo" id="toc-streamlit-functionality-echo" class="nav-link" data-scroll-target="#streamlit-functionality-echo">Streamlit Functionality: echo</a></li>
-  <li><a href="#streamlit-functionality-pages" id="toc-streamlit-functionality-pages" class="nav-link" data-scroll-target="#streamlit-functionality-pages">Streamlit Functionality: pages</a></li>
-  <li><a href="#example-streamlit-presentation" id="toc-example-streamlit-presentation" class="nav-link" data-scroll-target="#example-streamlit-presentation">Example Streamlit Presentation</a></li>
+  <li><a href="#why" id="toc-why" class="nav-link" data-scroll-target="#why">Why</a></li>
+  <li><a href="#what-how" id="toc-what-how" class="nav-link" data-scroll-target="#what-how">What / How</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -302,8 +291,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Communicating code: Presentations</h1>
-<p class="subtitle lead">Using notebooks and streamlit for presentations</p>
+<h1 class="title d-none d-lg-block">Olympics data with SQL and pandas</h1>
+<p class="subtitle lead">Using SQL and Pandas to understad Olympic data</p>
 </div>
 
 
@@ -324,234 +313,72 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 <p><img src="../../posts/header2.png" height="200"></p>
-<section id="content" class="level2">
-<h2 class="anchored" data-anchor-id="content">Content</h2>
-<ul>
-<li>Quarto
-<ul>
-<li>powerpoint <a href="https://quarto.org/docs/presentations/">https://quarto.org/docs/presentations/</a></li>
-<li>html</li>
-</ul></li>
-<li>Jupyter books</li>
-<li>Streamlit</li>
-</ul>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This project looks to understand the changing nature of the Olympics and how it reflects changes in athletes, sporting activities, and global politics. The Olympic Games are considered the world’s foremost sports competition with more than 200 nations participating [1,2], and in Tokyo in 2020 there was a broadcast audience of more than 3 billion with estimates of 3 out of 4 people following the Olympics [3].</p>
+<p>Since it’s inception over 100 years ago many changes have occured. In global politics countries have split and unified, populations have changed and the power distribution across nations fluctuated. In society there have been changes in the rights and roles of women. Finally, in sport there has been a move from amateur atheletes to professionalism and a change in the popularity of different sports.</p>
+<p>Due to it’s global importance, the question this work looks to answer is if data on the Olympics reflect the changes that have occured in the world.</p>
+<p>1.<a href="https://www.britannica.com/EBchecked/topic/428005/Olympic-Games">“Overview of Olympic Games”. Encyclopaedia Britannica. Retrieved 4 June 2008</a></p>
+<p>2.<a href="https://en.wikipedia.org/wiki/Olympic_Games">Olympic Games- Wikipedia</a></p>
+<p>3.<a href="https://stillmed.olympics.com/media/Documents/International-Olympic-Committee/IOC-Marketing-And-Broadcasting/Tokyo-2020-External-Communications.pdf">Tokyo 2020 audience &amp; insights report December 2021</a></p>
 </section>
-<section id="quarto-presentations" class="level1">
-<h1>Quarto Presentations</h1>
-<p>Quarto supports a variety of formats for creating presentations, including:</p>
-<pre><code>revealjs — reveal.js (HTML)
-
-pptx — PowerPoint (MS Office)
-
-beamer — Beamer (LaTeX/PDF)</code></pre>
-<p>I’ll consider the first two</p>
+<section id="the-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-data">The Data</h2>
+<p>The most important part of any analysis is the data. In <a href="https://thomashsimm.com/sql/pandas/python/olympics/2022/07/29/OlympicsSQL_createDFs.html">Olympics data with SQL and pandas- create the tables</a> I present the data to be analysed and do some initial processing.</p>
+<p>The main thing here is to seperate the data into useable tables for analysis, as summarised in the entity relationship diagram (ERD) below.</p>
+<p><img src="ghtop_images/SportTree.png" class="img-fluid"></p>
 </section>
-<section id="quarto-powerpoint-overview" class="level1">
-<h1>Quarto PowerPoint overview</h1>
-<p>The steps to make a PowerPoint presentation from a notebook:</p>
+<section id="analysis" class="level2">
+<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<p>Based on a brief analysis of the data three broad questions to be investigated were posed:</p>
 <ol type="1">
-<li>Create the inbuilt template.pptx file</li>
-<li>Adjust it to match your own template</li>
-<li>At the top of the notebook insert <code>format</code> for <code>pptx</code> including the template file</li>
-<li>Choose how you will define a new page</li>
-<li>You will probably need to manually check the slides and adjust as required
-<ul>
-<li>especially for interactive content and code</li>
-</ul></li>
+<li>What are the characteristics of athletes? How does this change with time, and can it be linked with societal or global changes?</li>
+<li>What countries do better at the Olympics? Is there a way to quantify this?</li>
+<li>What is the influence of a games being a home event?</li>
 </ol>
-<section id="creating-the-template" class="level2">
-<h2 class="anchored" data-anchor-id="creating-the-template">Creating the template</h2>
-<p><em>(Office info correct for Office 365 Feb 2023, Version 2301 Build 16.0.16026.20002)</em></p>
-<p>If your workplace has a custom template or you have one you always use, you can incorporate this into quarto.</p>
-<p>However, quarto is quite specific on the form this template takes, and requires the following elements - Title Slide - Title and Content - Section Header - Two Content - Comparison - Content with Caption - Blank</p>
-<p>By selecting Layout from the Home tab in powerpoint the different layouts can be seen</p>
-<p><img src="ghtop_images/ppt_layout.png" class="img-fluid"></p>
-<p>They can then be modified by going to View tab - Slide Master.</p>
-<p>If using your own template you will need to match the names of the slides given above. These can be found by hovering over the slides on the left or right clicking on one and selecting “Rename Layout”</p>
-<p><img src="ghtop_images/ppt_master.png" class="img-fluid"></p>
-<p>Alternatively, create a custom template using quarto and then modify this. The following command creates the template:</p>
-<p><code>quarto pandoc -o template.pptx --print-default-data-file reference.pptx</code></p>
-<p>Then go to View tab - Slide Master and modify each slide layout.</p>
-<p>Note if you are trying to match a template, some tips: - go to Design -&gt; Slide Size and match this to your template - when View tab - Slide Master is selected go to first tab (see above it will be left indented) on one you are copying from and select all on this then paste to the new template - these will be background images and other things that want to be passed to all slides - Check other slides for images and font-styles etc to match to the new template</p>
+<p>In the following parts these are explore in more detail.</p>
+<section id="athlete-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="athlete-analysis">Athlete Analysis</h3>
+<p>I did some initial plots on the changes in the characteristics of athletes given in the data, <code>height</code>, <code>weight</code> and <code>age</code>, of athletes attending the Olympics by year (see below).</p>
+<p>From these plots I was really intrigued as to what may be the cause of these changes.</p>
+<p>Mainly what was happening between 1960 and 1980 were there seemed to be changes in each of the parameters?</p>
+<p>My initial thought was this could be related to some combination of - a switch from amateurs to professionals - the Cold War between USA and USSR - an after effect of WWII</p>
+<p><a href="https://thomashsimm.com/sql/athletes/pandas/python/olympics/2022/07/20/OlympicsSQL-HeightWeightAge.html">Olympics data with SQL and pandas- height weight and age</a></p>
 </section>
-<section id="load-the-template" class="level2">
-<h2 class="anchored" data-anchor-id="load-the-template">Load the template</h2>
-<p>To load the template the first cell in the notebook needs to be modified as follows to reference the <code>template.pptx</code> file.</p>
-<pre><code>format:
-  pptx:
-    reference-doc: template.pptx
-    slide-level: 2</code></pre>
-<p>In addition, we can also specify here the rule by which a new slide is defined. If <code>slide-level: 2</code> is used a new slide is defined by “##’ and a new section header by ‘#’. So if we used ‘###’ this would be a heading within the slide.</p>
-<p>If <code>slide-level: 1</code> is used a new slide is defined by “#’ and ‘##’ this would be a heading within the slide (this is normally the default).</p>
+<section id="nation-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="nation-analysis">Nation Analysis</h3>
+<p>Due to the global importance of the Olympics, in 2020 there was a broadcast audience of more than 3 billion, I was interested to explore whether countries with the most medals will reflect global politics. And to see if the countries with most influence get more medals.</p>
+<p><a href="https://thomashsimm.com/sql/pandas/python/olympics/2022/07/29/OlympicsSQL_GDPpopulation.html">Olympics data with SQL and pandas- GDP and population</a></p>
 </section>
-<section id="check-the-slides" class="level2">
-<h2 class="anchored" data-anchor-id="check-the-slides">Check the slides</h2>
-<p>I have found creation of slides to powerpoint more prone to strange results than if .doc/.pdf/.html are used.</p>
-<p>So check the slides, see if interactive content or code has been included (probably not) and if the slide content goes outside the slide.</p>
-<p><img src="ghtop_images/ppt_eg.png" class="img-fluid"></p>
-<p>In the example above - There is overlap of text on a slide - Strange ouput of a slide - Code output not displayed</p>
-</section>
-</section>
-<section id="quarto-html-overview" class="level1">
-<h1>Quarto HTML overview</h1>
-<p>With quarto two different html formats can be produced by using either <code>html</code> or <code>revealjs</code>.</p>
-<p>Whereas, <code>html</code> produces the standard html format <code>revealjs</code> produces an interactive presentation format. <a href="https://quarto.org/docs/presentations/revealjs/">https://quarto.org/docs/presentations/revealjs/</a></p>
-<p><code>revealjs</code> does pretty much the same as a powerpoint file but is more robust - interactive content is included - less issues with getting format to fit within the slide</p>
-<p>But - Can’t use the ppt template - And maybe(?) there are issues with sharing this format? - Interactive elements not as well implemeneted as within <em>pure</em> html</p>
-<section id="adding-style-to-revealjs" class="level2">
-<h2 class="anchored" data-anchor-id="adding-style-to-revealjs">Adding style to revealjs</h2>
-<p>A simple way to add template like details to a <code>revealjs</code> file is to add a style.css sheet.</p>
-<p>In the example below, the style sheet adds logo.png to the bottom right of each sheet</p>
-<p>The file <code>style.css</code> looks like this:</p>
-<pre><code>.reveal .slide-logo {
-  display: block;
-  position: fixed;
-  top: unset !important;
-  left: unset !important;
-  bottom: 50px;
-  right: 12px;
-  height: 100px !important;
-  width: 100x !important;
-  max-width: unset !important;
-  max-height: unset !important;
-}</code></pre>
-<p>And the <code>revealjs</code> part at the top of the jupyter notebook looks like this</p>
-<pre><code>revealjs:
-    slide-number: true
-    height: 1080
-    width: 1920
-    logo: logo.png
-    css: style.css</code></pre>
-<p>So this would then look like the following, with the logo (<code>logo.png</code>) in the bottom right, and size and positioning given by the css file</p>
-<p><img src="ghtop_images/ppt_revealstyle.png" class="img-fluid"></p>
-</section>
-<section id="what-the-revealjs-file-looks-like" class="level2">
-<h2 class="anchored" data-anchor-id="what-the-revealjs-file-looks-like">What the revealjs file looks like</h2>
-<p><video src="ghtop_images/revealjs.mp4" class="img-fluid" controls=""><a href="ghtop_images/revealjs.mp4">Video</a></video></p>
-</section>
-</section>
-<section id="streamlit-presentations" class="level1">
-<h1>Streamlit Presentations</h1>
-<blockquote class="blockquote">
-<p>Streamlit is an open-source Python library that makes it easy to create and share beautiful, custom web apps for machine learning and data science. In just a few minutes you can build and deploy powerful data apps. So let’s get started!</p>
-</blockquote>
-<p>Principally used to create apps, but some of the functionality works well for code/data presentations</p>
-<section id="streamlit-functionality-overview" class="level2">
-<h2 class="anchored" data-anchor-id="streamlit-functionality-overview">Streamlit Functionality: overview</h2>
-<p>Streamlit allows various <a href="https://docs.streamlit.io/library/api-reference">functionality</a>:</p>
+<section id="games-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="games-analysis">Games Analysis</h3>
+<p>In this part the hypothesis considered is:</p>
+<pre><code>At a home Olympic games a nation will on average obtain more medals than at other games</code></pre>
 <ul>
-<li>textbox</li>
-<li>images/videos</li>
-<li>charts/tables</li>
-<li>menus/buttons</li>
-<li>etc</li>
+<li>But can we quantify this effect?</li>
+<li>Are there any residual effects before and after the games?</li>
+<li>What about a home continent games?</li>
 </ul>
-<p><img src="ghtop_images/streamlit_API.png" class="img-fluid"></p>
+<p><a href="https://thomashsimm.com/sql/pandas/python/olympics/2022/07/29/Olympics_HomeEvent.html">Olympics data with SQL and pandas- home games</a></p>
 </section>
-<section id="streamlit-functionality-streamlit_layout" class="level2">
-<h2 class="anchored" data-anchor-id="streamlit-functionality-streamlit_layout">Streamlit Functionality: streamlit_layout</h2>
-<p>But unlike some apps (am thinking MATLAB GUIs) you can’t create the look and functionality separately. So if you want something in a certain position it can be tricky. HTML can be used with <code>st.markdown</code> to give more control but it isn’t recommended to use by streamlit.</p>
-<p>Instead, to create the layout as you would like they have the following features:</p>
-<p><img src="ghtop_images/streamlit_layout.png" class="img-fluid"></p>
 </section>
-<section id="streamlit-functionality-columns-and-sidebar" class="level2">
-<h2 class="anchored" data-anchor-id="streamlit-functionality-columns-and-sidebar">Streamlit Functionality: columns and sidebar</h2>
-<p>The most useable are the first two: columns and sidebar</p>
-<p>Columns allows us to split the app vertically. The code is fairly simple:</p>
-<p>Either <code>colL, colM, colR = st.columns(3)</code> for 3 equal columns or to split columns with different sizes:</p>
-<pre><code>colL, _, colR = st.columns((10, 5, 20))
-with colL:
-    st.write('On the left')
-with colR:
-    st.write('On the right twice as big as left')</code></pre>
-<p><code>st.sidebar</code> just adds a sidebar to the app that can be hidden or shown.</p>
-<p>Anything in the sidebar is just prefixed by <code>st.sidebar</code> so:</p>
-<pre><code>st.sidebar.write('I am in the sidebar')
-st.write('I am in the main app')
-st.sidebar.write('I am back in the sidebar')</code></pre>
+<section id="presentation" class="level2">
+<h2 class="anchored" data-anchor-id="presentation">Presentation</h2>
+<p>To present this data in a unified form the following presentation was produced.</p>
+<p>This is a hypothetical presentation:</p>
+<section id="who" class="level4">
+<h4 class="anchored" data-anchor-id="who">Who</h4>
+<p>The audience is a fictional research group at Swansea University (UK) called the Sports History Group.</p>
+<p>This group is a cross-departmental, working across the History and Sports Science department. The group consists of two lecturers (one in each department), three post doctoral researchers, five PhD students and three Masters students.</p>
 </section>
-<section id="streamlit-functionality-html" class="level2">
-<h2 class="anchored" data-anchor-id="streamlit-functionality-html">Streamlit Functionality: html</h2>
-<p>It is possible to add various additional personalisations using html. BUT it does come with security risks and so is [not recommended]](https://github.com/streamlit/streamlit/issues/152)</p>
-<p><img src="ghtop_images/streamlit_html.png" class="img-fluid"></p>
-<p>But it does allow much more control over the layout of the app that can be useful for a presentation: - Can add a background image - Can add background color to a textbox - Control over positioning of widgets - lots more</p>
-<p>HTML is implementated using <code>st.markdown</code> with <code>unsafe_allow_html=True</code> inside the former</p>
+<section id="why" class="level3">
+<h3 class="anchored" data-anchor-id="why">Why</h3>
+<p>The work I am presenting has overlap with several of the reserachers/students.</p>
+<p>The main goal is a scoping exercise with one of the post doctoral researchers and the two lecturers who have identified a grant proposal. The Olympics commitee have put out a grant application. The aim of this is to produce a report on the influence the Olympics has had on Geo-Politics and on Athletes and Sport in general. With guidance on what the Olympics can do in the future to maintain and enhance its globally importance, and how it can positively impact Olympic athletes.</p>
 </section>
-<section id="streamlit-functionality-html-examples" class="level2">
-<h2 class="anchored" data-anchor-id="streamlit-functionality-html-examples">Streamlit Functionality: html examples</h2>
-<p>add background to a text box</p>
-<pre><code>text = "Code Examples"
-        st.markdown(f'&lt;center&gt;&lt;p style=font-family:"Calibri";background-color:#FFFFFF;color:#000000;font-size:42px;border-radius:10%&gt;&lt;b&gt;{text}&lt;/b&gt;&lt;/p&gt;&lt;/center&gt;', unsafe_allow_html=True)
-</code></pre>
-<p>Or to add a background image</p>
-<pre><code>import streamlit as st
-import base64
-
-@st.cache(allow_output_mutation=True)
-def get_base64_of_bin_file(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-
-def set_png_as_page_bg(png_file):
-    bin_str = get_base64_of_bin_file(png_file) 
-    page_bg_img = '''
-    &lt;style&gt;
-    .stApp {
-    background-image: url("data:image/png;base64,%s");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: scroll; # doesn't work
-    }
-    &lt;/style&gt;
-    ''' % bin_str
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-    return</code></pre>
-</section>
-<section id="streamlit-functionality-echo" class="level2">
-<h2 class="anchored" data-anchor-id="streamlit-functionality-echo">Streamlit Functionality: echo</h2>
-<blockquote class="blockquote">
-<p>Sometimes you want your Streamlit app to contain both your usual Streamlit graphic elements and the code that generated those elements. That’s where st.echo() comes in</p>
-</blockquote>
-<p>Easier to display this by an example:</p>
-<p><img src="ghtop_images/streamlit_echo.png" class="img-fluid"></p>
-<p>In the example above the right of the image is given below (st.columns is used, where the input for the function is found from the left column).</p>
-<ul>
-<li><code>st.echo</code> is used with the <code>with</code> statement.</li>
-<li>everything within the <code>with</code> is printed to the screen and executed</li>
-</ul>
-<pre><code>with st.echo():
-    # Everything inside this block will be both printed to the screen
-    # and executed.
-
-    def do_pd_replace(text, text_search, text_sub):
-        col_name = "Start string"
-        df = pd.DataFrame(data=[text], columns=[col_name])
-
-        df["Final String"] = df[col_name].replace(
-            text_search, text_sub, regex=True
-        )
-
-        st.dataframe(df)
-        st.write(f"text_search = '{text_search}' and text_sub = '{text_sub}'")
-        st.write(f"Input string = '{text}'")
-        st.write(f"Output string = '{df['Final String'].values[0]}'")
-
-    do_pd_replace(text, text_search, text_sub)
-</code></pre>
-</section>
-<section id="streamlit-functionality-pages" class="level2">
-<h2 class="anchored" data-anchor-id="streamlit-functionality-pages">Streamlit Functionality: pages</h2>
-<p>By simply creating a folder called <code>pages</code> and putting other streamlit .py files in the folder they can then be accessed in the sidebar.</p>
-<ul>
-<li>A main file needs to be outside the pages folder</li>
-<li>The .py files in pages behave as if they were outside the folder (i.e.&nbsp;when loading files/functions)</li>
-</ul>
-<p><img src="ghtop_images/streamlit_pages.png" class="img-fluid"></p>
-</section>
-<section id="example-streamlit-presentation" class="level2">
-<h2 class="anchored" data-anchor-id="example-streamlit-presentation">Example Streamlit Presentation</h2>
-<p><video src="ghtop_images/streamlit_present.webm" class="img-fluid" controls=""><a href="ghtop_images/streamlit_present.webm">Video</a></video></p>
+<section id="what-how" class="level3">
+<h3 class="anchored" data-anchor-id="what-how">What / How</h3>
+<p>More details are in the <a href="https://thomashsimm.com/presentation/sql/pandas/python/olympics/2022/07/31/OlympicsSQL-Presentation.html">presentation</a></p>
 
 
 </section>
