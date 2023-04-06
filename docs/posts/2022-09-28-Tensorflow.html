@@ -129,7 +129,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -144,6 +144,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">
+ <span class="menu-text">TH Simm Python Pages</span></a>
+  </li>  
+</ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="../about.html">
@@ -172,7 +178,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#tensorflow-cheat-sheet" id="toc-tensorflow-cheat-sheet" class="nav-link active" data-scroll-target="#tensorflow-cheat-sheet">TensorFlow cheat sheet</a></li>
+  <li><a href="#contents" id="toc-contents" class="nav-link" data-scroll-target="#contents">Contents</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#useful-links-details" id="toc-useful-links-details" class="nav-link" data-scroll-target="#useful-links-details">Useful Links / Details</a>
+  <ul class="collapse">
+  <li><a href="#general" id="toc-general" class="nav-link" data-scroll-target="#general">General</a></li>
+  <li><a href="#courses" id="toc-courses" class="nav-link" data-scroll-target="#courses">Courses</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  </ul></li>
+  <li><a href="#general-tensorflow-procedure" id="toc-general-tensorflow-procedure" class="nav-link" data-scroll-target="#general-tensorflow-procedure">General TensorFlow Procedure</a>
+  <ul class="collapse">
+  <li><a href="#model-creations" id="toc-model-creations" class="nav-link" data-scroll-target="#model-creations">Model creations</a>
+  <ul class="collapse">
+  <li><a href="#tabular-data" id="toc-tabular-data" class="nav-link" data-scroll-target="#tabular-data">Tabular Data</a></li>
+  <li><a href="#image-data" id="toc-image-data" class="nav-link" data-scroll-target="#image-data">Image Data</a></li>
+  <li><a href="#language-data" id="toc-language-data" class="nav-link" data-scroll-target="#language-data">Language Data</a></li>
+  </ul></li>
+  <li><a href="#compile-the-model" id="toc-compile-the-model" class="nav-link" data-scroll-target="#compile-the-model">Compile the model</a></li>
+  <li><a href="#evaluate-predict-the-model" id="toc-evaluate-predict-the-model" class="nav-link" data-scroll-target="#evaluate-predict-the-model"><code>Evaluate</code> / <code>Predict</code> the model</a></li>
+  <li><a href="#saving-and-loading" id="toc-saving-and-loading" class="nav-link" data-scroll-target="#saving-and-loading">Saving and Loading</a>
+  <ul class="collapse">
+  <li><a href="#saving-loading-weights" id="toc-saving-loading-weights" class="nav-link" data-scroll-target="#saving-loading-weights">Saving / Loading weights</a></li>
+  </ul></li>
+  <li><a href="#callbacks" id="toc-callbacks" class="nav-link" data-scroll-target="#callbacks">Callbacks</a></li>
+  <li><a href="#overfitting-strategies" id="toc-overfitting-strategies" class="nav-link" data-scroll-target="#overfitting-strategies">Overfitting strategies</a>
+  <ul class="collapse">
+  <li><a href="#dropout" id="toc-dropout" class="nav-link" data-scroll-target="#dropout">Dropout</a></li>
+  <li><a href="#batch-normalization" id="toc-batch-normalization" class="nav-link" data-scroll-target="#batch-normalization">Batch Normalization</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#functional-api" id="toc-functional-api" class="nav-link" data-scroll-target="#functional-api">Functional API</a>
+  <ul class="collapse">
+  <li><a href="#multiple-inputs-and-outputs" id="toc-multiple-inputs-and-outputs" class="nav-link" data-scroll-target="#multiple-inputs-and-outputs">Multiple inputs and outputs</a></li>
+  </ul></li>
+  <li><a href="#transfer-learning" id="toc-transfer-learning" class="nav-link" data-scroll-target="#transfer-learning">Transfer Learning</a>
+  <ul class="collapse">
+  <li><a href="#inception-images" id="toc-inception-images" class="nav-link" data-scroll-target="#inception-images">Inception (images)</a></li>
+  </ul></li>
+  <li><a href="#other" id="toc-other" class="nav-link" data-scroll-target="#other">Other</a>
+  <ul class="collapse">
+  <li><a href="#summary-info-of-model" id="toc-summary-info-of-model" class="nav-link" data-scroll-target="#summary-info-of-model">Summary / info of model</a></li>
+  <li><a href="#class-or-function---metrics-and-losses" id="toc-class-or-function---metrics-and-losses" class="nav-link" data-scroll-target="#class-or-function---metrics-and-losses">Class or Function - Metrics and Losses</a></li>
+  <li><a href="#low-level-handling-of-metrics" id="toc-low-level-handling-of-metrics" class="nav-link" data-scroll-target="#low-level-handling-of-metrics">Low level handling of metrics</a></li>
+  <li><a href="#categorical-binary-versus-multiple" id="toc-categorical-binary-versus-multiple" class="nav-link" data-scroll-target="#categorical-binary-versus-multiple">Categorical: Binary versus Multiple</a></li>
+  <li><a href="#learning-rate" id="toc-learning-rate" class="nav-link" data-scroll-target="#learning-rate">Learning rate</a></li>
+  <li><a href="#lambda-functions" id="toc-lambda-functions" class="nav-link" data-scroll-target="#lambda-functions"><code>lambda</code> functions</a></li>
+  <li><a href="#force-cpugpu" id="toc-force-cpugpu" class="nav-link" data-scroll-target="#force-cpugpu">Force CPU/GPU</a></li>
+  </ul></li>
+  <li><a href="#page-2" id="toc-page-2" class="nav-link" data-scroll-target="#page-2">Page 2</a></li>
+  <li><a href="#datasets-tensors-optimization" id="toc-datasets-tensors-optimization" class="nav-link" data-scroll-target="#datasets-tensors-optimization">Datasets, Tensors, Optimization</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><p><img src="../posts/header2.png" height="200"></p>
 

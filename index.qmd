@@ -1,10 +1,12 @@
 ---
-title: "THSwebsitenew"
+title: "TH Simm Python Pages"
 ---
 
-This is a Quarto website.
+# Some discussions around Python
+
+## Communicating code and data
+- [Presentation](https://thomashsimm.quarto.pub/thomashsimm/posts/Communicating_Code/PresentationOfCommunicatingCode.html#/title-slide)
 
 
-- [Communicating code and data](https://thomashsimm.quarto.pub/thomashsimm/posts/Communicating_Code/PresentationOfCommunicatingCode.html#/title-slide)
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Website built with Quarto visit for more info <https://quarto.org/docs/websites>.
