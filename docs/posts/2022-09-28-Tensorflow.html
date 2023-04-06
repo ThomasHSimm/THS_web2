@@ -189,7 +189,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>comments: true</li>
 <li>categories: [tensorflow]</li>
 </ul>
-<p><img src="ghtop_images/header2.png" class="img-fluid"></p>
 </section>
 <section id="contents" class="level1">
 <h1>Contents</h1>
@@ -314,12 +313,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Embedding"><code>Embedding</code></a> layer creates a vector-space for the text data. So for example, the words beautiful and ugly may be in opposite directions. And words such as cat and kitten may be close together in vector space.</p>
 <p><code>GlobalAveragePooling1D</code>can be replaced by <code>Flatten()</code></p>
 <div class="cell" data-run_control="{&quot;frozen&quot;:true}">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> tf.keras.Sequential([ </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        tf.keras.layers.Embedding(num_words,embedding_dim,input_length<span class="op">=</span>maxlen),</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        tf.keras.layers.GlobalAveragePooling1D(),</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        tf.keras.layers.Dense(<span class="dv">24</span>,activation<span class="op">=</span><span class="st">'relu'</span>),</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        tf.keras.layers.Dense(<span class="dv">5</span>,<span class="st">'softmax'</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    ])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> tf.keras.Sequential([ </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.Embedding(num_words,embedding_dim,input_length<span class="op">=</span>maxlen),</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.GlobalAveragePooling1D(),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.Dense(<span class="dv">24</span>,activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.Dense(<span class="dv">5</span>,<span class="st">'softmax'</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The model above does not take account for the order of words,</p>
 <p>If we want to do this we can insert an additional layer after the embedding layer. For example, by using the LSTM model as below</p>
