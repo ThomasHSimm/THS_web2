@@ -2,11 +2,9 @@
 title: "TH Simm Python Pages"
 ---
 
-# Some discussions around Python
-
 ## Communicating code and data
 - [Presentation](https://thomashsimm.quarto.pub/thomashsimm/posts/Communicating_Code/PresentationOfCommunicatingCode.html#/title-slide)
 
 
-
+## Links
 Website built with Quarto visit for more info <https://quarto.org/docs/websites>.
