@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Thomas H. Simm">
 
-<title>ThomasHSimm – olympicssql_gdppopulation</title>
+<title>ThomasHSimm - Olympics data with SQL and pandas- GDP and population</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -173,7 +174,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"></h1>
+      <h1 class="quarto-secondary-nav-title">Olympics data with SQL and pandas- GDP and population</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -335,9 +336,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#olympics-data-with-sql-and-pandas--gdp-and-population" id="toc-olympics-data-with-sql-and-pandas--gdp-and-population" class="nav-link active" data-scroll-target="#olympics-data-with-sql-and-pandas--gdp-and-population">Olympics data with SQL and pandas- GDP and population</a>
-  <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#pre-analysis" id="toc-pre-analysis" class="nav-link" data-scroll-target="#pre-analysis">Pre-analysis</a>
   <ul class="collapse">
   <li><a href="#get-medals-won-by-country-and-year" id="toc-get-medals-won-by-country-and-year" class="nav-link" data-scroll-target="#get-medals-won-by-country-and-year">Get medals won by country and year</a></li>
@@ -358,26 +357,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#overview-medals-vs-athletes-per-nation" id="toc-overview-medals-vs-athletes-per-nation" class="nav-link" data-scroll-target="#overview-medals-vs-athletes-per-nation">Overview Medals VS Athletes per nation</a></li>
   </ul></li>
   <li><a href="#cold-war" id="toc-cold-war" class="nav-link" data-scroll-target="#cold-war">Cold War</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><p><img src="../../posts/header2.png" height="200"></p>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Olympics data with SQL and pandas- GDP and population</h1>
+<p class="subtitle lead">What is the effect of GDP and population on medals</p>
+</div>
 
 
 
-<section id="olympics-data-with-sql-and-pandas--gdp-and-population" class="level1">
-<h1>Olympics data with SQL and pandas- GDP and population</h1>
-<blockquote class="blockquote">
-<p>What is the effect of GDP and population on medals</p>
-</blockquote>
-<ul>
-<li>toc: true</li>
-<li>badges: true</li>
-<li>categories: [SQL, Pandas, python, Olympics]</li>
-</ul>
-<p><img src="ghtop_images/header2.png" class="img-fluid"></p>
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Thomas H. Simm </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+<p><img src="../../posts/header2.png" height="200"></p>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Due to the global importance of the Olympics, in 2020 there was a broadcast audience of more than 3 billion, I was interested to explore whether countries with the most medals will reflect global politics. And to see if the countries with most influence get more medals.</p>
@@ -1827,7 +1836,7 @@ Spearman Correlation of  = 0.41 (1e-05)</code></pre>
 <span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
 <span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Number of male athletes</span><span class="ch">\n</span><span class="st"> per nation'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2022-07-29-OlympicsSQL_GDPpopulation_files/figure-html/cell-19-output-1.png" class="img-fluid"></p>
+<p><img src="2022-07-29-OlympicsSQL_GDPpopulation_files/figure-html/cell-18-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 </section>
@@ -1996,7 +2005,7 @@ Spearman Correlation of  = 0.41 (1e-05)</code></pre>
 and Pearson correlation= 0.87 (5e-32)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2022-07-29-OlympicsSQL_GDPpopulation_files/figure-html/cell-21-output-2.png" class="img-fluid"></p>
+<p><img src="2022-07-29-OlympicsSQL_GDPpopulation_files/figure-html/cell-20-output-2.png" class="img-fluid"></p>
 </div>
 </div>
 </section>
@@ -2161,7 +2170,6 @@ and Pearson correlation= 0.87 (5e-32)</code></pre>
 <p><img src="ghtop_images/ColdWarMedalsM.png" class="img-fluid"></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

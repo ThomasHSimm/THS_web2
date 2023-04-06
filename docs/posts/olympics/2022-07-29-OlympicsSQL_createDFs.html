@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Thomas H. Simm">
 
-<title>ThomasHSimm – olympicssql_createdfs</title>
+<title>ThomasHSimm - Olympics data with SQL and pandas- create the tables</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -173,7 +174,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"></h1>
+      <h1 class="quarto-secondary-nav-title">Olympics data with SQL and pandas- create the tables</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -335,9 +336,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#olympics-data-with-sql-and-pandas--create-the-tables" id="toc-olympics-data-with-sql-and-pandas--create-the-tables" class="nav-link active" data-scroll-target="#olympics-data-with-sql-and-pandas--create-the-tables">Olympics data with SQL and pandas- create the tables</a>
-  <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
   <li><a href="#creating-a-country-table" id="toc-creating-a-country-table" class="nav-link" data-scroll-target="#creating-a-country-table">Creating a country table</a></li>
   </ul></li>
@@ -353,26 +352,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#seperate-out-medals" id="toc-seperate-out-medals" class="nav-link" data-scroll-target="#seperate-out-medals">Seperate out medals</a></li>
   </ul></li>
   <li><a href="#save-it" id="toc-save-it" class="nav-link" data-scroll-target="#save-it">Save it</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><p><img src="../../posts/header2.png" height="200"></p>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Olympics data with SQL and pandas- create the tables</h1>
+<p class="subtitle lead">Splitting up and cleaning Olympic dataset</p>
+</div>
 
 
 
-<section id="olympics-data-with-sql-and-pandas--create-the-tables" class="level1">
-<h1>Olympics data with SQL and pandas- create the tables</h1>
-<blockquote class="blockquote">
-<p>Splitting up and cleaning Olympic dataset</p>
-</blockquote>
-<ul>
-<li>toc: true</li>
-<li>badges: true</li>
-<li>categories: [SQL, Pandas, python, Olympics]</li>
-</ul>
-<p><img src="ghtop_images/header2.png" class="img-fluid"></p>
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Thomas H. Simm </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+<p><img src="../../posts/header2.png" height="200"></p>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Two csv files (representing two different tables) were imported to databricks.</p>
@@ -5238,7 +5247,6 @@ We still have the main df when we want to create the country and the games table
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
