@@ -14,8 +14,10 @@ website:
         href: https://github.com/ThomasHSimm
       - icon: mortarboard-fill
         href: https://scholar.google.com/citations?hl=en&user=HdPDn1sAAAAJ
-    left:
-    - href: index.qmd
+  sidebar:
+    style: "docked"
+    search: true
+    contents: auto
 format:
   html:
     theme: 
