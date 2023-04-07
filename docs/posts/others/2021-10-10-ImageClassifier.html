@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Thomas H. Simm">
 
-<title>ThomasHSimm - TensorFlow NLP cheat sheet</title>
+<title>ThomasHSimm – imageclassifier</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -171,7 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">TensorFlow NLP cheat sheet</h1>
+      <h1 class="quarto-secondary-nav-title"></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -319,12 +318,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">Others</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">Others</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/others/2020-01-01-AWS.html" class="sidebar-item-text sidebar-link">AWS Cheat sheet</a>
@@ -337,7 +336,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/others/2021-10-10-ImageClassifier.html" class="sidebar-item-text sidebar-link">Building a Classifier App on the web</a>
+  <a href="../../posts/others/2021-10-10-ImageClassifier.html" class="sidebar-item-text sidebar-link active">Building a Classifier App on the web</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -379,12 +378,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">Tensorflow</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">Tensorflow</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/tensorflow/2022-09-28-Tensorflow.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet</a>
@@ -407,7 +406,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/tensorflow/2022-10-10-Tensorflow-NLP.html" class="sidebar-item-text sidebar-link active">TensorFlow NLP cheat sheet</a>
+  <a href="../../posts/tensorflow/2022-10-10-Tensorflow-NLP.html" class="sidebar-item-text sidebar-link">TensorFlow NLP cheat sheet</a>
   </div>
 </li>
       </ul>
@@ -423,93 +422,238 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#basic-implementation" id="toc-basic-implementation" class="nav-link active" data-scroll-target="#basic-implementation">Basic Implementation</a></li>
-  <li><a href="#text-data-tokenizer" id="toc-text-data-tokenizer" class="nav-link" data-scroll-target="#text-data-tokenizer">Text data Tokenizer</a></li>
+  <li><a href="#building-a-classifier-app-on-the-web" id="toc-building-a-classifier-app-on-the-web" class="nav-link active" data-scroll-target="#building-a-classifier-app-on-the-web">Building a Classifier App on the web</a>
+  <ul class="collapse">
+  <li><a href="#the-model-part" id="toc-the-model-part" class="nav-link" data-scroll-target="#the-model-part">1) The model Part</a></li>
+  <li><a href="#the-app-in-python" id="toc-the-app-in-python" class="nav-link" data-scroll-target="#the-app-in-python">2) The App in python</a></li>
+  <li><a href="#the-binder-part" id="toc-the-binder-part" class="nav-link" data-scroll-target="#the-binder-part">3) The Binder Part</a>
+  <ul class="collapse">
+  <li><a href="#binder" id="toc-binder" class="nav-link" data-scroll-target="#binder">Binder</a></li>
+  <li><a href="#voila" id="toc-voila" class="nav-link" data-scroll-target="#voila">Voila</a></li>
+  </ul></li>
+  <li><a href="#the-result" id="toc-the-result" class="nav-link" data-scroll-target="#the-result">The result</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block">TensorFlow NLP cheat sheet</h1>
-<p class="subtitle lead">Some tips for tensorflow and keras in Natural Language Processing</p>
-</div>
+<main class="content" id="quarto-document-content"><p><img src="../../posts/header2.png" height="200"></p>
 
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Thomas H. Simm </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
-
-</header>
-<p><img src="../../posts/header2.png" height="200"></p>
-<section id="basic-implementation" class="level1">
-<h1>Basic Implementation</h1>
-<p>The standard language model starts with an embedding layer, this then needs to be flattened to a vector, then we can add a dense layer before an output layer.</p>
-<p>The <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Embedding"><code>Embedding</code></a> layer creates a vector-space for the text data. So for example, the words beautiful and ugly may be in opposite directions. And words such as cat and kitten may be close together in vector space.</p>
-<p><code>GlobalAveragePooling1D</code>can be replaced by <code>Flatten()</code></p>
-<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> tf.keras.Sequential([ </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.Embedding(num_words,embedding_dim,input_length<span class="op">=</span>maxlen),</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.GlobalAveragePooling1D(),</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.Dense(<span class="dv">24</span>,activation<span class="op">=</span><span class="st">'relu'</span>),</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.Dense(<span class="dv">5</span>,<span class="st">'softmax'</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The model above does not take account for the order of words,</p>
-<p>If we want to do this we can insert an additional layer after the embedding layer. For example, by using the LSTM model as below</p>
-<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>model_lstm<span class="op">=</span> tf.keras.Sequential([</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.Embedding(VOCAB_SIZE,EMBEDDING_DIM,input_length<span class="op">=</span>MAXLEN),</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(<span class="dv">32</span>)),</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.Dense(<span class="dv">24</span>,activation<span class="op">=</span><span class="st">'relu'</span>),</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.Dense(NUM_CLASSES,activation<span class="op">=</span><span class="st">'softmax'</span>)   </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>We can even insert a conolution layer after the embedding instead</p>
-<p><code>tf.keras.layers.Conv1D(128,5,activation='relu')</code></p>
-<p>For two consecutive layers of RNNs use <code>return_sequences=True</code></p>
-<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(lstm1_dim, return_sequences<span class="op">=</span><span class="va">True</span>)),</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(lstm2_dim)),</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="text-data-tokenizer" class="level1">
-<h1>Text data Tokenizer</h1>
+<p><img src="ghtop_images/header2.png" class="img-fluid"></p>
+<section id="building-a-classifier-app-on-the-web" class="level1">
+<h1>Building a Classifier App on the web</h1>
+<blockquote class="blockquote">
+<p>Creating an image classifier app that is on the net! Using Jupyter notebooks, FastAi, Binder and Voila</p>
+</blockquote>
 <ul>
-<li>Create a <code>Tokenizer</code> instance</li>
-<li>Fit tokenizer to text data with <code>tokenizer.fit_on_texts(text_data)</code></li>
-<li>Convert text to sequences with <code>sequences = tokenizer.texts_to_sequences(text_data)</code>
+<li>toc:true</li>
+<li>branch: master</li>
+<li>badges: true</li>
+<li>comments: true</li>
+<li>author: Thomas H. Simm</li>
+<li>categories: [fastai, jupyter, Binder, Voila, myBinder, ThomasHSimm]</li>
+</ul>
+<ol type="1">
+<li><p>The Model Part</p></li>
+<li><p>The Python Part Of the App</p></li>
+<li><p>The Binder Part</p></li>
+</ol>
+<section id="the-model-part" class="level2">
+<h2 class="anchored" data-anchor-id="the-model-part">1) The model Part</h2>
+<p>The model was run on https://colab.research.google.com with a GPU</p>
+<p>Necessary to have a GPU for time</p>
+<p>Some imports and installs</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install <span class="op">-</span>Uqq fastbook</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> fastbook</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>fastbook.setup_book()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastbook <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.widgets <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Gets Azure search key to use Bing search API</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>key <span class="op">=</span> os.environ.get(<span class="st">'AZURE_SEARCH_KEY'</span>, <span class="st">'keygoeshere'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>I’m going to do a classifier for holiday types</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>destas<span class="op">=</span>{<span class="st">'beach'</span>:{<span class="st">'beach'</span>,<span class="st">'tropical'</span>,<span class="st">'sea'</span>,<span class="st">'beach holidays'</span>},</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">'snow'</span>:{<span class="st">'ski'</span>,<span class="st">'snowboard'</span>,<span class="st">'snow'</span>,<span class="st">'ski holidays'</span>},</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'countryside'</span>:{<span class="st">'lakes mountains'</span>,<span class="st">'countryside'</span>,<span class="st">'forest'</span>,<span class="st">'fields'</span>},</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'city'</span>:{<span class="st">'city'</span>,<span class="st">'cities'</span>,<span class="st">'bars'</span>,<span class="st">'buildings'</span>},</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'safari'</span>:{<span class="st">'safari'</span>,<span class="st">'safari holidays'</span>,<span class="st">'safari park'</span>,<span class="st">'safari africa'</span>}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Creates a folder containing images for each type</p>
+<p>Need to add to dir with different searches not delete and add new stuff each time</p>
+<p>For eaach holiday type- go through the search topics and add the results together before downloading images to the holiday type folder</p>
+<p>This gives 600 pics per holiday type</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> Path(<span class="st">'Destinations'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    path.mkdir()</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> o <span class="kw">in</span> destas:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    dest <span class="op">=</span> (path<span class="op">/</span>o)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    dest.mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> ii,oo <span class="kw">in</span> <span class="bu">enumerate</span>(destas[o]): </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        <span class="co"># print(oo)</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        results <span class="op">=</span> search_images_bing(key, <span class="ss">f'</span><span class="sc">{</span>oo<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> ii<span class="op">&gt;</span><span class="dv">0</span>:</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>            resultsALL <span class="op">=</span> L(resultsALL,results).concat()</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>            resultsALL<span class="op">=</span>results</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(o)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(np.shape(resultsALL))</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    download_images(dest, urls<span class="op">=</span>resultsALL.attrgot(<span class="st">'contentUrl'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Create a data block for fastai</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fns <span class="op">=</span> get_image_files(path)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>dests <span class="op">=</span> DataBlock(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    blocks<span class="op">=</span>(ImageBlock, CategoryBlock), </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    get_items<span class="op">=</span>get_image_files, </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    splitter<span class="op">=</span>RandomSplitter(valid_pct<span class="op">=</span><span class="fl">0.2</span>, seed<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    get_y<span class="op">=</span>parent_label,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    item_tfms<span class="op">=</span>Resize(<span class="dv">128</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>get rid of failed images</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>failed <span class="op">=</span> verify_images(fns)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>failed.<span class="bu">map</span>(Path.unlink)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>failed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Have a look at the images</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> dests.dataloaders(path)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dls.valid.show_batch(max_n<span class="op">=</span><span class="dv">40</span>, nrows<span class="op">=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="ghtop_images/ic1.png" class="img-fluid"></p>
+<p>create a dls for the learner</p>
 <ul>
-<li>For example, the following words have the indices: apple-&gt;1, brain-&gt;2, cat-&gt;3, that-&gt;4, is-&gt;5</li>
-<li>And a sequence of text within the data can be converted to a sequence: “that cat apple is brain” -&gt; (4, 3, 1, 5, 2)</li>
-</ul></li>
-<li>Get the word index <code>word_index = tokenizer.word_index</code></li>
-<li>Get the text back from the sequences <code>text = tokenizer.sequences_to_texts(sequences)</code></li>
+<li>randomresizedcrop</li>
+<li>default aug transforms</li>
 </ul>
 <div class="cell" data-run_control="{&quot;frozen&quot;:true}">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.preprocessing.text <span class="im">import</span> Tokenizer</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.preprocessing.sequence <span class="im">import</span> pad_sequences</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="op">=</span> Tokenizer(oov_token<span class="op">=</span><span class="st">"&lt;OOV&gt;"</span>,num_words<span class="op">=</span><span class="dv">10_000</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>tokenizer.fit_on_texts(text_data)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>sequences <span class="op">=</span> label_tokenizer.texts_to_sequences(text_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>dests <span class="op">=</span> dests.new(</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    item_tfms<span class="op">=</span>RandomResizedCrop(<span class="dv">224</span>, min_scale<span class="op">=</span><span class="fl">0.5</span>),</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    batch_tfms<span class="op">=</span>aug_transforms())</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> dests.dataloaders(path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Do the learning over 4 epochs</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> cnn_learner(dls, resnet18, metrics<span class="op">=</span>error_rate)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="ghtop_images/ic2.png" class="img-fluid"></p>
+<p>Confusion matrix</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>interp <span class="op">=</span> ClassificationInterpretation.from_learner(learn)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>interp.plot_confusion_matrix()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="ghtop_images/ic3.png" class="img-fluid"></p>
+<p>Save the model (saves as export.pkl)</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>learn.export()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="the-app-in-python" class="level2">
+<h2 class="anchored" data-anchor-id="the-app-in-python">2) The App in python</h2>
+<p>Some imports</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Classifier App</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># THSimm</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.<span class="bu">all</span> <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.widgets <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> urllib.request</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Create parts of the widget</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>learn_inf <span class="op">=</span> load_learner(<span class="st">'export.pkl'</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>btn_upload <span class="op">=</span> widgets.FileUpload()</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>out_pl <span class="op">=</span> widgets.Output()</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>out_pl.clear_output()</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>lbl_pred <span class="op">=</span> widgets.Label()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Function occurs on click upload</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> on_click_classify(change):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    img <span class="op">=</span> PILImage.create(btn_upload.data[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    out_pl.clear_output()</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> out_pl: display(img.to_thumb(<span class="dv">500</span>,<span class="dv">500</span>))</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    pred,pred_idx,probs <span class="op">=</span> learn_inf.predict(img)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    lbl_pred.value <span class="op">=</span> <span class="ss">f'Prediction: </span><span class="sc">{</span>pred<span class="sc">}</span><span class="ss">; Probability: </span><span class="sc">{</span>probs[pred_idx]<span class="sc">:.04f}</span><span class="ss">'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>btn_upload.observe(on_click_classify,names<span class="op">=</span>[<span class="st">'data'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>What is displayed</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#hide_output</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span><span class="st">'Select your plane'</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>display(VBox([widgets.HTML(value <span class="op">=</span> <span class="ss">f"&lt;h1&gt;&lt;font color='Black'&gt;</span><span class="sc">{</span>text<span class="sc">}</span><span class="ss">&lt;/h1&gt;</span><span class="ch">\</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="ss">                                     &lt;ol text-align: center&gt;&lt;font color='Black'&gt;</span><span class="ch">\</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="ss">                                    &lt;li&gt;Beach&lt;/li&gt;</span><span class="ch">\</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="ss">                                    &lt;li&gt;Snow&lt;/li&gt;</span><span class="ch">\</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="ss">                                    &lt;li&gt;Countryside&lt;/li&gt;</span><span class="ch">\</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="ss">                                    &lt;li&gt;City&lt;/li&gt;</span><span class="ch">\</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="ss">                                    &lt;li&gt;Safari&lt;/li&gt;</span><span class="ch">\</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="ss">                                    &lt;/ol&gt;"</span>), </span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>      btn_upload,  out_pl, lbl_pred]) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="the-binder-part" class="level2">
+<h2 class="anchored" data-anchor-id="the-binder-part">3) The Binder Part</h2>
+<section id="binder" class="level3">
+<h3 class="anchored" data-anchor-id="binder">Binder</h3>
+<blockquote class="blockquote">
+mybinder.org is an online service for building and sharing reproducible and interactive computational environments from online repositories. Under the hood, it is a federation of BinderHub deployments that are maintained by the Binder community. It serves as both a public service and a demonstration of the BinderHub technology, though it is by no means the only BinderHub in existence. If you’re interested in deploying your own BinderHub for your own uses, please see the BinderHub documentation and don’t hesitate to reach out to the Binder community.
+</blockquote>
+<p>https://mybinder.readthedocs.io/en/latest/introduction.html#preparing-a-repository-for-binder</p>
+<p>Basically allowing us to put code online</p>
+</section>
+<section id="voila" class="level3">
+<h3 class="anchored" data-anchor-id="voila">Voila</h3>
+<p>The 2nd import part is Voila which allows us to hide the code and just display outputs</p>
+<p>https://voila.readthedocs.io/en/stable/using.html</p>
+<section id="method" class="level4">
+<h4 class="anchored" data-anchor-id="method">Method:</h4>
+<ul>
+<li>
+Create repository on github that is public, containing the ipynb file and a requirements.txt file
+</li>
+<li>
+Then go to binder https://mybinder.org/
+</li>
+<li>
+Fill in form as shown below
+</li>
+</ul>
+<p>In requirements.txt:</p>
+<p>voila fastai packaging ipywidgets</p>
+<p><img src="ghtop_images/ic4.png" class="img-fluid"></p>
+</section>
+</section>
+</section>
+<section id="the-result" class="level2">
+<h2 class="anchored" data-anchor-id="the-result">The result</h2>
+<p>https://mybinder.org/v2/gh/ThomasHSimm/LocationsClassifier/HEAD?urlpath=%2Fvoila%2Frender%2FAppForDestClass.ipynb</p>
+<p>https://tinyurl.com/LocClassAppThomasHSimm</p>
+<hr>
+<p><img src="ghtop_images/ic5.png" class="img-fluid"></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

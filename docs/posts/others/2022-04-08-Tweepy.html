@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Thomas H. Simm">
 
-<title>ThomasHSimm - TensorFlow NLP cheat sheet</title>
+<title>ThomasHSimm – tweepy</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -171,7 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">TensorFlow NLP cheat sheet</h1>
+      <h1 class="quarto-secondary-nav-title"></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -319,12 +318,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">Others</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">Others</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/others/2020-01-01-AWS.html" class="sidebar-item-text sidebar-link">AWS Cheat sheet</a>
@@ -367,7 +366,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/others/2022-04-08-Tweepy.html" class="sidebar-item-text sidebar-link">Tweepy</a>
+  <a href="../../posts/others/2022-04-08-Tweepy.html" class="sidebar-item-text sidebar-link active">Tweepy</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -379,12 +378,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">Tensorflow</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">Tensorflow</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/tensorflow/2022-09-28-Tensorflow.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet</a>
@@ -407,7 +406,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/tensorflow/2022-10-10-Tensorflow-NLP.html" class="sidebar-item-text sidebar-link active">TensorFlow NLP cheat sheet</a>
+  <a href="../../posts/tensorflow/2022-10-10-Tensorflow-NLP.html" class="sidebar-item-text sidebar-link">TensorFlow NLP cheat sheet</a>
   </div>
 </li>
       </ul>
@@ -423,93 +422,259 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#basic-implementation" id="toc-basic-implementation" class="nav-link active" data-scroll-target="#basic-implementation">Basic Implementation</a></li>
-  <li><a href="#text-data-tokenizer" id="toc-text-data-tokenizer" class="nav-link" data-scroll-target="#text-data-tokenizer">Text data Tokenizer</a></li>
+  <li><a href="#tweepy" id="toc-tweepy" class="nav-link active" data-scroll-target="#tweepy">Tweepy</a>
+  <ul class="collapse">
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#setting-up-twitter-api" id="toc-setting-up-twitter-api" class="nav-link" data-scroll-target="#setting-up-twitter-api">Setting up twitter API</a>
+  <ul class="collapse">
+  <li><a href="#apply-for-a-developer-account" id="toc-apply-for-a-developer-account" class="nav-link" data-scroll-target="#apply-for-a-developer-account">1. Apply for a developer account</a></li>
+  <li><a href="#create-a-projectapp" id="toc-create-a-projectapp" class="nav-link" data-scroll-target="#create-a-projectapp">2. Create a project/app</a></li>
+  <li><a href="#set-up-an-environment" id="toc-set-up-an-environment" class="nav-link" data-scroll-target="#set-up-an-environment">3. Set up an environment</a></li>
+  <li><a href="#install-tweepy" id="toc-install-tweepy" class="nav-link" data-scroll-target="#install-tweepy">4. Install tweepy</a></li>
+  </ul></li>
+  <li><a href="#tweepy-code" id="toc-tweepy-code" class="nav-link" data-scroll-target="#tweepy-code">Tweepy code</a>
+  <ul class="collapse">
+  <li><a href="#import-and-check-it-is-authenticated" id="toc-import-and-check-it-is-authenticated" class="nav-link" data-scroll-target="#import-and-check-it-is-authenticated">Import and check it is authenticated</a></li>
+  <li><a href="#search-tweets" id="toc-search-tweets" class="nav-link" data-scroll-target="#search-tweets">Search tweets</a></li>
+  <li><a href="#the-results-file" id="toc-the-results-file" class="nav-link" data-scroll-target="#the-results-file">The results file</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><p><img src="../../posts/header2.png" height="200"></p>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block">TensorFlow NLP cheat sheet</h1>
-<p class="subtitle lead">Some tips for tensorflow and keras in Natural Language Processing</p>
+
+
+<section id="tweepy" class="level1">
+<h1>Tweepy</h1>
+<blockquote class="blockquote">
+<p>Searching tweets using tweepy</p>
+</blockquote>
+<ul>
+<li>toc: true</li>
+<li>badges: true</li>
+<li>comments: true</li>
+<li>categories: [twitter, tweepy, Python]</li>
+</ul>
+<p><img src="ghtop_images/header2.png" class="img-fluid"></p>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<section id="a.-getting-started-with-twitter-api---twitter-developer-platform" class="level4">
+<h4 class="anchored" data-anchor-id="a.-getting-started-with-twitter-api---twitter-developer-platform">A. Getting started with twitter API - Twitter Developer Platform</h4>
+<p>https://developer.twitter.com/en/docs/twitter-api/getting-started/about-twitter-api</p>
+</section>
+<section id="b.-tweepy-documentation" class="level4">
+<h4 class="anchored" data-anchor-id="b.-tweepy-documentation">B. Tweepy Documentation</h4>
+<p>https://docs.tweepy.org/en/stable/index.html</p>
+</section>
+<section id="c.-a-comprehensive-guide-for-using-the-twitter-api-v2-with-tweepy-in-python---suhem-parack" class="level4">
+<h4 class="anchored" data-anchor-id="c.-a-comprehensive-guide-for-using-the-twitter-api-v2-with-tweepy-in-python---suhem-parack">C. A comprehensive guide for using the Twitter API v2 with Tweepy in Python - Suhem Parack</h4>
+<p>https://dev.to/twitterdev/a-comprehensive-guide-for-using-the-twitter-api-v2-using-tweepy-in-python-15d9</p>
+</section>
+<section id="d.-making-queries-to-twitter-api-on-tweepy---roberto-aguilar" class="level4">
+<h4 class="anchored" data-anchor-id="d.-making-queries-to-twitter-api-on-tweepy---roberto-aguilar">D. Making queries to Twitter API on tweepy - Roberto Aguilar</h4>
+<p>https://medium.com/<span class="citation" data-cites="robguilarr/making-queries-to-twitter-api-on-tweepy-66afeb7184a4">@robguilarr/making-queries-to-twitter-api-on-tweepy-66afeb7184a4</span></p>
+</section>
+<section id="e.-accessing-the-twitter-api-with-python---mihajlo-pavloski" class="level4">
+<h4 class="anchored" data-anchor-id="e.-accessing-the-twitter-api-with-python---mihajlo-pavloski">E. Accessing the Twitter API with Python - Mihajlo Pavloski</h4>
+<p>https://stackabuse.com/accessing-the-twitter-api-with-python/</p>
+</section>
+<section id="f.-how-to-apply-for-a-twitter-developer-account---jean-christophe-chouinard" class="level4">
+<h4 class="anchored" data-anchor-id="f.-how-to-apply-for-a-twitter-developer-account---jean-christophe-chouinard">F. How to Apply for a Twitter Developer Account - jean-christophe-chouinard</h4>
+<p>https://www.jcchouinard.com/apply-for-a-twitter-developer-account/</p>
+</section>
+<section id="g.-how-to-get-twitter-api-credentials-api-keys---jean-christophe-chouinard" class="level4">
+<h4 class="anchored" data-anchor-id="g.-how-to-get-twitter-api-credentials-api-keys---jean-christophe-chouinard">G. How to get Twitter API Credentials (API Keys) - jean-christophe-chouinard</h4>
+<p>https://www.jcchouinard.com/twitter-api-credentials/</p>
+</section>
+<section id="h.-twitter-api-with-python-complete-guide---jean-christophe-chouinard" class="level4">
+<h4 class="anchored" data-anchor-id="h.-twitter-api-with-python-complete-guide---jean-christophe-chouinard">H. Twitter API with Python (Complete Guide) - jean-christophe-chouinard</h4>
+<p>https://www.jcchouinard.com/twitter-api/</p>
+</section>
+</section>
+<section id="setting-up-twitter-api" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-twitter-api">Setting up twitter API</h2>
+<section id="apply-for-a-developer-account" class="level3">
+<h3 class="anchored" data-anchor-id="apply-for-a-developer-account">1. Apply for a developer account</h3>
+<pre><code>Before using the Twitter API, you first need a Twitter account, and to have obtained some credentials. The process of getting credentials could change with time, but currently it is as follows:
+
+Visit the Application Management page at https://apps.twitter.com/, and sign in with your Twitter account
+Click on the "Create New App" button, fill in the details and agree the Terms of Service
+Navigate to "Keys and Access Tokens" section and take a note of your Consumer Key and Secret
+In the same section click on "Create my access token" button
+Take note of your Access Token and Access Token Secret
+And that's all. The consumer key/secret is used to authenticate the app that is using the Twitter API, while the access token/secret authenticates the user. All of these parameters should be treated as passwords, and should not be included in your code in plain text. One suitable way is to store them in a JSON file "twitter_credentials.json" and load these values from your code when needed.</code></pre>
+<p>Source <a href="https://stackabuse.com/accessing-the-twitter-api-with-python/">E. Accessing the Twitter API with Python - Mihajlo Pavloski</a></p>
+<pre><code>Twitter API access levels and versions
+
+While the Twitter API v2 is the primary Twitter API, the platform currently supports previous versions (v1.1, Gnip 2.0) as well. We recommend that all users start with v2 as this is where all future innovation will happen. 
+
+The Twitter API v2 includes a few access levels to help you scale your usage on the platform. In general, new accounts can quickly sign up for free, Essential access. Should you want additional access, you may choose to apply for free Elevated access and beyond. </code></pre>
+<p>Source <a href="https://developer.twitter.com/en/docs/twitter-api/getting-started/about-twitter-api">A. Getting started with twitter API - Twitter Developer Platform</a></p>
+<p><img src="ghtop_images/twitterAccesstypes.png" class="img-fluid"></p>
+<p>I applied for elevated access. This involved filling in several questions about what I would user twitter API for and a follow up email.</p>
+<p>For more info on how to apply for a twitter development account see <a href="https://www.jcchouinard.com/apply-for-a-twitter-developer-account/">F. How to Apply for a Twitter Developer Account - jean-christophe-chouinard</a></p>
+</section>
+<section id="create-a-projectapp" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-projectapp">2. Create a project/app</h3>
+<p>To use the twitter API you need to create a twitter App. From this you can then get the security IDs, bearer_token, API_key etc.</p>
+<p>For more details on this see <a href="https://www.jcchouinard.com/twitter-api-credentials/">G. How to get Twitter API Credentials (API Keys) - jean-christophe-chouinard</a></p>
+</section>
+<section id="set-up-an-environment" class="level3">
+<h3 class="anchored" data-anchor-id="set-up-an-environment">3. Set up an environment</h3>
+<pre><code>Twitter API bestows us several endpoints at the moment we request our App access. From which 3 of them are for searching methods, those that bring samples of the tweets we want according to specific criteria.
+api.search_30_day()
+
+Premium Search for tweets from the last 30 days.
+Monthly limitation of 4500 tweets per minute, without exceeding 25K tweets per month — Sandbox
+
+api.search_full_archive()
+
+Premium Search for tweets from March of 2006.
+Monthly limitation of 3000 tweets per minute, without exceeding 5K tweets per month — Sandbox
+
+api.search_tweets()
+
+Regular Search for tweets from the last 6–9 days as maximum.
+Monthly limitation of 3000 tweets per minute — Sandbox, this is the one that we gonna use in this case.</code></pre>
+<p>From <a href="https://medium.com/@robguilarr/making-queries-to-twitter-api-on-tweepy-66afeb7184a4">D. Making queries to Twitter API on tweepy - Roberto Aguilar</a></p>
+<p>These environments are found at https://developer.twitter.com/en/account/environments.</p>
+<p>And the name of the environment is included in the particular search (as shown below <code>label=XXX</code>.</p>
+</section>
+<section id="install-tweepy" class="level3">
+<h3 class="anchored" data-anchor-id="install-tweepy">4. Install tweepy</h3>
+<p><code>pip install tweepy</code></p>
+</section>
+</section>
+<section id="tweepy-code" class="level2">
+<h2 class="anchored" data-anchor-id="tweepy-code">Tweepy code</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">"BEARER_TOKEN"</span>]<span class="op">=</span><span class="st">" insert here "</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">"API_key"</span>]<span class="op">=</span><span class="st">'insert here'</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">"API_secret"</span>]<span class="op">=</span><span class="st">' insert here'</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">"access_token"</span>] <span class="op">=</span> <span class="st">" insert here "</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">"access_token_secret"</span>]<span class="op">=</span><span class="st">" insert here "</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Thomas H. Simm </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
-
-</header>
-<p><img src="../../posts/header2.png" height="200"></p>
-<section id="basic-implementation" class="level1">
-<h1>Basic Implementation</h1>
-<p>The standard language model starts with an embedding layer, this then needs to be flattened to a vector, then we can add a dense layer before an output layer.</p>
-<p>The <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Embedding"><code>Embedding</code></a> layer creates a vector-space for the text data. So for example, the words beautiful and ugly may be in opposite directions. And words such as cat and kitten may be close together in vector space.</p>
-<p><code>GlobalAveragePooling1D</code>can be replaced by <code>Flatten()</code></p>
-<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> tf.keras.Sequential([ </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.Embedding(num_words,embedding_dim,input_length<span class="op">=</span>maxlen),</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.GlobalAveragePooling1D(),</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.Dense(<span class="dv">24</span>,activation<span class="op">=</span><span class="st">'relu'</span>),</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.Dense(<span class="dv">5</span>,<span class="st">'softmax'</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The model above does not take account for the order of words,</p>
-<p>If we want to do this we can insert an additional layer after the embedding layer. For example, by using the LSTM model as below</p>
-<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>model_lstm<span class="op">=</span> tf.keras.Sequential([</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.Embedding(VOCAB_SIZE,EMBEDDING_DIM,input_length<span class="op">=</span>MAXLEN),</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(<span class="dv">32</span>)),</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.Dense(<span class="dv">24</span>,activation<span class="op">=</span><span class="st">'relu'</span>),</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    tf.keras.layers.Dense(NUM_CLASSES,activation<span class="op">=</span><span class="st">'softmax'</span>)   </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>We can even insert a conolution layer after the embedding instead</p>
-<p><code>tf.keras.layers.Conv1D(128,5,activation='relu')</code></p>
-<p>For two consecutive layers of RNNs use <code>return_sequences=True</code></p>
-<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(lstm1_dim, return_sequences<span class="op">=</span><span class="va">True</span>)),</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(lstm2_dim)),</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="import-and-check-it-is-authenticated" class="level3">
+<h3 class="anchored" data-anchor-id="import-and-check-it-is-authenticated">Import and check it is authenticated</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tweepy</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># API keys that yous saved earlier</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>api_key <span class="op">=</span> os.environ.get(<span class="st">"API_KEY"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>api_secrets <span class="op">=</span> os.environ.get(<span class="st">"API_secret"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>access_token <span class="op">=</span> os.environ.get(<span class="st">"access_token"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>access_secret <span class="op">=</span> os.environ.get(<span class="st">"access_token_secret"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Authenticate to Twitter</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>auth <span class="op">=</span> tweepy.OAuthHandler(api_key,api_secrets)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>auth.set_access_token(access_token,access_secret)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>api <span class="op">=</span> tweepy.API(auth)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    api.verify_credentials()</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Successful Authentication'</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Failed authentication'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="text-data-tokenizer" class="level1">
-<h1>Text data Tokenizer</h1>
+<section id="search-tweets" class="level3">
+<h3 class="anchored" data-anchor-id="search-tweets">Search tweets</h3>
+<p>Two main ones:</p>
+<p>For last 30 days:</p>
+<p><code>outa = api.search_30_day(label, query, *, tag, fromDate, toDate, maxResults,next)</code></p>
+<p>And for any times:</p>
+<p><code>outa = api.search_full_archive(label, query, *, tag, fromDate, toDate,                                maxResults, next)</code></p>
+<section id="query" class="level4">
+<h4 class="anchored" data-anchor-id="query">Query</h4>
+<p>from the python script:</p>
+<pre><code>The equivalent of one premium rule/filter, with up to 1,024 characters (256 with Sandbox dev environments).
+
+This parameter should include ALL portions of the rule/filter,including all operators, and portions of the rule should not be separated into other parameters of the query.</code></pre>
+<p>Following adapted from <a href="https://medium.com/@robguilarr/making-queries-to-twitter-api-on-tweepy-66afeb7184a4">D. Making queries to Twitter API on tweepy - Roberto Aguilar</a></p>
 <ul>
-<li>Create a <code>Tokenizer</code> instance</li>
-<li>Fit tokenizer to text data with <code>tokenizer.fit_on_texts(text_data)</code></li>
-<li>Convert text to sequences with <code>sequences = tokenizer.texts_to_sequences(text_data)</code>
-<ul>
-<li>For example, the following words have the indices: apple-&gt;1, brain-&gt;2, cat-&gt;3, that-&gt;4, is-&gt;5</li>
-<li>And a sequence of text within the data can be converted to a sequence: “that cat apple is brain” -&gt; (4, 3, 1, 5, 2)</li>
-</ul></li>
-<li>Get the word index <code>word_index = tokenizer.word_index</code></li>
-<li>Get the text back from the sequences <code>text = tokenizer.sequences_to_texts(sequences)</code></li>
+<li>Search for a term</li>
 </ul>
-<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.preprocessing.text <span class="im">import</span> Tokenizer</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.preprocessing.sequence <span class="im">import</span> pad_sequences</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="op">=</span> Tokenizer(oov_token<span class="op">=</span><span class="st">"&lt;OOV&gt;"</span>,num_words<span class="op">=</span><span class="dv">10_000</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>tokenizer.fit_on_texts(text_data)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>sequences <span class="op">=</span> label_tokenizer.texts_to_sequences(text_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>query = 'holiday'</code> - Containing two words</p>
+<p><code>query = 'holiday jet2'</code> - Containing exact words</p>
+<p><code>query='"jet2 braces" "holiday"'</code> - Contain one word OR another</p>
+<p><code>query='jet2 OR "tuiuk"'</code> - Hashtags and mentions</p>
+<p><code>query = '@jet2tweets #holiday'</code> - Exclude words</p>
+<p><code>query='@jet2tweets -travel'</code> - Who the tweet is sent from and to</p>
+<p><code>query='holiday from:jet2tweets'</code></p>
+<p><code>query='holiday to:jet2tweets'</code></p>
+</section>
+<section id="dates" class="level4">
+<h4 class="anchored" data-anchor-id="dates">Dates</h4>
+<p>Dates are in the format YYYYMMDDHHmm</p>
+<p>So 0:00 21st March 2021 = ‘202103210000’</p>
+<p>#hide #### Tag</p>
+<p>from script:</p>
+<pre><code>Tags can be used to segregate rules and their matching data into
+different logical groups. If a rule tag is provided, the rule tag
+is included in the 'matching_rules' attribute.
+
+It is recommended to assign rule-specific UUIDs to rule tags and
+maintain desired mappings on the client side.</code></pre>
+<p>Following adapted from <a href="https://medium.com/@robguilarr/making-queries-to-twitter-api-on-tweepy-66afeb7184a4">D. Making queries to Twitter API on tweepy - Roberto Aguilar</a></p>
+<ul>
+<li>Retweets</li>
+</ul>
+<p><code>tag='-filter:retweets'</code> without retweets</p>
+<p><code>tag='filter:retweets'</code> and just RTs</p>
+<ul>
+<li>Has links</li>
+</ul>
+<p><code>tag='-filter:links'</code></p>
+<ul>
+<li>Has media</li>
+</ul>
+<p><code>tag='-filter:media'</code></p>
+<ul>
+<li>Trusted</li>
+</ul>
+<p><code>tag='-filter:trusted'</code></p>
+<p>More filters can be seen in the <a href="https://developer.twitter.com/en/docs/twitter-api/tweets/search/migrate">Docs</a></p>
+</section>
+</section>
+<section id="the-results-file" class="level3">
+<h3 class="anchored" data-anchor-id="the-results-file">The results file</h3>
+<p><code>outa=api.search_full_archive(label=label,          query=query,toDate=end_time,fromDate=start_time)</code></p>
+<p>The information from outa is accessed for each element using _json, i.e.&nbsp;</p>
+<p><code>outa[0]._json</code> gives the first search result</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>xx<span class="op">=</span>outa[<span class="dv">0</span>]._json</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ii,x <span class="kw">in</span> <span class="bu">enumerate</span>(xx):</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(ii,x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="ghtop_images/tweepy_outputs.png" class="img-fluid"></p>
+<p>If the tweet is longer than 140 char the <code>text</code> property doesn’t display all the text of the tweet.</p>
+<p>This will normally then be in the <code>extended_tweet</code> property but also sometimes in the <code>retweeted_status</code> property.</p>
+<p>So to get around this put in exceptions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>textAll<span class="op">=</span>[]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> numa <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">10</span>):</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    xx<span class="op">=</span>outa1[numa]._json</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        textAll.append(numa,<span class="st">'1'</span>, xx[<span class="st">'created_at'</span>],</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>              xx[<span class="st">'retweeted_status'</span>][<span class="st">'extended_tweet'</span>][<span class="st">'full_text'</span>] )</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>            textAll.append(numa,<span class="st">'2'</span>,xx[<span class="st">'created_at'</span>],</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>                  xx[<span class="st">'extended_tweet'</span>][<span class="st">'full_text'</span>])</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span>:</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>            textAll.append(numa,<span class="st">'3'</span>,xx[<span class="st">'created_at'</span>],xx[<span class="st">'text'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
