@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Thomas H. Simm">
 
-<title>ThomasHSimm - TH Simm Python Pages</title>
+<title>ThomasHSimm - Presentation of Olympics data with SQL and pandas</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +24,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href=".//posts/Picture3.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../..//posts/Picture3.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -74,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">ThomasHSimm</span>
     </a>
   </div>
@@ -84,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page">
+    <a class="nav-link active" href="../../../about.html" aria-current="page">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -107,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">TH Simm Python Pages</h1>
+      <h1 class="quarto-secondary-nav-title">Presentation of Olympics data with SQL and pandas</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -127,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">About</a>
+  <a href="../../../about.html" class="sidebar-item-text sidebar-link">About</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -156,12 +157,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/NLP stuff/2022-04-25-NLP-Of-TravelTweets.html" class="sidebar-item-text sidebar-link">Natural Language Processing of Travel Tweets</a>
+  <a href="../../../posts/INFO/NLP stuff/2022-04-25-NLP-Of-TravelTweets.html" class="sidebar-item-text sidebar-link">Natural Language Processing of Travel Tweets</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/NLP stuff/2022-03-15-NLPtextgenerator.html" class="sidebar-item-text sidebar-link">Using NLP for text generation</a>
+  <a href="../../../posts/INFO/NLP stuff/2022-03-15-NLPtextgenerator.html" class="sidebar-item-text sidebar-link">Using NLP for text generation</a>
   </div>
 </li>
       </ul>
@@ -176,67 +177,67 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/others_python/AWS.html" class="sidebar-item-text sidebar-link">AWS Cheat sheet</a>
+  <a href="../../../posts/INFO/others_python/AWS.html" class="sidebar-item-text sidebar-link">AWS Cheat sheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/others_python/SQL.html" class="sidebar-item-text sidebar-link">Basics SQL</a>
+  <a href="../../../posts/INFO/others_python/SQL.html" class="sidebar-item-text sidebar-link">Basics SQL</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/others_python/FastaiCheatSheets.html" class="sidebar-item-text sidebar-link">FastAI CheatSheet</a>
+  <a href="../../../posts/INFO/others_python/FastaiCheatSheets.html" class="sidebar-item-text sidebar-link">FastAI CheatSheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/others_python/Git-and-Github.html" class="sidebar-item-text sidebar-link">Git and Github</a>
+  <a href="../../../posts/INFO/others_python/Git-and-Github.html" class="sidebar-item-text sidebar-link">Git and Github</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/others_python/PythonBasics.html" class="sidebar-item-text sidebar-link">Python Basics</a>
+  <a href="../../../posts/INFO/others_python/PythonBasics.html" class="sidebar-item-text sidebar-link">Python Basics</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/others_python/Imbedding-Python-Web.html" class="sidebar-item-text sidebar-link">Python Imbedding Web</a>
+  <a href="../../../posts/INFO/others_python/Imbedding-Python-Web.html" class="sidebar-item-text sidebar-link">Python Imbedding Web</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/others_python/Regular-Expressions.html" class="sidebar-item-text sidebar-link">Regular expressions RE</a>
+  <a href="../../../posts/INFO/others_python/Regular-Expressions.html" class="sidebar-item-text sidebar-link">Regular expressions RE</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/others_python/PythonBook.html" class="sidebar-item-text sidebar-link">Some Python Basics</a>
+  <a href="../../../posts/INFO/others_python/PythonBook.html" class="sidebar-item-text sidebar-link">Some Python Basics</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/others_python/speechRecog.html" class="sidebar-item-text sidebar-link">Speech recognition</a>
+  <a href="../../../posts/INFO/others_python/speechRecog.html" class="sidebar-item-text sidebar-link">Speech recognition</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/others_python/OS.html" class="sidebar-item-text sidebar-link">The operating system</a>
+  <a href="../../../posts/INFO/others_python/OS.html" class="sidebar-item-text sidebar-link">The operating system</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/others_python/Tweepy.html" class="sidebar-item-text sidebar-link">Tweepy</a>
+  <a href="../../../posts/INFO/others_python/Tweepy.html" class="sidebar-item-text sidebar-link">Tweepy</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/others_python/WebScraping.html" class="sidebar-item-text sidebar-link">Web scraping</a>
+  <a href="../../../posts/INFO/others_python/WebScraping.html" class="sidebar-item-text sidebar-link">Web scraping</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/others_python/WorkingWithVideos.html" class="sidebar-item-text sidebar-link">Working with videos</a>
+  <a href="../../../posts/INFO/others_python/WorkingWithVideos.html" class="sidebar-item-text sidebar-link">Working with videos</a>
   </div>
 </li>
       </ul>
@@ -251,27 +252,27 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/tensorflow/2022-09-28-Tensorflow.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet</a>
+  <a href="../../../posts/INFO/tensorflow/2022-09-28-Tensorflow.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/tensorflow/2022-10-07-Tensorflow-2.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet 2</a>
+  <a href="../../../posts/INFO/tensorflow/2022-10-07-Tensorflow-2.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet 2</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/tensorflow/2022-10-10-Tensorflow-Images.html" class="sidebar-item-text sidebar-link">TensorFlow Images cheat sheet</a>
+  <a href="../../../posts/INFO/tensorflow/2022-10-10-Tensorflow-Images.html" class="sidebar-item-text sidebar-link">TensorFlow Images cheat sheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html" class="sidebar-item-text sidebar-link">TensorFlow Low-Level cheat sheet</a>
+  <a href="../../../posts/INFO/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html" class="sidebar-item-text sidebar-link">TensorFlow Low-Level cheat sheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/INFO/tensorflow/2022-10-10-Tensorflow-NLP.html" class="sidebar-item-text sidebar-link">TensorFlow NLP cheat sheet</a>
+  <a href="../../../posts/INFO/tensorflow/2022-10-10-Tensorflow-NLP.html" class="sidebar-item-text sidebar-link">TensorFlow NLP cheat sheet</a>
   </div>
 </li>
       </ul>
@@ -280,12 +281,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">PROJECTS</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">PROJECTS</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">Communicating Code</a>
@@ -296,32 +297,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/Communicating_Code/CommCodePres_notebooks.html" class="sidebar-item-text sidebar-link">Communicating code: Notebooks</a>
+  <a href="../../../posts/PROJECTS/Communicating_Code/CommCodePres_notebooks.html" class="sidebar-item-text sidebar-link">Communicating code: Notebooks</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/Communicating_Code/CommCodePres_pres.html" class="sidebar-item-text sidebar-link">Communicating code: Presentations</a>
+  <a href="../../../posts/PROJECTS/Communicating_Code/CommCodePres_pres.html" class="sidebar-item-text sidebar-link">Communicating code: Presentations</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/Communicating_Code/CommCodePres_tables.html" class="sidebar-item-text sidebar-link">Communicating code: Tables</a>
+  <a href="../../../posts/PROJECTS/Communicating_Code/CommCodePres_tables.html" class="sidebar-item-text sidebar-link">Communicating code: Tables</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/Communicating_Code/CommCodePres_html.html" class="sidebar-item-text sidebar-link">Communicating code: Website</a>
+  <a href="../../../posts/PROJECTS/Communicating_Code/CommCodePres_html.html" class="sidebar-item-text sidebar-link">Communicating code: Website</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/Communicating_Code/CommCodePres.html" class="sidebar-item-text sidebar-link">Overview: Communicating code and data</a>
+  <a href="../../../posts/PROJECTS/Communicating_Code/CommCodePres.html" class="sidebar-item-text sidebar-link">Overview: Communicating code and data</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/Communicating_Code/PresentationOfCommunicatingCode.html" class="sidebar-item-text sidebar-link">Presentation: Communicating code and data</a>
+  <a href="../../../posts/PROJECTS/Communicating_Code/PresentationOfCommunicatingCode.html" class="sidebar-item-text sidebar-link">Presentation: Communicating code and data</a>
   </div>
 </li>
       </ul>
@@ -336,67 +337,67 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/GolfSwing/GolfPos1FastAI.html" class="sidebar-item-text sidebar-link">Body position recognition using FastAI</a>
+  <a href="../../../posts/PROJECTS/GolfSwing/GolfPos1FastAI.html" class="sidebar-item-text sidebar-link">Body position recognition using FastAI</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/GolfSwing/GolfSwingPart2.html" class="sidebar-item-text sidebar-link">Golf Swing Part II- Separating Swing Positions</a>
+  <a href="../../../posts/PROJECTS/GolfSwing/GolfSwingPart2.html" class="sidebar-item-text sidebar-link">Golf Swing Part II- Separating Swing Positions</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/GolfSwing/GolfSwingPart3.html" class="sidebar-item-text sidebar-link">Golf Swing Part III- Using pre-trained models- FiftyOne and Streamlit App</a>
+  <a href="../../../posts/PROJECTS/GolfSwing/GolfSwingPart3.html" class="sidebar-item-text sidebar-link">Golf Swing Part III- Using pre-trained models- FiftyOne and Streamlit App</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/GolfSwing/GolfSwingPart4.html" class="sidebar-item-text sidebar-link">Modifications to code for separating swing video</a>
+  <a href="../../../posts/PROJECTS/GolfSwing/GolfSwingPart4.html" class="sidebar-item-text sidebar-link">Modifications to code for separating swing video</a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">Olympics</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">Olympics</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/olympics/OlympicsSQL.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas</a>
+  <a href="../../../posts/PROJECTS/olympics/OlympicsSQL.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/olympics/OlympicsSQL_createDFs.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- create the tables</a>
+  <a href="../../../posts/PROJECTS/olympics/OlympicsSQL_createDFs.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- create the tables</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/olympics/OlympicsSQL_createCountryDF.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- creating a country table</a>
+  <a href="../../../posts/PROJECTS/olympics/OlympicsSQL_createCountryDF.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- creating a country table</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/olympics/OlympicsSQL_GDPpopulation.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- GDP and population</a>
+  <a href="../../../posts/PROJECTS/olympics/OlympicsSQL_GDPpopulation.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- GDP and population</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/olympics/OlympicsSQL-HeightWeightAge.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- height weight and age</a>
+  <a href="../../../posts/PROJECTS/olympics/OlympicsSQL-HeightWeightAge.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- height weight and age</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/olympics/Olympics_HomeEvent.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- home games</a>
+  <a href="../../../posts/PROJECTS/olympics/Olympics_HomeEvent.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- home games</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/olympics/OlympicsSQL-Presentation.html" class="sidebar-item-text sidebar-link">Presentation of Olympics data with SQL and pandas</a>
+  <a href="../../../posts/PROJECTS/olympics/OlympicsSQL-Presentation.html" class="sidebar-item-text sidebar-link active">Presentation of Olympics data with SQL and pandas</a>
   </div>
 </li>
       </ul>
@@ -411,12 +412,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/swansea_property/SwanseaHousePriceApp.html" class="sidebar-item-text sidebar-link">Creating a property prediction App</a>
+  <a href="../../../posts/PROJECTS/swansea_property/SwanseaHousePriceApp.html" class="sidebar-item-text sidebar-link">Creating a property prediction App</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/PROJECTS/swansea_property/SwanseaHousePrices_Part2.html" class="sidebar-item-text sidebar-link">Swansea House Prices- Part 2</a>
+  <a href="../../../posts/PROJECTS/swansea_property/SwanseaHousePrices_Part2.html" class="sidebar-item-text sidebar-link">Swansea House Prices- Part 2</a>
   </div>
 </li>
       </ul>
@@ -430,27 +431,27 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#communicating-code-and-data" id="toc-communicating-code-and-data" class="nav-link active" data-scroll-target="#communicating-code-and-data">Communicating code and data</a></li>
-  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">TH Simm Python Pages</h1>
+<h1 class="title d-none d-lg-block">Presentation of Olympics data with SQL and pandas</h1>
+<p class="subtitle lead">Presentation of Using SQL and Pandas to understad Olympic data</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Thomas H. Simm </p>
+          </div>
+  </div>
     
   
     
@@ -458,19 +459,45 @@ ul.task-list li input[type="checkbox"] {
   
 
 </header>
-<p><img src="./posts/header2.png" height="200"></p>
-<section id="communicating-code-and-data" class="level2">
-<h2 class="anchored" data-anchor-id="communicating-code-and-data">Communicating code and data</h2>
-<ul>
-<li><a href="https://thomashsimm.quarto.pub/thomashsimm/posts/Communicating_Code/PresentationOfCommunicatingCode.html#/title-slide">Presentation</a></li>
-</ul>
-</section>
-<section id="links" class="level2">
-<h2 class="anchored" data-anchor-id="links">Links</h2>
-<p>Website built with Quarto visit for more info <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
+
+<p><img src="../../../posts/header2.png" height="200"></p><p><img src="ghtop_images/Slide1.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide2.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide3.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide4.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide5.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide6.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide7.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide8.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide9.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide10.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide11.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide12.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide13.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide14.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide15.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide16.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide17.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide18.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide19.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide20.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide21.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide22.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide23.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide24.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide25.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide26.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide27.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide28.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide29.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide30.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide31.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide32.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide33.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide34.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide35.PNG" class="img-fluid"></p>
+<p><img src="ghtop_images/Slide36.PNG" class="img-fluid"></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
