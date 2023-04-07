@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ThomasHSimm – golfswingpart4</title>
+<title>ThomasHSimm – fastaicheatsheets</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -243,12 +243,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">GolfSwing</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">GolfSwing</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/GolfSwing/GolfPos1FastAI.html" class="sidebar-item-text sidebar-link">Body position recognition using FastAI</a>
@@ -266,7 +266,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/GolfSwing/GolfSwingPart4.html" class="sidebar-item-text sidebar-link active">Modifications to code for separating swing video</a>
+  <a href="../../posts/GolfSwing/GolfSwingPart4.html" class="sidebar-item-text sidebar-link">Modifications to code for separating swing video</a>
   </div>
 </li>
       </ul>
@@ -338,12 +338,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">Others Python</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">Others Python</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/others_python/AWS.html" class="sidebar-item-text sidebar-link">AWS Cheat sheet</a>
@@ -361,7 +361,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/others_python/FastaiCheatSheets.html" class="sidebar-item-text sidebar-link">FastAI CheatSheet</a>
+  <a href="../../posts/others_python/FastaiCheatSheets.html" class="sidebar-item-text sidebar-link active">FastAI CheatSheet</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -482,11 +482,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#modifications-to-code-for-separating-swing-video" id="toc-modifications-to-code-for-separating-swing-video" class="nav-link active" data-scroll-target="#modifications-to-code-for-separating-swing-video">Modifications to code for separating swing video</a>
+  <li><a href="#fastai-cheatsheet" id="toc-fastai-cheatsheet" class="nav-link active" data-scroll-target="#fastai-cheatsheet">FastAI CheatSheet</a>
   <ul class="collapse">
-  <li><a href="#imported-files-are-not-saved-to-a-location" id="toc-imported-files-are-not-saved-to-a-location" class="nav-link" data-scroll-target="#imported-files-are-not-saved-to-a-location">- Imported files are not saved to a location</a></li>
-  <li><a href="#video-load-issue" id="toc-video-load-issue" class="nav-link" data-scroll-target="#video-load-issue">- Video load issue</a></li>
-  <li><a href="#using-on-a-cpu-instead-of-a-gpu" id="toc-using-on-a-cpu-instead-of-a-gpu" class="nav-link" data-scroll-target="#using-on-a-cpu-instead-of-a-gpu">- Using on a CPU instead of a GPU</a></li>
+  <li><a href="#misc." id="toc-misc." class="nav-link" data-scroll-target="#misc.">Misc.</a>
+  <ul class="collapse">
+  <li><a href="#creating-a-path" id="toc-creating-a-path" class="nav-link" data-scroll-target="#creating-a-path">Creating a path</a></li>
+  </ul></li>
+  <li><a href="#loading-the-data" id="toc-loading-the-data" class="nav-link" data-scroll-target="#loading-the-data">Loading the data</a>
+  <ul class="collapse">
+  <li><a href="#datablocks" id="toc-datablocks" class="nav-link" data-scroll-target="#datablocks">DataBlocks</a></li>
+  <li><a href="#dataloaders" id="toc-dataloaders" class="nav-link" data-scroll-target="#dataloaders">DataLoaders</a></li>
+  </ul></li>
+  <li><a href="#the-model" id="toc-the-model" class="nav-link" data-scroll-target="#the-model">The model</a>
+  <ul class="collapse">
+  <li><a href="#different-models" id="toc-different-models" class="nav-link" data-scroll-target="#different-models">Different models</a></li>
+  <li><a href="#learning" id="toc-learning" class="nav-link" data-scroll-target="#learning">Learning</a></li>
+  <li><a href="#some-other-useful-bits" id="toc-some-other-useful-bits" class="nav-link" data-scroll-target="#some-other-useful-bits">Some other useful bits</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -496,36 +508,173 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="modifications-to-code-for-separating-swing-video" class="level2">
-<h2 class="anchored" data-anchor-id="modifications-to-code-for-separating-swing-video">Modifications to code for separating swing video</h2>
-<section id="imported-files-are-not-saved-to-a-location" class="level3">
-<h3 class="anchored" data-anchor-id="imported-files-are-not-saved-to-a-location">- Imported files are not saved to a location</h3>
-<p>This means can’t pass ‘path’ when creating the Dataset. So that line is removed from the <code>__init__</code></p>
-<p>In theory the video could then be loaded with <code>cap = cv2.VideoCapture(self)</code> but this doesn’t work as openCV requires a file. So a get around for this is create a temp file https://discuss.streamlit.io/t/how-to-access-uploaded-video-in-streamlit-by-open-cv/5831/4</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> st.file_uploader(<span class="st">"Upload file"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tfile <span class="op">=</span> tempfile.NamedTemporaryFile(delete<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>tfile.write(f.read())</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>vf <span class="op">=</span> cv.VideoCapture(tfile.name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For the same reason the image files are not saved as a file</p>
+<section id="fastai-cheatsheet" class="level1">
+<h1>FastAI CheatSheet</h1>
+<blockquote class="blockquote">
+<p>Using FastAI</p>
+</blockquote>
+<ul>
+<li>toc: true</li>
+<li>badges: true</li>
+<li>comments: true</li>
+<li>categories: [Neural networks,FastAI, Python]</li>
+</ul>
+<p><img src="ghtop_images/header2.png" class="img-fluid"></p>
+<section id="misc." class="level2">
+<h2 class="anchored" data-anchor-id="misc.">Misc.</h2>
+<section id="creating-a-path" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-path">Creating a path</h3>
+<p>Where the data is</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}" data-execution_count="68">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># current directory</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>path<span class="op">=</span>Path()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Path.BASE_PATH <span class="op">=</span> path</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># another folder off cwd</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> Path(<span class="st">'bears'</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#if doesn't exist can do</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>path.mkdir()</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># as part of downloading inbuilt data</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> untar_data(URLs.IMDB)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># When using path to select a subfolder</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>`trains <span class="op">=</span> path<span class="op">/</span><span class="st">'train'</span>`</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Or to view</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>`(path<span class="op">/</span><span class="st">'train'</span>).ls()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="video-load-issue" class="level3">
-<h3 class="anchored" data-anchor-id="video-load-issue">- Video load issue</h3>
-<p>If the video is loaded a second time <code>ret, img = cv2.VideoCapture</code> there are problems receieving the video i.e.&nbsp;<code>ret=False</code>.</p>
-<p>A get around used was to copy the imported file</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>uploaded_filesCOPY <span class="op">=</span> copy.copy( uploaded_files )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="using-on-a-cpu-instead-of-a-gpu" class="level3">
-<h3 class="anchored" data-anchor-id="using-on-a-cpu-instead-of-a-gpu">- Using on a CPU instead of a GPU</h3>
-<p>The code needed modifying slightly to allow it to work using a CPU. Although it does have the following line, a few more changes were needed</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> torch.device(<span class="st">'cuda'</span> <span class="cf">if</span> torch.cuda.is_available() <span class="cf">else</span> <span class="st">'cpu'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Adding a description in the loads</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>torch.load(<span class="st">'mobilenet_v2.pth.tar'</span>,map_location<span class="op">=</span>torch.device(<span class="st">'cpu'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Removing the cdu() part at end of e.g.&nbsp;variables</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Variable(torch.zeros(<span class="dv">2</span><span class="op">*</span><span class="va">self</span>.lstm_layers, batch_size, <span class="va">self</span>.lstm_hidden).cuda()</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># to     </span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>Variable(torch.zeros(<span class="dv">2</span><span class="op">*</span><span class="va">self</span>.lstm_layers, batch_size, <span class="va">self</span>.lstm_hidden)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="loading-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="loading-the-data">Loading the data</h2>
+<p><code>DataLoaders</code> is a thin class that just stores whatever <code>DataLoader</code> objects you pass to it, and makes them available as <code>train</code> and <code>valid</code>. Although it’s a very simple class, it’s very important in fastai: it provides the data for your model. The key functionality in <code>DataLoaders</code> is provided with just these four lines of code (it has some other minor functionality we’ll skip over for now):</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> DataLoaders(GetAttr):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, <span class="op">*</span>loaders): <span class="va">self</span>.loaders <span class="op">=</span> loaders</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__getitem__</span>(<span class="va">self</span>, i): <span class="cf">return</span> <span class="va">self</span>.loaders[i]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    train,valid <span class="op">=</span> add_props(<span class="kw">lambda</span> i,<span class="va">self</span>: <span class="va">self</span>[i])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To turn our downloaded data into a <code>DataLoaders</code> object we need to tell fastai at least four things:</p>
+<ul>
+<li>What kinds of data we are working with</li>
+<li>How to get the list of items</li>
+<li>How to label these items</li>
+<li>How to create the validation set</li>
+</ul>
+<section id="datablocks" class="level3">
+<h3 class="anchored" data-anchor-id="datablocks">DataBlocks</h3>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dBlock <span class="op">=</span> DataBlock(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    blocks<span class="op">=</span>(ImageBlock, CategoryBlock), </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    get_items<span class="op">=</span>get_image_files, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    splitter<span class="op">=</span>RandomSplitter(valid_pct<span class="op">=</span><span class="fl">0.2</span>, seed<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    get_y<span class="op">=</span>parent_label,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    item_tfms<span class="op">=</span>Resize(<span class="dv">128</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>blocks</code> what format is the data? - <code>ImageBlock</code> - <code>CategoryBlock</code> - <code>TextBlock</code></p>
+<p><code>get_items</code> takes a function that that gives the list of all data (images/text etc) - <code>get_image_files</code> - <code>partial(get_text_files, folders=['train', 'test', 'unsup'])</code></p>
+<p><code>splitter</code> how data is plit into test and validation sets - <code>RandomSplitter(valid_pct=0.2, seed=42)</code> randomly - <code>def splitter(df):     train = df.index[~df['is_valid']].tolist()     valid = df.index[df['is_valid']].tolist()     return train,valid</code> use a function this one uses data frame</p>
+<p><code>get_x</code> and <code>get_y</code> get the independent (x) and dependent variables (y) takes a function that provides labels for the data - <code>parent_label</code> gets the name of the parent folder e.g.&nbsp;when doing categorical data put rabbits in ‘rabbits’ folder and horses in ‘horses’ folder - <code>def get_y(r): return r['labels'].split(' ')</code></p>
+<p><code>item_tfms</code> runs on individual items- allows for data augmentation, making images the same size etc - <code>Resize(128)</code> resize all images to 128 - <code>Resize(128, ResizeMethod.Pad, pad_mode='zeros'</code> resize with zeros</p>
+<p><code>batch_tfms</code> similar to the above but apply to all batch - <code>[*aug_transforms(size=size, min_scale=0.75),</code> <code>Normalize.from_stats(*imagenet_stats)]</code></p>
+</section>
+<section id="dataloaders" class="level3">
+<h3 class="anchored" data-anchor-id="dataloaders">DataLoaders</h3>
+<p>The data block is like a template for creating a DataLoaders. We still need to tell fastai the actual source of our data—in this case, the path where the images can be found along with some other details.</p>
+<p>A <code>DataLoaders</code> includes validation and training <code>DataLoader</code>s. <code>DataLoader</code> is a class that provides batches of a few items at a time to the GPU. When you loop through a <code>DataLoader</code> fastai will give you 64 (by default) items at a time, all stacked up into a single tensor.</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> dBlock.dataloaders(path, </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>            path<span class="op">=</span>path, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            bs<span class="op">=</span><span class="dv">128</span>, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            seq_len<span class="op">=</span><span class="dv">80</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>after_item</code> applied after each item equivalent of <code>item_tfms</code></p>
+<p><code>before_batch</code> applied on list of items before they’re collated</p>
+<p><code>after_batch</code> applied on the batch as a whole after construction- equivalent to <code>batch_tfms</code></p>
+<p><code>bs</code> batch size</p>
+<p><code>seq_len</code></p>
+<p><code>path</code> path to data</p>
+</section>
+</section>
+<section id="the-model" class="level2">
+<h2 class="anchored" data-anchor-id="the-model">The model</h2>
+<section id="different-models" class="level3">
+<h3 class="anchored" data-anchor-id="different-models">Different models</h3>
+<section id="vision" class="level4">
+<h4 class="anchored" data-anchor-id="vision">Vision</h4>
+<p><code>from fastai.vision import models</code></p>
+<p><code>learn = cnn_learner(data, models.resnet18, metrics=accuracy)</code></p>
+<p>Torchvision models</p>
+<ul>
+<li><code>resnet18</code>, <code>resnet34</code>, <code>resnet50</code>, <code>resnet101</code>, <code>resnet152</code></li>
+<li><code>squeezenet1_0</code>, <code>squeezenet1_1</code></li>
+<li><code>densenet121</code>, <code>densenet169</code>, <code>densenet201</code>, <code>densenet161</code></li>
+<li><code>vgg16_bn</code>, <code>vgg19_bn</code></li>
+<li><code>alexnet</code> Others</li>
+<li><code>Darknet</code></li>
+<li><code>unet</code></li>
+</ul>
+</section>
+<section id="text" class="level4">
+<h4 class="anchored" data-anchor-id="text">Text</h4>
+<p><code>from fastai.text import *</code></p>
+<p><code>learn = language_model_learner(data_lm, AWD_LSTM, drop_mult=0.5)</code></p>
+<p>Or for classification</p>
+<p><code>learn = text_classifier_learner(data_clas, AWD_LSTM, drop_mult=0.5)</code></p>
+</section>
+<section id="tabular" class="level4">
+<h4 class="anchored" data-anchor-id="tabular">Tabular</h4>
+<p><code>from fastai.tabular import *</code></p>
+<p><code>learn = tabular_learner(data, layers=[200,100], emb_szs={'native-country': 10}, metrics=accuracy)</code></p>
+</section>
+</section>
+<section id="learning" class="level3">
+<h3 class="anchored" data-anchor-id="learning">Learning</h3>
+<p>To fit the model we have a few options:</p>
+<ul>
+<li><p><code>learn.fit(10,lr=4e-3)</code></p></li>
+<li><p><code>learn.fit_one_cycle()</code></p></li>
+<li><p><code>learn.fine_tune(10, base_lr=1e-3, freeze_epochs=7)</code></p></li>
+<li><p><code>learn.fine_tune(15, lr)</code></p></li>
+</ul>
+<p>FastAI adds an extra 2 layers on the end of neural network when doing <strong>transfer learning</strong>, these can then be fitted using fine_tune. It is recommended to do a few fits frozen before unfreezing. This is normally the best option for transfer learning.</p>
+<p>But the other ones can be used. In general fit can be more unstable and lead to bigger losses, but can be useful if fine_tune is not bringing losses down.</p>
+<p>https://forums.fast.ai/t/fine-tune-vs-fit-one-cycle/66029/6</p>
+<pre><code>fit_one_cycle = New Model
+
+fine_tuning = with Transfer Learning?
+
+I’d say yes but with a very strong but, only because it’s easy to fall into a trap that way. fine_tuning is geared towards transfer learning specifically, but you can also just do fit_one_cycle as well! (Or flat_cos).
+
+For beginners it’s a great starting fit function (and advanced too), but also don’t forget that you can then</code></pre>
+<p>An alternative to <code>fine_tuning</code> with transfer learning is to specify which layers are frozen:</p>
+<p>Unfreeze layers, to freeze all except the last two parameter groups use <code>freeze_to</code>:</p>
+<p><code>learn.freeze_to(-2)</code></p>
+<p><code>learn.fit_one_cycle(1, slice(1e-2/(2.6**4),1e-2))</code></p>
+<p>And unfreeze a bit more</p>
+<p><code>learn.freeze_to(-3)</code></p>
+<p>Or unfreeze the whole model</p>
+<p><code>learn.unfreeze</code></p>
+<p>Can see the difference between <code>fine_tune</code> and <code>fit_one_cycle</code> from the <code>fine_tune</code> function:</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fine_tune(<span class="va">self</span>:Learner, epochs, base_lr<span class="op">=</span><span class="fl">2e-3</span>, freeze_epochs<span class="op">=</span><span class="dv">1</span>, lr_mult<span class="op">=</span><span class="dv">100</span>,</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>              pct_start<span class="op">=</span><span class="fl">0.3</span>, div<span class="op">=</span><span class="fl">5.0</span>, <span class="op">**</span>kwargs):</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"Fine tune with `freeze` for `freeze_epochs` then with `unfreeze` from `epochs` using discriminative LR"</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.freeze()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.fit_one_cycle(freeze_epochs, <span class="bu">slice</span>(base_lr), pct_start<span class="op">=</span><span class="fl">0.99</span>, <span class="op">**</span>kwargs)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    base_lr <span class="op">/=</span> <span class="dv">2</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.unfreeze()</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.fit_one_cycle(epochs, <span class="bu">slice</span>(base_lr<span class="op">/</span>lr_mult, base_lr), pct_start<span class="op">=</span>pct_start, div<span class="op">=</span>div, <span class="op">**</span>kwargs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="some-other-useful-bits" class="level3">
+<h3 class="anchored" data-anchor-id="some-other-useful-bits">Some other useful bits</h3>
+<p>Find the best learing rate:</p>
+<p><code>learn.lr_find()</code></p>
+<p><img src="ghtop_images/GOLF5.png" class="img-fluid"></p>
 
 
+</section>
 </section>
 </section>
 

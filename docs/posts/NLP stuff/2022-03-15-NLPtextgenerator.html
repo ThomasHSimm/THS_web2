@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ThomasHSimm – golfswingpart4</title>
+<title>ThomasHSimm – nlptextgenerator</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -243,12 +243,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">GolfSwing</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">GolfSwing</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/GolfSwing/GolfPos1FastAI.html" class="sidebar-item-text sidebar-link">Body position recognition using FastAI</a>
@@ -266,19 +266,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/GolfSwing/GolfSwingPart4.html" class="sidebar-item-text sidebar-link active">Modifications to code for separating swing video</a>
+  <a href="../../posts/GolfSwing/GolfSwingPart4.html" class="sidebar-item-text sidebar-link">Modifications to code for separating swing video</a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">NLP stuff</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">NLP stuff</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/NLP stuff/2022-04-25-NLP-Of-TravelTweets.html" class="sidebar-item-text sidebar-link">Natural Language Processing of Travel Tweets</a>
@@ -286,7 +286,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/NLP stuff/2022-03-15-NLPtextgenerator.html" class="sidebar-item-text sidebar-link">Using NLP for text generation</a>
+  <a href="../../posts/NLP stuff/2022-03-15-NLPtextgenerator.html" class="sidebar-item-text sidebar-link active">Using NLP for text generation</a>
   </div>
 </li>
       </ul>
@@ -482,11 +482,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#modifications-to-code-for-separating-swing-video" id="toc-modifications-to-code-for-separating-swing-video" class="nav-link active" data-scroll-target="#modifications-to-code-for-separating-swing-video">Modifications to code for separating swing video</a>
+  <li><a href="#using-nlp-for-text-generation" id="toc-using-nlp-for-text-generation" class="nav-link active" data-scroll-target="#using-nlp-for-text-generation">Using NLP for text generation</a>
   <ul class="collapse">
-  <li><a href="#imported-files-are-not-saved-to-a-location" id="toc-imported-files-are-not-saved-to-a-location" class="nav-link" data-scroll-target="#imported-files-are-not-saved-to-a-location">- Imported files are not saved to a location</a></li>
-  <li><a href="#video-load-issue" id="toc-video-load-issue" class="nav-link" data-scroll-target="#video-load-issue">- Video load issue</a></li>
-  <li><a href="#using-on-a-cpu-instead-of-a-gpu" id="toc-using-on-a-cpu-instead-of-a-gpu" class="nav-link" data-scroll-target="#using-on-a-cpu-instead-of-a-gpu">- Using on a CPU instead of a GPU</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#nlp" id="toc-nlp" class="nav-link" data-scroll-target="#nlp">NLP</a></li>
+  </ul></li>
+  <li><a href="#what-is-below" id="toc-what-is-below" class="nav-link" data-scroll-target="#what-is-below">What is below</a></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a>
+  <ul class="collapse">
+  <li><a href="#get-some-text-to-act-as-a-style" id="toc-get-some-text-to-act-as-a-style" class="nav-link" data-scroll-target="#get-some-text-to-act-as-a-style">Get some text to act as a style</a></li>
+  <li><a href="#language-model-using-datablock" id="toc-language-model-using-datablock" class="nav-link" data-scroll-target="#language-model-using-datablock">Language model using DataBlock</a></li>
+  <li><a href="#create-model-and-run" id="toc-create-model-and-run" class="nav-link" data-scroll-target="#create-model-and-run">Create model and Run</a></li>
+  </ul></li>
+  <li><a href="#model-text-generation" id="toc-model-text-generation" class="nav-link" data-scroll-target="#model-text-generation">Model Text Generation</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -496,34 +505,153 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="modifications-to-code-for-separating-swing-video" class="level2">
-<h2 class="anchored" data-anchor-id="modifications-to-code-for-separating-swing-video">Modifications to code for separating swing video</h2>
-<section id="imported-files-are-not-saved-to-a-location" class="level3">
-<h3 class="anchored" data-anchor-id="imported-files-are-not-saved-to-a-location">- Imported files are not saved to a location</h3>
-<p>This means can’t pass ‘path’ when creating the Dataset. So that line is removed from the <code>__init__</code></p>
-<p>In theory the video could then be loaded with <code>cap = cv2.VideoCapture(self)</code> but this doesn’t work as openCV requires a file. So a get around for this is create a temp file https://discuss.streamlit.io/t/how-to-access-uploaded-video-in-streamlit-by-open-cv/5831/4</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> st.file_uploader(<span class="st">"Upload file"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tfile <span class="op">=</span> tempfile.NamedTemporaryFile(delete<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>tfile.write(f.read())</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>vf <span class="op">=</span> cv.VideoCapture(tfile.name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For the same reason the image files are not saved as a file</p>
+<section id="using-nlp-for-text-generation" class="level1">
+<h1>Using NLP for text generation</h1>
+<blockquote class="blockquote">
+<p>Using FastAI to build a NLP text generator</p>
+</blockquote>
+<ul>
+<li>toc: true</li>
+<li>badges: true</li>
+<li>comments: true</li>
+<li>categories: [NLP, Neural networks,FastAI, Python]</li>
+</ul>
+<p><img src="ghtop_images/header2.png" class="img-fluid"></p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="nlp" class="level3">
+<h3 class="anchored" data-anchor-id="nlp">NLP</h3>
+<p>NLP, or natural language processing, is a machine learning priocess used on language data. Some applications include:</p>
+<ol type="1">
+<li>search, ranking</li>
+<li>spam detection</li>
+<li>ads recommendation</li>
+<li>email categorization</li>
+<li>machine translation</li>
+<li>speech recognition</li>
+<li>Sentiment analysis</li>
+</ol>
+<p>From <code>FastAI FastBooks</code>:</p>
+<pre><code>What we call a language model is a model that has been trained to guess what the next word in a text is (having read the ones before). This kind of task is called self-supervised learning: we do not need to give labels to our model, just feed it lots and lots of texts. It has a process to automatically get labels from the data, and this task isn't trivial: to properly guess the next word in a sentence, the model will have to develop an understanding of the English (or other) language
+
+Even if our language model knows the basics of the language we are using in the task (e.g., our pretrained model is in English), it helps to get used to the style of the corpus we are targeting. It may be more informal language, or more technical, with new words to learn or different ways of composing sentences. In the case of the IMDb dataset, there will be lots of names of movie directors and actors, and often a less formal style of language than that seen in Wikipedia.
+
+We already saw that with fastai, we can download a pretrained English language model and use it to get state-of-the-art results for NLP classification. </code></pre>
 </section>
-<section id="video-load-issue" class="level3">
-<h3 class="anchored" data-anchor-id="video-load-issue">- Video load issue</h3>
-<p>If the video is loaded a second time <code>ret, img = cv2.VideoCapture</code> there are problems receieving the video i.e.&nbsp;<code>ret=False</code>.</p>
-<p>A get around used was to copy the imported file</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>uploaded_filesCOPY <span class="op">=</span> copy.copy( uploaded_files )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="using-on-a-cpu-instead-of-a-gpu" class="level3">
-<h3 class="anchored" data-anchor-id="using-on-a-cpu-instead-of-a-gpu">- Using on a CPU instead of a GPU</h3>
-<p>The code needed modifying slightly to allow it to work using a CPU. Although it does have the following line, a few more changes were needed</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> torch.device(<span class="st">'cuda'</span> <span class="cf">if</span> torch.cuda.is_available() <span class="cf">else</span> <span class="st">'cpu'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Adding a description in the loads</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>torch.load(<span class="st">'mobilenet_v2.pth.tar'</span>,map_location<span class="op">=</span>torch.device(<span class="st">'cpu'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Removing the cdu() part at end of e.g.&nbsp;variables</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Variable(torch.zeros(<span class="dv">2</span><span class="op">*</span><span class="va">self</span>.lstm_layers, batch_size, <span class="va">self</span>.lstm_hidden).cuda()</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># to     </span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>Variable(torch.zeros(<span class="dv">2</span><span class="op">*</span><span class="va">self</span>.lstm_layers, batch_size, <span class="va">self</span>.lstm_hidden)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="what-is-below" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-below">What is below</h2>
+<p>Here I’ll use the IMDB dataset and train it on the works of Shakespeare to generate text in the style of his work given a starting few words.</p>
+<p>Uses fastAI, modified from “10_nlp.ipynb” in fastAI/fastbook</p>
+<p>https://colab.research.google.com/drive/11JRjYu7XsmSzo3IT8oH2KNf-e-v6W5tf?usp=sharing</p>
+</section>
+<section id="code" class="level2">
+<h2 class="anchored" data-anchor-id="code">Code</h2>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Some imports</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install <span class="op">-</span>Uqq fastbook</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> fastbook</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>fastbook.setup_book()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastbook <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display,HTML</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.text.<span class="bu">all</span> <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="get-some-text-to-act-as-a-style" class="level3">
+<h3 class="anchored" data-anchor-id="get-some-text-to-act-as-a-style">Get some text to act as a style</h3>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A URL containing the works of Shakespeare</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>url<span class="op">=</span><span class="st">'https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt'</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Going to put in a folder called BARD which we create</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>dest<span class="op">=</span><span class="st">'BARD'</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>os.mkdir(dest)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># get the text from the url and put as data</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> response.text</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># reduce data to miss start and end guff</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>xstart<span class="op">=</span><span class="dv">10450</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>xend<span class="op">=</span><span class="dv">580</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> data[xstart:<span class="op">-</span>xend]</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># create a text file every 1000</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co"># use format number_0.txt seems to work best for DataBlock</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>rr<span class="op">=</span><span class="bu">int</span>(<span class="bu">len</span>(data)<span class="op">/</span><span class="dv">1000</span>)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(rr):</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(dest <span class="op">+</span> <span class="st">'/</span><span class="sc">{}</span><span class="st">_0.txt'</span>.<span class="bu">format</span>(<span class="bu">str</span>(i)),<span class="st">'w'</span>) <span class="im">as</span> f:</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        f.writelines(data[ (i<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span><span class="dv">1000</span>:i<span class="op">*</span><span class="dv">1000</span> ])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="language-model-using-datablock" class="level3">
+<h3 class="anchored" data-anchor-id="language-model-using-datablock">Language model using DataBlock</h3>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create path</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>path<span class="op">=</span>Path()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># get's the text parts- will just come from folder dest </span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># where the text files are saved</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>get_shak <span class="op">=</span> partial(get_text_files,folders<span class="op">=</span>dest)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Craete a dataBlock- using the Class of TextBlock and the classes </span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># in-built function from folder</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>dbb <span class="op">=</span> DataBlock(</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    blocks<span class="op">=</span>TextBlock.from_folder(path, is_lm<span class="op">=</span><span class="va">True</span>),</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    get_items<span class="op">=</span>get_shak, splitter<span class="op">=</span>RandomSplitter(<span class="fl">0.1</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Now create the dataLoaders</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span>dbb.dataloaders(path, path<span class="op">=</span>path, bs<span class="op">=</span><span class="dv">128</span>, seq_len<span class="op">=</span><span class="dv">80</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Have a look at the batches</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>dls.show_batch(max_n<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="ghtop_images/bard.png" class="img-fluid"></p>
+</section>
+<section id="create-model-and-run" class="level3">
+<h3 class="anchored" data-anchor-id="create-model-and-run">Create model and Run</h3>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> language_model_learner(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    dls, AWD_LSTM, drop_mult<span class="op">=</span><span class="fl">0.3</span>, </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    metrics<span class="op">=</span>[accuracy, Perplexity()]).to_fp16()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>learn.fit_one_cycle(<span class="dv">1</span>, <span class="fl">2e-2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="ghtop_images/bard2.png" class="img-fluid"></p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>learn.unfreeze()</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>learn.fit_one_cycle(<span class="dv">10</span>, <span class="fl">2e-3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img src="ghtop_images/bard3.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="model-text-generation" class="level2">
+<h2 class="anchored" data-anchor-id="model-text-generation">Model Text Generation</h2>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>TEXT <span class="op">=</span> <span class="st">"Hi Romeo how are you?"</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>N_WORDS <span class="op">=</span> <span class="dv">40</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>N_SENTENCES <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>preds <span class="op">=</span> [learn.predict(TEXT, N_WORDS, temperature<span class="op">=</span><span class="fl">0.75</span>) </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>         <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(N_SENTENCES)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>.join(preds))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>“Cannot get rid of this spot” 30 words, 2 sentences</p>
+<pre><code>Can not get rid of this spot ? No ; I 'll set a foot to Caesar . If i can tell you , Triumvirate , that know the heads of
+
+Can not get rid of this spot ? When one sees England here , he next is sure to be sent for . If i be not , my King , you must</code></pre>
+<p>“Hi Romeo how are you?” 60words 2sent. 0.75temp.</p>
+<pre><code>Hi Romeo how are you ? What 's your will ? My heart is split . What , my soul ! My body 's as cold as wax ; my heart is now as a nail in my heart ; thou shalt see Romeo set a crown on't ! Come , and that ring i gave him , the ring</code></pre>
+<p>“Where shall i go for my holiday?”</p>
+<pre><code>Where shall i go for my holiday ? Am i to France ? Are you English ? Are you a Spanish man ? [ aside ] i know not what ; nor no other man but this . [ they speak ] If i speak , i am going .</code></pre>
+<p>“Poor me , poor me , poor me another drink”</p>
+<pre><code>Poor me , poor me , poor me another drink , I 'll burn out King Lear 's grave . Thou art too dear to me ; i am perfect i am least of all . I 'll go live i ' th ' middle , and there will i not live in this .</code></pre>
 
 
 </section>

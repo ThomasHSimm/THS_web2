@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ThomasHSimm – golfswingpart4</title>
+<title>ThomasHSimm – imbedding-python-web</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -124,6 +124,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -243,12 +247,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">GolfSwing</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">GolfSwing</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/GolfSwing/GolfPos1FastAI.html" class="sidebar-item-text sidebar-link">Body position recognition using FastAI</a>
@@ -266,7 +270,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/GolfSwing/GolfSwingPart4.html" class="sidebar-item-text sidebar-link active">Modifications to code for separating swing video</a>
+  <a href="../../posts/GolfSwing/GolfSwingPart4.html" class="sidebar-item-text sidebar-link">Modifications to code for separating swing video</a>
   </div>
 </li>
       </ul>
@@ -338,12 +342,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">Others Python</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">Others Python</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/others_python/AWS.html" class="sidebar-item-text sidebar-link">AWS Cheat sheet</a>
@@ -376,7 +380,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/others_python/Imbedding-Python-Web.html" class="sidebar-item-text sidebar-link">Python Imbedding Web</a>
+  <a href="../../posts/others_python/Imbedding-Python-Web.html" class="sidebar-item-text sidebar-link active">Python Imbedding Web</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -482,11 +486,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#modifications-to-code-for-separating-swing-video" id="toc-modifications-to-code-for-separating-swing-video" class="nav-link active" data-scroll-target="#modifications-to-code-for-separating-swing-video">Modifications to code for separating swing video</a>
+  <li><a href="#python-imbedding-web" id="toc-python-imbedding-web" class="nav-link active" data-scroll-target="#python-imbedding-web">Python Imbedding Web</a>
   <ul class="collapse">
-  <li><a href="#imported-files-are-not-saved-to-a-location" id="toc-imported-files-are-not-saved-to-a-location" class="nav-link" data-scroll-target="#imported-files-are-not-saved-to-a-location">- Imported files are not saved to a location</a></li>
-  <li><a href="#video-load-issue" id="toc-video-load-issue" class="nav-link" data-scroll-target="#video-load-issue">- Video load issue</a></li>
-  <li><a href="#using-on-a-cpu-instead-of-a-gpu" id="toc-using-on-a-cpu-instead-of-a-gpu" class="nav-link" data-scroll-target="#using-on-a-cpu-instead-of-a-gpu">- Using on a CPU instead of a GPU</a></li>
+  <li><a href="#ipywidgets" id="toc-ipywidgets" class="nav-link" data-scroll-target="#ipywidgets">Ipywidgets</a></li>
+  <li><a href="#inserting-into-a-website" id="toc-inserting-into-a-website" class="nav-link" data-scroll-target="#inserting-into-a-website">Inserting into a website</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -496,34 +499,192 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="modifications-to-code-for-separating-swing-video" class="level2">
-<h2 class="anchored" data-anchor-id="modifications-to-code-for-separating-swing-video">Modifications to code for separating swing video</h2>
-<section id="imported-files-are-not-saved-to-a-location" class="level3">
-<h3 class="anchored" data-anchor-id="imported-files-are-not-saved-to-a-location">- Imported files are not saved to a location</h3>
-<p>This means can’t pass ‘path’ when creating the Dataset. So that line is removed from the <code>__init__</code></p>
-<p>In theory the video could then be loaded with <code>cap = cv2.VideoCapture(self)</code> but this doesn’t work as openCV requires a file. So a get around for this is create a temp file https://discuss.streamlit.io/t/how-to-access-uploaded-video-in-streamlit-by-open-cv/5831/4</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> st.file_uploader(<span class="st">"Upload file"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tfile <span class="op">=</span> tempfile.NamedTemporaryFile(delete<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>tfile.write(f.read())</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>vf <span class="op">=</span> cv.VideoCapture(tfile.name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For the same reason the image files are not saved as a file</p>
+<section id="python-imbedding-web" class="level1">
+<h1>Python Imbedding Web</h1>
+<section id="ipywidgets" class="level2">
+<h2 class="anchored" data-anchor-id="ipywidgets">Ipywidgets</h2>
+<p>https://ipywidgets.readthedocs.io/en/latest/</p>
+<blockquote class="blockquote">
+<p>ipywidgets, also known as jupyter-widgets or simply widgets, are interactive HTML widgets for Jupyter notebooks and the IPython kernel.</p>
+<p>Notebooks come alive when interactive widgets are used. Users gain control of their data and can visualize changes in the data.</p>
+Learning becomes an immersive, fun experience. Researchers can easily see how changing inputs to a model impact the results.
+</blockquote>
+<p>Import</p>
+<div class="cell" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ipywidgets <span class="im">as</span> widgets</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>A slider</p>
+<div class="cell" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>widgets.IntSlider()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"fd540d92eb554b7cb67d5e1fdb68f3a1","version_major":2,"version_minor":0}
+</script>
+</div>
+</div>
+<p>Change the details of the slider</p>
+<div class="cell" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>widgets.IntSlider(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    value<span class="op">=</span><span class="dv">7</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">min</span><span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">max</span><span class="op">=</span><span class="dv">10</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    step<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    description<span class="op">=</span><span class="st">'Test:'</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    disabled<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    continuous_update<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    orientation<span class="op">=</span><span class="st">'horizontal'</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    readout<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    readout_format<span class="op">=</span><span class="st">'d'</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"a20dbb25447241f488809e8006847702","version_major":2,"version_minor":0}
+</script>
+</div>
+</div>
+<p>Get the value</p>
+<div class="cell" data-execution_count="55">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>widgets.IntSlider()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The value is </span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(<span class="bu">str</span>(x.value)))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The value is 0</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"f3853ec98f4f41d2bf9b1d87d433cc37","version_major":2,"version_minor":0}
+</script>
+</div>
+</div>
+<p>A different way with interact</p>
+<div class="cell" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#import the interact part</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipywidgets <span class="im">import</span> interact</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#some function we want to call</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">*</span> x <span class="op">*</span><span class="dv">2</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#the new widget slider</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>interact(square, x<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"7e5df256070a42feaffb78f3c938f527","version_major":2,"version_minor":0}
+</script>
+</div>
+</div>
+<p>A text box</p>
+<div class="cell" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>widgets.Text(value<span class="op">=</span><span class="st">'Hello World!'</span>, disabled<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"7dc047734d6649eb98ca3cee0ca0e209","version_major":2,"version_minor":0}
+</script>
+</div>
+</div>
+<p>A toggle button</p>
+<div class="cell" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>widgets.ToggleButton(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    value<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    description<span class="op">=</span><span class="st">'Click me'</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    disabled<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    button_style<span class="op">=</span><span class="st">''</span>, <span class="co"># 'success', 'info', 'warning', 'danger' or ''</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    tooltip<span class="op">=</span><span class="st">'Description'</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    icon<span class="op">=</span><span class="st">'check'</span> <span class="co"># (FontAwesome names without the `fa-` prefix)</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"b8eccac48b3145b9be334b2ea34085ac","version_major":2,"version_minor":0}
+</script>
+</div>
+</div>
+<p>A dropdown menu</p>
+<div class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>widgets.Dropdown(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    options<span class="op">=</span>[<span class="st">'1'</span>, <span class="st">'2'</span>, <span class="st">'3'</span>],</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    value<span class="op">=</span><span class="st">'2'</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    description<span class="op">=</span><span class="st">'Number:'</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    disabled<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"fd25d5ed8de74ba8b637b073b0680bdc","version_major":2,"version_minor":0}
+</script>
+</div>
+</div>
+<p>A radiobutton with a label in a box</p>
+<div class="cell" data-execution_count="60">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>widgets.Box(</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    [</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        widgets.Label(value<span class="op">=</span><span class="st">'Pizza topping with a very long label:'</span>),</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        widgets.RadioButtons(</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>            options<span class="op">=</span>[</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                <span class="st">'pepperoni'</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                <span class="st">'pineapple'</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>                <span class="st">'anchovies'</span>,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>                <span class="st">'and the long name that will fit fine and the long name that will fit fine and the long name that will fit fine '</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>            ],</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>            layout<span class="op">=</span>{<span class="st">'width'</span>: <span class="st">'max-content'</span>}</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"245c6b96e9e44ed9a0fd38d88d6c1579","version_major":2,"version_minor":0}
+</script>
+</div>
+</div>
+<p>Some html</p>
+<div class="cell" data-execution_count="61">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>widgets.HTMLMath(</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    value<span class="op">=</span><span class="vs">r"Some math and &lt;i&gt;HTML&lt;/i&gt;: \(x^2\) and $$\frac{x+1}{x-1}$$"</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    placeholder<span class="op">=</span><span class="st">'Some HTML'</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    description<span class="op">=</span><span class="st">'Some HTML'</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"5aaa0a610fee4cc3823fbd017687fd35","version_major":2,"version_minor":0}
+</script>
+</div>
+</div>
+<p>Accordion, with slider and textbox</p>
+<div class="cell" data-execution_count="62">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>accordion <span class="op">=</span> widgets.Accordion(children<span class="op">=</span>[widgets.IntSlider(), widgets.Text()], titles<span class="op">=</span>(<span class="st">'Slider'</span>, <span class="st">'Text'</span>))</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>accordion</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"12a47a31fc38449e9fede4eea2cd7376","version_major":2,"version_minor":0}
+</script>
+</div>
+</div>
+<p>multiple sliders</p>
+<div class="cell" data-execution_count="63">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> widgets.IntSlider(description<span class="op">=</span><span class="st">'a'</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> widgets.IntSlider(description<span class="op">=</span><span class="st">'b'</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> widgets.IntSlider(description<span class="op">=</span><span class="st">'c'</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(a, b, c):</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'</span><span class="sc">{}</span><span class="st">*</span><span class="sc">{}</span><span class="st">*</span><span class="sc">{}</span><span class="st">=</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(a, b, c, a<span class="op">*</span>b<span class="op">*</span>c))</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>out <span class="op">=</span> widgets.interactive_output(f, {<span class="st">'a'</span>: a, <span class="st">'b'</span>: b, <span class="st">'c'</span>: c})</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>widgets.HBox([widgets.VBox([a, b, c]), out])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"06f9fa1cbb904affb12fd080cfde4fc1","version_major":2,"version_minor":0}
+</script>
+</div>
+</div>
 </section>
-<section id="video-load-issue" class="level3">
-<h3 class="anchored" data-anchor-id="video-load-issue">- Video load issue</h3>
-<p>If the video is loaded a second time <code>ret, img = cv2.VideoCapture</code> there are problems receieving the video i.e.&nbsp;<code>ret=False</code>.</p>
-<p>A get around used was to copy the imported file</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>uploaded_filesCOPY <span class="op">=</span> copy.copy( uploaded_files )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="using-on-a-cpu-instead-of-a-gpu" class="level3">
-<h3 class="anchored" data-anchor-id="using-on-a-cpu-instead-of-a-gpu">- Using on a CPU instead of a GPU</h3>
-<p>The code needed modifying slightly to allow it to work using a CPU. Although it does have the following line, a few more changes were needed</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> torch.device(<span class="st">'cuda'</span> <span class="cf">if</span> torch.cuda.is_available() <span class="cf">else</span> <span class="st">'cpu'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Adding a description in the loads</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>torch.load(<span class="st">'mobilenet_v2.pth.tar'</span>,map_location<span class="op">=</span>torch.device(<span class="st">'cpu'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Removing the cdu() part at end of e.g.&nbsp;variables</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Variable(torch.zeros(<span class="dv">2</span><span class="op">*</span><span class="va">self</span>.lstm_layers, batch_size, <span class="va">self</span>.lstm_hidden).cuda()</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># to     </span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>Variable(torch.zeros(<span class="dv">2</span><span class="op">*</span><span class="va">self</span>.lstm_layers, batch_size, <span class="va">self</span>.lstm_hidden)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="inserting-into-a-website" class="level2">
+<h2 class="anchored" data-anchor-id="inserting-into-a-website">Inserting into a website</h2>
+<p>After installing nbinteract a html file of a python notebook can be created</p>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>nbinteract Quick_ipyWidget.ipynb <span class="op">-</span>s thomashsimm<span class="op">/</span>TestWdgets<span class="op">/</span>main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<iframe src="https://thomashsimm.github.io/test/tutorial.html" width="700">
+</iframe>
+<iframe src="https://mybinder.org/v2/gh/ThomasHSimm/TestWdgets/HEAD?urlpath=%2Fvoila%2Frender%2FQuick_ipyWidget.ipynb" width="700">
+</iframe>
 
 
 </section>

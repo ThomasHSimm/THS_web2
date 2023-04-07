@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Thomas H. Simm">
 
-<title>ThomasHSimm - TH Simm Python Pages</title>
+<title>ThomasHSimm - Olympics data with SQL and pandas</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +24,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href=".//posts/Picture3.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../..//posts/Picture3.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -74,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">ThomasHSimm</span>
     </a>
   </div>
@@ -84,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page">
+    <a class="nav-link active" href="../../about.html" aria-current="page">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -107,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">TH Simm Python Pages</h1>
+      <h1 class="quarto-secondary-nav-title">Olympics data with SQL and pandas</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -127,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">About</a>
+  <a href="../../about.html" class="sidebar-item-text sidebar-link">About</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -148,32 +149,32 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Communicating_Code/CommCodePres_notebooks.html" class="sidebar-item-text sidebar-link">Communicating code: Notebooks</a>
+  <a href="../../posts/Communicating_Code/CommCodePres_notebooks.html" class="sidebar-item-text sidebar-link">Communicating code: Notebooks</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Communicating_Code/CommCodePres_pres.html" class="sidebar-item-text sidebar-link">Communicating code: Presentations</a>
+  <a href="../../posts/Communicating_Code/CommCodePres_pres.html" class="sidebar-item-text sidebar-link">Communicating code: Presentations</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Communicating_Code/CommCodePres_tables.html" class="sidebar-item-text sidebar-link">Communicating code: Tables</a>
+  <a href="../../posts/Communicating_Code/CommCodePres_tables.html" class="sidebar-item-text sidebar-link">Communicating code: Tables</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Communicating_Code/CommCodePres_html.html" class="sidebar-item-text sidebar-link">Communicating code: Website</a>
+  <a href="../../posts/Communicating_Code/CommCodePres_html.html" class="sidebar-item-text sidebar-link">Communicating code: Website</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Communicating_Code/CommCodePres.html" class="sidebar-item-text sidebar-link">Overview: Communicating code and data</a>
+  <a href="../../posts/Communicating_Code/CommCodePres.html" class="sidebar-item-text sidebar-link">Overview: Communicating code and data</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Communicating_Code/PresentationOfCommunicatingCode.html" class="sidebar-item-text sidebar-link">Presentation: Communicating code and data</a>
+  <a href="../../posts/Communicating_Code/PresentationOfCommunicatingCode.html" class="sidebar-item-text sidebar-link">Presentation: Communicating code and data</a>
   </div>
 </li>
       </ul>
@@ -188,22 +189,22 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/GolfSwing/GolfPos1FastAI.html" class="sidebar-item-text sidebar-link">Body position recognition using FastAI</a>
+  <a href="../../posts/GolfSwing/GolfPos1FastAI.html" class="sidebar-item-text sidebar-link">Body position recognition using FastAI</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/GolfSwing/GolfSwingPart2.html" class="sidebar-item-text sidebar-link">Golf Swing Part II- Separating Swing Positions</a>
+  <a href="../../posts/GolfSwing/GolfSwingPart2.html" class="sidebar-item-text sidebar-link">Golf Swing Part II- Separating Swing Positions</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/GolfSwing/GolfSwingPart3.html" class="sidebar-item-text sidebar-link">Golf Swing Part III- Using pre-trained models- FiftyOne and Streamlit App</a>
+  <a href="../../posts/GolfSwing/GolfSwingPart3.html" class="sidebar-item-text sidebar-link">Golf Swing Part III- Using pre-trained models- FiftyOne and Streamlit App</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/GolfSwing/GolfSwingPart4.html" class="sidebar-item-text sidebar-link">Modifications to code for separating swing video</a>
+  <a href="../../posts/GolfSwing/GolfSwingPart4.html" class="sidebar-item-text sidebar-link">Modifications to code for separating swing video</a>
   </div>
 </li>
       </ul>
@@ -218,57 +219,57 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/NLP stuff/2022-04-25-NLP-Of-TravelTweets.html" class="sidebar-item-text sidebar-link">Natural Language Processing of Travel Tweets</a>
+  <a href="../../posts/NLP stuff/2022-04-25-NLP-Of-TravelTweets.html" class="sidebar-item-text sidebar-link">Natural Language Processing of Travel Tweets</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/NLP stuff/2022-03-15-NLPtextgenerator.html" class="sidebar-item-text sidebar-link">Using NLP for text generation</a>
+  <a href="../../posts/NLP stuff/2022-03-15-NLPtextgenerator.html" class="sidebar-item-text sidebar-link">Using NLP for text generation</a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">Olympics</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">Olympics</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/olympics/OlympicsSQL.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas</a>
+  <a href="../../posts/olympics/OlympicsSQL.html" class="sidebar-item-text sidebar-link active">Olympics data with SQL and pandas</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/olympics/OlympicsSQL_createDFs.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- create the tables</a>
+  <a href="../../posts/olympics/OlympicsSQL_createDFs.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- create the tables</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/olympics/OlympicsSQL_createCountryDF.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- creating a country table</a>
+  <a href="../../posts/olympics/OlympicsSQL_createCountryDF.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- creating a country table</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/olympics/OlympicsSQL_GDPpopulation.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- GDP and population</a>
+  <a href="../../posts/olympics/OlympicsSQL_GDPpopulation.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- GDP and population</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/olympics/OlympicsSQL-HeightWeightAge.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- height weight and age</a>
+  <a href="../../posts/olympics/OlympicsSQL-HeightWeightAge.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- height weight and age</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/olympics/Olympics_HomeEvent.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- home games</a>
+  <a href="../../posts/olympics/Olympics_HomeEvent.html" class="sidebar-item-text sidebar-link">Olympics data with SQL and pandas- home games</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/olympics/OlympicsSQL-Presentation.html" class="sidebar-item-text sidebar-link">Presentation of Olympics data with SQL and pandas</a>
+  <a href="../../posts/olympics/OlympicsSQL-Presentation.html" class="sidebar-item-text sidebar-link">Presentation of Olympics data with SQL and pandas</a>
   </div>
 </li>
       </ul>
@@ -283,72 +284,72 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/others_python/AWS.html" class="sidebar-item-text sidebar-link">AWS Cheat sheet</a>
+  <a href="../../posts/others_python/AWS.html" class="sidebar-item-text sidebar-link">AWS Cheat sheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/others_python/SQL.html" class="sidebar-item-text sidebar-link">Basics SQL</a>
+  <a href="../../posts/others_python/SQL.html" class="sidebar-item-text sidebar-link">Basics SQL</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/others_python/AWS questions.html" class="sidebar-item-text sidebar-link">Chapter 3</a>
+  <a href="../../posts/others_python/AWS questions.html" class="sidebar-item-text sidebar-link">Chapter 3</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/others_python/FastaiCheatSheets.html" class="sidebar-item-text sidebar-link">FastAI CheatSheet</a>
+  <a href="../../posts/others_python/FastaiCheatSheets.html" class="sidebar-item-text sidebar-link">FastAI CheatSheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/others_python/Git-and-Github.html" class="sidebar-item-text sidebar-link">Git and Github</a>
+  <a href="../../posts/others_python/Git-and-Github.html" class="sidebar-item-text sidebar-link">Git and Github</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/others_python/PythonBasics.html" class="sidebar-item-text sidebar-link">Python Basics</a>
+  <a href="../../posts/others_python/PythonBasics.html" class="sidebar-item-text sidebar-link">Python Basics</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/others_python/Imbedding-Python-Web.html" class="sidebar-item-text sidebar-link">Python Imbedding Web</a>
+  <a href="../../posts/others_python/Imbedding-Python-Web.html" class="sidebar-item-text sidebar-link">Python Imbedding Web</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/others_python/Regular-Expressions.html" class="sidebar-item-text sidebar-link">Regular expressions RE</a>
+  <a href="../../posts/others_python/Regular-Expressions.html" class="sidebar-item-text sidebar-link">Regular expressions RE</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/others_python/PythonBook.html" class="sidebar-item-text sidebar-link">Some Python Basics</a>
+  <a href="../../posts/others_python/PythonBook.html" class="sidebar-item-text sidebar-link">Some Python Basics</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/others_python/speechRecog.html" class="sidebar-item-text sidebar-link">Speech recognition</a>
+  <a href="../../posts/others_python/speechRecog.html" class="sidebar-item-text sidebar-link">Speech recognition</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/others_python/OS.html" class="sidebar-item-text sidebar-link">The operating system</a>
+  <a href="../../posts/others_python/OS.html" class="sidebar-item-text sidebar-link">The operating system</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/others_python/Tweepy.html" class="sidebar-item-text sidebar-link">Tweepy</a>
+  <a href="../../posts/others_python/Tweepy.html" class="sidebar-item-text sidebar-link">Tweepy</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/others_python/WebScraping.html" class="sidebar-item-text sidebar-link">Web scraping</a>
+  <a href="../../posts/others_python/WebScraping.html" class="sidebar-item-text sidebar-link">Web scraping</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/others_python/WorkingWithVideos.html" class="sidebar-item-text sidebar-link">Working with videos</a>
+  <a href="../../posts/others_python/WorkingWithVideos.html" class="sidebar-item-text sidebar-link">Working with videos</a>
   </div>
 </li>
       </ul>
@@ -363,12 +364,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/swansea_property/SwanseaHousePriceApp.html" class="sidebar-item-text sidebar-link">Creating a property prediction App</a>
+  <a href="../../posts/swansea_property/SwanseaHousePriceApp.html" class="sidebar-item-text sidebar-link">Creating a property prediction App</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/swansea_property/SwanseaHousePrices_Part2.html" class="sidebar-item-text sidebar-link">Swansea House Prices- Part 2</a>
+  <a href="../../posts/swansea_property/SwanseaHousePrices_Part2.html" class="sidebar-item-text sidebar-link">Swansea House Prices- Part 2</a>
   </div>
 </li>
       </ul>
@@ -383,27 +384,27 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/tensorflow/2022-09-28-Tensorflow.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet</a>
+  <a href="../../posts/tensorflow/2022-09-28-Tensorflow.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/tensorflow/2022-10-07-Tensorflow-2.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet 2</a>
+  <a href="../../posts/tensorflow/2022-10-07-Tensorflow-2.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet 2</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/tensorflow/2022-10-10-Tensorflow-Images.html" class="sidebar-item-text sidebar-link">TensorFlow Images cheat sheet</a>
+  <a href="../../posts/tensorflow/2022-10-10-Tensorflow-Images.html" class="sidebar-item-text sidebar-link">TensorFlow Images cheat sheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html" class="sidebar-item-text sidebar-link">TensorFlow Low-Level cheat sheet</a>
+  <a href="../../posts/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html" class="sidebar-item-text sidebar-link">TensorFlow Low-Level cheat sheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/tensorflow/2022-10-10-Tensorflow-NLP.html" class="sidebar-item-text sidebar-link">TensorFlow NLP cheat sheet</a>
+  <a href="../../posts/tensorflow/2022-10-10-Tensorflow-NLP.html" class="sidebar-item-text sidebar-link">TensorFlow NLP cheat sheet</a>
   </div>
 </li>
       </ul>
@@ -419,8 +420,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#communicating-code-and-data" id="toc-communicating-code-and-data" class="nav-link active" data-scroll-target="#communicating-code-and-data">Communicating code and data</a></li>
-  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#the-data" id="toc-the-data" class="nav-link" data-scroll-target="#the-data">The Data</a></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a>
+  <ul class="collapse">
+  <li><a href="#athlete-analysis" id="toc-athlete-analysis" class="nav-link" data-scroll-target="#athlete-analysis">Athlete Analysis</a></li>
+  <li><a href="#nation-analysis" id="toc-nation-analysis" class="nav-link" data-scroll-target="#nation-analysis">Nation Analysis</a></li>
+  <li><a href="#games-analysis" id="toc-games-analysis" class="nav-link" data-scroll-target="#games-analysis">Games Analysis</a></li>
+  </ul></li>
+  <li><a href="#presentation" id="toc-presentation" class="nav-link" data-scroll-target="#presentation">Presentation</a>
+  <ul class="collapse">
+  <li><a href="#why" id="toc-why" class="nav-link" data-scroll-target="#why">Why</a></li>
+  <li><a href="#what-how" id="toc-what-how" class="nav-link" data-scroll-target="#what-how">What / How</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -429,13 +441,20 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">TH Simm Python Pages</h1>
+<h1 class="title d-none d-lg-block">Olympics data with SQL and pandas</h1>
+<p class="subtitle lead">Using SQL and Pandas to understad Olympic data</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Thomas H. Simm </p>
+          </div>
+  </div>
     
   
     
@@ -443,18 +462,76 @@ ul.task-list li input[type="checkbox"] {
   
 
 </header>
-<p><img src="./posts/header2.png" height="200"></p>
-<section id="communicating-code-and-data" class="level2">
-<h2 class="anchored" data-anchor-id="communicating-code-and-data">Communicating code and data</h2>
-<ul>
-<li><a href="https://thomashsimm.quarto.pub/thomashsimm/posts/Communicating_Code/PresentationOfCommunicatingCode.html#/title-slide">Presentation</a></li>
-</ul>
+<p><img src="../../posts/header2.png" height="200"></p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This project looks to understand the changing nature of the Olympics and how it reflects changes in athletes, sporting activities, and global politics. The Olympic Games are considered the world’s foremost sports competition with more than 200 nations participating [1,2], and in Tokyo in 2020 there was a broadcast audience of more than 3 billion with estimates of 3 out of 4 people following the Olympics [3].</p>
+<p>Since it’s inception over 100 years ago many changes have occured. In global politics countries have split and unified, populations have changed and the power distribution across nations fluctuated. In society there have been changes in the rights and roles of women. Finally, in sport there has been a move from amateur atheletes to professionalism and a change in the popularity of different sports.</p>
+<p>Due to it’s global importance, the question this work looks to answer is if data on the Olympics reflect the changes that have occured in the world.</p>
+<p>1.<a href="https://www.britannica.com/EBchecked/topic/428005/Olympic-Games">“Overview of Olympic Games”. Encyclopaedia Britannica. Retrieved 4 June 2008</a></p>
+<p>2.<a href="https://en.wikipedia.org/wiki/Olympic_Games">Olympic Games- Wikipedia</a></p>
+<p>3.<a href="https://stillmed.olympics.com/media/Documents/International-Olympic-Committee/IOC-Marketing-And-Broadcasting/Tokyo-2020-External-Communications.pdf">Tokyo 2020 audience &amp; insights report December 2021</a></p>
 </section>
-<section id="links" class="level2">
-<h2 class="anchored" data-anchor-id="links">Links</h2>
-<p>Website built with Quarto visit for more info <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
+<section id="the-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-data">The Data</h2>
+<p>The most important part of any analysis is the data. In <a href="https://thomashsimm.com/sql/pandas/python/olympics/2022/07/29/OlympicsSQL_createDFs.html">Olympics data with SQL and pandas- create the tables</a> I present the data to be analysed and do some initial processing.</p>
+<p>The main thing here is to seperate the data into useable tables for analysis, as summarised in the entity relationship diagram (ERD) below.</p>
+<p><img src="ghtop_images/SportTree.png" class="img-fluid"></p>
+</section>
+<section id="analysis" class="level2">
+<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<p>Based on a brief analysis of the data three broad questions to be investigated were posed:</p>
+<ol type="1">
+<li>What are the characteristics of athletes? How does this change with time, and can it be linked with societal or global changes?</li>
+<li>What countries do better at the Olympics? Is there a way to quantify this?</li>
+<li>What is the influence of a games being a home event?</li>
+</ol>
+<p>In the following parts these are explore in more detail.</p>
+<section id="athlete-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="athlete-analysis">Athlete Analysis</h3>
+<p>I did some initial plots on the changes in the characteristics of athletes given in the data, <code>height</code>, <code>weight</code> and <code>age</code>, of athletes attending the Olympics by year (see below).</p>
+<p>From these plots I was really intrigued as to what may be the cause of these changes.</p>
+<p>Mainly what was happening between 1960 and 1980 were there seemed to be changes in each of the parameters?</p>
+<p>My initial thought was this could be related to some combination of - a switch from amateurs to professionals - the Cold War between USA and USSR - an after effect of WWII</p>
+<p><a href="https://thomashsimm.com/sql/athletes/pandas/python/olympics/2022/07/20/OlympicsSQL-HeightWeightAge.html">Olympics data with SQL and pandas- height weight and age</a></p>
+</section>
+<section id="nation-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="nation-analysis">Nation Analysis</h3>
+<p>Due to the global importance of the Olympics, in 2020 there was a broadcast audience of more than 3 billion, I was interested to explore whether countries with the most medals will reflect global politics. And to see if the countries with most influence get more medals.</p>
+<p><a href="https://thomashsimm.com/sql/pandas/python/olympics/2022/07/29/OlympicsSQL_GDPpopulation.html">Olympics data with SQL and pandas- GDP and population</a></p>
+</section>
+<section id="games-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="games-analysis">Games Analysis</h3>
+<p>In this part the hypothesis considered is:</p>
+<pre><code>At a home Olympic games a nation will on average obtain more medals than at other games</code></pre>
+<ul>
+<li>But can we quantify this effect?</li>
+<li>Are there any residual effects before and after the games?</li>
+<li>What about a home continent games?</li>
+</ul>
+<p><a href="https://thomashsimm.com/sql/pandas/python/olympics/2022/07/29/Olympics_HomeEvent.html">Olympics data with SQL and pandas- home games</a></p>
+</section>
+</section>
+<section id="presentation" class="level2">
+<h2 class="anchored" data-anchor-id="presentation">Presentation</h2>
+<p>To present this data in a unified form the following presentation was produced.</p>
+<p>This is a hypothetical presentation:</p>
+<section id="who" class="level4">
+<h4 class="anchored" data-anchor-id="who">Who</h4>
+<p>The audience is a fictional research group at Swansea University (UK) called the Sports History Group.</p>
+<p>This group is a cross-departmental, working across the History and Sports Science department. The group consists of two lecturers (one in each department), three post doctoral researchers, five PhD students and three Masters students.</p>
+</section>
+<section id="why" class="level3">
+<h3 class="anchored" data-anchor-id="why">Why</h3>
+<p>The work I am presenting has overlap with several of the reserachers/students.</p>
+<p>The main goal is a scoping exercise with one of the post doctoral researchers and the two lecturers who have identified a grant proposal. The Olympics commitee have put out a grant application. The aim of this is to produce a report on the influence the Olympics has had on Geo-Politics and on Athletes and Sport in general. With guidance on what the Olympics can do in the future to maintain and enhance its globally importance, and how it can positively impact Olympic athletes.</p>
+</section>
+<section id="what-how" class="level3">
+<h3 class="anchored" data-anchor-id="what-how">What / How</h3>
+<p>More details are in the <a href="https://thomashsimm.com/presentation/sql/pandas/python/olympics/2022/07/31/OlympicsSQL-Presentation.html">presentation</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ThomasHSimm – golfswingpart4</title>
+<title>ThomasHSimm – speechrecog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -243,12 +243,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">GolfSwing</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">GolfSwing</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/GolfSwing/GolfPos1FastAI.html" class="sidebar-item-text sidebar-link">Body position recognition using FastAI</a>
@@ -266,7 +266,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/GolfSwing/GolfSwingPart4.html" class="sidebar-item-text sidebar-link active">Modifications to code for separating swing video</a>
+  <a href="../../posts/GolfSwing/GolfSwingPart4.html" class="sidebar-item-text sidebar-link">Modifications to code for separating swing video</a>
   </div>
 </li>
       </ul>
@@ -338,12 +338,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">Others Python</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">Others Python</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/others_python/AWS.html" class="sidebar-item-text sidebar-link">AWS Cheat sheet</a>
@@ -391,7 +391,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/others_python/speechRecog.html" class="sidebar-item-text sidebar-link">Speech recognition</a>
+  <a href="../../posts/others_python/speechRecog.html" class="sidebar-item-text sidebar-link active">Speech recognition</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -482,11 +482,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#modifications-to-code-for-separating-swing-video" id="toc-modifications-to-code-for-separating-swing-video" class="nav-link active" data-scroll-target="#modifications-to-code-for-separating-swing-video">Modifications to code for separating swing video</a>
+  <li><a href="#speech-recognition" id="toc-speech-recognition" class="nav-link active" data-scroll-target="#speech-recognition">Speech recognition</a>
   <ul class="collapse">
-  <li><a href="#imported-files-are-not-saved-to-a-location" id="toc-imported-files-are-not-saved-to-a-location" class="nav-link" data-scroll-target="#imported-files-are-not-saved-to-a-location">- Imported files are not saved to a location</a></li>
-  <li><a href="#video-load-issue" id="toc-video-load-issue" class="nav-link" data-scroll-target="#video-load-issue">- Video load issue</a></li>
-  <li><a href="#using-on-a-cpu-instead-of-a-gpu" id="toc-using-on-a-cpu-instead-of-a-gpu" class="nav-link" data-scroll-target="#using-on-a-cpu-instead-of-a-gpu">- Using on a CPU instead of a GPU</a></li>
+  <li><a href="#resources-sources" id="toc-resources-sources" class="nav-link" data-scroll-target="#resources-sources">Resources / Sources</a></li>
+  <li><a href="#installs" id="toc-installs" class="nav-link" data-scroll-target="#installs">Installs</a></li>
+  <li><a href="#create-a-recording" id="toc-create-a-recording" class="nav-link" data-scroll-target="#create-a-recording">Create a recording</a></li>
+  <li><a href="#convert-audio-to-text" id="toc-convert-audio-to-text" class="nav-link" data-scroll-target="#convert-audio-to-text">Convert Audio to text</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -496,34 +497,94 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="modifications-to-code-for-separating-swing-video" class="level2">
-<h2 class="anchored" data-anchor-id="modifications-to-code-for-separating-swing-video">Modifications to code for separating swing video</h2>
-<section id="imported-files-are-not-saved-to-a-location" class="level3">
-<h3 class="anchored" data-anchor-id="imported-files-are-not-saved-to-a-location">- Imported files are not saved to a location</h3>
-<p>This means can’t pass ‘path’ when creating the Dataset. So that line is removed from the <code>__init__</code></p>
-<p>In theory the video could then be loaded with <code>cap = cv2.VideoCapture(self)</code> but this doesn’t work as openCV requires a file. So a get around for this is create a temp file https://discuss.streamlit.io/t/how-to-access-uploaded-video-in-streamlit-by-open-cv/5831/4</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> st.file_uploader(<span class="st">"Upload file"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tfile <span class="op">=</span> tempfile.NamedTemporaryFile(delete<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>tfile.write(f.read())</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>vf <span class="op">=</span> cv.VideoCapture(tfile.name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For the same reason the image files are not saved as a file</p>
+<section id="speech-recognition" class="level1">
+<h1>Speech recognition</h1>
+<blockquote class="blockquote">
+<p>Converting audio speech to text</p>
+</blockquote>
+<ul>
+<li>toc: true</li>
+<li>badges: true</li>
+<li>comments: true</li>
+<li>categories: [NLP, speech_recognition, Python]</li>
+</ul>
+<p><img src="ghtop_images/header2.png" class="img-fluid"></p>
+<section id="resources-sources" class="level2">
+<h2 class="anchored" data-anchor-id="resources-sources">Resources / Sources</h2>
+<ol type="1">
+<li>https://www.thepythoncode.com/article/using-speech-recognition-to-convert-speech-to-text-python</li>
+<li>https://www.geeksforgeeks.org/create-a-voice-recorder-using-python/</li>
+<li>https://stackoverflow.com/questions/52283840/i-cant-install-pyaudio-on-windows-how-to-solve-error-microsoft-visual-c-14</li>
+<li>https://github.com/Uberi/speech_recognition/blob/master/examples/audio_transcribe.py</li>
+</ol>
 </section>
-<section id="video-load-issue" class="level3">
-<h3 class="anchored" data-anchor-id="video-load-issue">- Video load issue</h3>
-<p>If the video is loaded a second time <code>ret, img = cv2.VideoCapture</code> there are problems receieving the video i.e.&nbsp;<code>ret=False</code>.</p>
-<p>A get around used was to copy the imported file</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>uploaded_filesCOPY <span class="op">=</span> copy.copy( uploaded_files )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="installs" class="level2">
+<h2 class="anchored" data-anchor-id="installs">Installs</h2>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install speechrecognition pydub</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip3 install sounddevice</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip3 install wavio</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install scipy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="using-on-a-cpu-instead-of-a-gpu" class="level3">
-<h3 class="anchored" data-anchor-id="using-on-a-cpu-instead-of-a-gpu">- Using on a CPU instead of a GPU</h3>
-<p>The code needed modifying slightly to allow it to work using a CPU. Although it does have the following line, a few more changes were needed</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> torch.device(<span class="st">'cuda'</span> <span class="cf">if</span> torch.cuda.is_available() <span class="cf">else</span> <span class="st">'cpu'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Adding a description in the loads</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>torch.load(<span class="st">'mobilenet_v2.pth.tar'</span>,map_location<span class="op">=</span>torch.device(<span class="st">'cpu'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Removing the cdu() part at end of e.g.&nbsp;variables</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Variable(torch.zeros(<span class="dv">2</span><span class="op">*</span><span class="va">self</span>.lstm_layers, batch_size, <span class="va">self</span>.lstm_hidden).cuda()</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># to     </span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>Variable(torch.zeros(<span class="dv">2</span><span class="op">*</span><span class="va">self</span>.lstm_layers, batch_size, <span class="va">self</span>.lstm_hidden)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="create-a-recording" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-recording">Create a recording</h2>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># import required libraries</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sounddevice <span class="im">as</span> sd</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.io.wavfile <span class="im">import</span> write</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wavio <span class="im">as</span> wv</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Sampling frequency</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>freq <span class="op">=</span> <span class="dv">44100</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Recording duration</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>duration <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Start recorder with the given values </span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># of duration and sample frequency</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>recording <span class="op">=</span> sd.rec(<span class="bu">int</span>(duration <span class="op">*</span> freq), </span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>                   samplerate<span class="op">=</span>freq, channels<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Record audio for the given number of seconds</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>sd.wait()</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># This will convert the NumPy array to an audio</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># file with the given sampling frequency</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># write("recording0.wav", freq, recording)</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the NumPy array to audio file</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>fileo<span class="op">=</span><span class="st">"recording1.wav"</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>wv.write(fileo, recording, freq, sampwidth<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To make it an arbitrary duration</p>
+<p>https://python-sounddevice.readthedocs.io/en/0.3.12/examples.html#recording-with-arbitrary-duration</p>
+</section>
+<section id="convert-audio-to-text" class="level2">
+<h2 class="anchored" data-anchor-id="convert-audio-to-text">Convert Audio to text</h2>
+<div class="cell" data-run_control="{&quot;frozen&quot;:true}" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> speech_recognition <span class="im">as</span> sr</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>AUDIO_FILE <span class="op">=</span> fileo</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> sr.Recognizer()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> sr.AudioFile(AUDIO_FILE) <span class="im">as</span> source:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    audio <span class="op">=</span> r.record(source)  <span class="co"># read the entire audio file</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># we're just using the default API key</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"-&gt;&gt; "</span> <span class="op">+</span> r.recognize_google(audio))</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> sr.UnknownValueError:</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Google Speech Recognition could not understand audio"</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> sr.RequestError <span class="im">as</span> e:</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Could not request results from Google Speech Recognition service; </span><span class="sc">{0}</span><span class="st">"</span>.<span class="bu">format</span>(e))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>-&gt;&gt; I heard you have a compilation of every good song ever done by anybody every great song by The Beach Boys All the underground hits all the modern lovers tracks I heard you have a vinyl record on German imports I heard that you have a white label every cm</code></pre>
+</div>
+</div>
+<p>When reading out <code>Losing My Edge by LCD Soundsystem</code></p>
+<p>I heard you have a compilation of every good song ever done by anybody. Every great song by the Beach Boys. All the underground hits. All the Modern Lovers tracks. I heard you have a vinyl of every Niagra record on German import. I heard that you have a white label of every semina</p>
 
 
 </section>
