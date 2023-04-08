@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Thomas H. Simm">
 
-<title>ThomasHSimm – swanseahousepriceapp</title>
+<title>ThomasHSimm - Creating a property prediction App</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -170,7 +171,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"></h1>
+      <h1 class="quarto-secondary-nav-title">Creating a property prediction App</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -537,9 +538,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#creating-a-property-prediction-app" id="toc-creating-a-property-prediction-app" class="nav-link active" data-scroll-target="#creating-a-property-prediction-app">Creating a property prediction App</a>
-  <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#the-python-script-for-the-app" id="toc-the-python-script-for-the-app" class="nav-link" data-scroll-target="#the-python-script-for-the-app">The Python Script for the App</a>
   <ul class="collapse">
   <li><a href="#loading-the-data" id="toc-loading-the-data" class="nav-link" data-scroll-target="#loading-the-data">Loading the data</a></li>
@@ -553,27 +552,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#full-python-function" id="toc-full-python-function" class="nav-link" data-scroll-target="#full-python-function">Full Python function</a></li>
   </ul></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><p><img src="../../../posts/header2.png" height="200"></p>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Creating a property prediction App</h1>
+<p class="subtitle lead">Using Python and Streamlit to create a property price app using machine learning</p>
+</div>
 
 
 
-<section id="creating-a-property-prediction-app" class="level1">
-<h1>Creating a property prediction App</h1>
-<blockquote class="blockquote">
-<p>Using Python and Streamlit to create a property price app using machine learning</p>
-</blockquote>
-<ul>
-<li>toc: true</li>
-<li>badges: true</li>
-<li>comments: true</li>
-<li>categories: [Streamlit, RandomForrests, HousePrices, Python]</li>
-</ul>
-<p><img src="ghtop_images/header2.png" class="img-fluid"></p>
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Thomas H. Simm </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+<p><img src="../../../posts/header2.png" height="200"></p>
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <p>This is an app for predicting house prices in Swansea using Streamlit https://streamlit.io/</p>
@@ -587,9 +595,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>More details of the prediction side of the app, using Random Forrests and neural networks, is dealt with here https://thomashsimm.com/jupyter/python/randomforests/tabulardata/sklearn/2022/02/17/SwanseaHousePrices_Part2.html.</p>
 <p>A video of the app is shown below or can be accessed via https://share.streamlit.io/dmaterialia/propertystreamlit/main/PropertyApp.py</p>
 <p>The intention of the app is to provide a simple user interface to allow price predictions</p>
-<blockquote class="blockquote">
-<p>youtube: https://youtu.be/IGykZUeZqRA</p>
-</blockquote>
+<!-- > youtube: https://youtu.be/IGykZUeZqRA -->
 </section>
 <section id="the-python-script-for-the-app" class="level2">
 <h2 class="anchored" data-anchor-id="the-python-script-for-the-app">The Python Script for the App</h2>
@@ -906,7 +912,6 @@ fastai</code></pre>
 </div>
 
 
-</section>
 </section>
 </section>
 
