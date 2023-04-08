@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Thomas H. Simm">
 
-<title>ThomasHSimm – fastaicheatsheets</title>
+<title>ThomasHSimm - FastAI CheatSheet</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -170,7 +171,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"></h1>
+      <h1 class="quarto-secondary-nav-title">FastAI CheatSheet</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -219,12 +220,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/NLP stuff/2022-04-25-NLP-Of-TravelTweets.html" class="sidebar-item-text sidebar-link">Natural Language Processing of Travel Tweets</a>
+  <a href="../../../posts/INFO/NLP stuff/NLP-Of-TravelTweets.html" class="sidebar-item-text sidebar-link">Natural Language Processing of Travel Tweets</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/NLP stuff/2022-03-15-NLPtextgenerator.html" class="sidebar-item-text sidebar-link">Using NLP for text generation</a>
+  <a href="../../../posts/INFO/NLP stuff/NLPtextgenerator.html" class="sidebar-item-text sidebar-link">Using NLP for text generation</a>
   </div>
 </li>
       </ul>
@@ -314,27 +315,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/tensorflow/2022-09-28-Tensorflow.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet</a>
+  <a href="../../../posts/INFO/tensorflow/Tensorflow.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/tensorflow/2022-10-07-Tensorflow-2.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet 2</a>
+  <a href="../../../posts/INFO/tensorflow/Tensorflow-2.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet 2</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/tensorflow/2022-10-10-Tensorflow-Images.html" class="sidebar-item-text sidebar-link">TensorFlow Images cheat sheet</a>
+  <a href="../../../posts/INFO/tensorflow/Tensorflow-Images.html" class="sidebar-item-text sidebar-link">TensorFlow Images cheat sheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html" class="sidebar-item-text sidebar-link">TensorFlow Low-Level cheat sheet</a>
+  <a href="../../../posts/INFO/tensorflow/Tensorflow-CustomLayersModels.html" class="sidebar-item-text sidebar-link">TensorFlow Low-Level cheat sheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/tensorflow/2022-10-10-Tensorflow-NLP.html" class="sidebar-item-text sidebar-link">TensorFlow NLP cheat sheet</a>
+  <a href="../../../posts/INFO/tensorflow/Tensorflow-NLP.html" class="sidebar-item-text sidebar-link">TensorFlow NLP cheat sheet</a>
   </div>
 </li>
       </ul>
@@ -507,9 +508,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#fastai-cheatsheet" id="toc-fastai-cheatsheet" class="nav-link active" data-scroll-target="#fastai-cheatsheet">FastAI CheatSheet</a>
-  <ul class="collapse">
-  <li><a href="#misc." id="toc-misc." class="nav-link" data-scroll-target="#misc.">Misc.</a>
+  <li><a href="#misc." id="toc-misc." class="nav-link active" data-scroll-target="#misc.">Misc.</a>
   <ul class="collapse">
   <li><a href="#creating-a-path" id="toc-creating-a-path" class="nav-link" data-scroll-target="#creating-a-path">Creating a path</a></li>
   </ul></li>
@@ -524,27 +523,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#learning" id="toc-learning" class="nav-link" data-scroll-target="#learning">Learning</a></li>
   <li><a href="#some-other-useful-bits" id="toc-some-other-useful-bits" class="nav-link" data-scroll-target="#some-other-useful-bits">Some other useful bits</a></li>
   </ul></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><p><img src="../../../posts/header2.png" height="200"></p>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">FastAI CheatSheet</h1>
+<p class="subtitle lead">Using FastAI</p>
+</div>
 
 
 
-<section id="fastai-cheatsheet" class="level1">
-<h1>FastAI CheatSheet</h1>
-<blockquote class="blockquote">
-<p>Using FastAI</p>
-</blockquote>
-<ul>
-<li>toc: true</li>
-<li>badges: true</li>
-<li>comments: true</li>
-<li>categories: [Neural networks,FastAI, Python]</li>
-</ul>
-<p><img src="ghtop_images/header2.png" class="img-fluid"></p>
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Thomas H. Simm </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+<p><img src="../../../posts/header2.png" height="200"></p>
 <section id="misc." class="level2">
 <h2 class="anchored" data-anchor-id="misc.">Misc.</h2>
 <section id="creating-a-path" class="level3">
@@ -699,7 +707,6 @@ For beginners it’s a great starting fit function (and advanced too), but also 
 <p><img src="ghtop_images/GOLF5.png" class="img-fluid"></p>
 
 
-</section>
 </section>
 </section>
 

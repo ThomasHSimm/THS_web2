@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Thomas H. Simm">
 
-<title>ThomasHSimm – sql</title>
+<title>ThomasHSimm - Basics SQL</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"></h1>
+      <h1 class="quarto-secondary-nav-title">Basics SQL</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -156,12 +157,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/NLP stuff/2022-04-25-NLP-Of-TravelTweets.html" class="sidebar-item-text sidebar-link">Natural Language Processing of Travel Tweets</a>
+  <a href="../../../posts/INFO/NLP stuff/NLP-Of-TravelTweets.html" class="sidebar-item-text sidebar-link">Natural Language Processing of Travel Tweets</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/NLP stuff/2022-03-15-NLPtextgenerator.html" class="sidebar-item-text sidebar-link">Using NLP for text generation</a>
+  <a href="../../../posts/INFO/NLP stuff/NLPtextgenerator.html" class="sidebar-item-text sidebar-link">Using NLP for text generation</a>
   </div>
 </li>
       </ul>
@@ -251,27 +252,27 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/tensorflow/2022-09-28-Tensorflow.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet</a>
+  <a href="../../../posts/INFO/tensorflow/Tensorflow.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/tensorflow/2022-10-07-Tensorflow-2.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet 2</a>
+  <a href="../../../posts/INFO/tensorflow/Tensorflow-2.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet 2</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/tensorflow/2022-10-10-Tensorflow-Images.html" class="sidebar-item-text sidebar-link">TensorFlow Images cheat sheet</a>
+  <a href="../../../posts/INFO/tensorflow/Tensorflow-Images.html" class="sidebar-item-text sidebar-link">TensorFlow Images cheat sheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html" class="sidebar-item-text sidebar-link">TensorFlow Low-Level cheat sheet</a>
+  <a href="../../../posts/INFO/tensorflow/Tensorflow-CustomLayersModels.html" class="sidebar-item-text sidebar-link">TensorFlow Low-Level cheat sheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/tensorflow/2022-10-10-Tensorflow-NLP.html" class="sidebar-item-text sidebar-link">TensorFlow NLP cheat sheet</a>
+  <a href="../../../posts/INFO/tensorflow/Tensorflow-NLP.html" class="sidebar-item-text sidebar-link">TensorFlow NLP cheat sheet</a>
   </div>
 </li>
       </ul>
@@ -444,8 +445,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#basics-sql" id="toc-basics-sql" class="nav-link active" data-scroll-target="#basics-sql">Basics SQL</a></li>
-  <li><a href="#statements-and-syntax" id="toc-statements-and-syntax" class="nav-link" data-scroll-target="#statements-and-syntax">Statements and syntax</a>
+  <li><a href="#statements-and-syntax" id="toc-statements-and-syntax" class="nav-link active" data-scroll-target="#statements-and-syntax">Statements and syntax</a>
   <ul class="collapse">
   <li><a href="#select-from" id="toc-select-from" class="nav-link" data-scroll-target="#select-from">Select, From</a></li>
   <li><a href="#where" id="toc-where" class="nav-link" data-scroll-target="#where">Where</a></li>
@@ -484,22 +484,32 @@ ul.task-list li input[type="checkbox"] {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><p><img src="../../../posts/header2.png" height="200"></p>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Basics SQL</h1>
+<p class="subtitle lead">Some SQL basics</p>
+</div>
 
 
 
-<section id="basics-sql" class="level1">
-<h1>Basics SQL</h1>
-<blockquote class="blockquote">
-<p>SQL basics</p>
-</blockquote>
-<ul>
-<li>toc: true</li>
-<li>badges: true</li>
-<li>categories: [SQL]</li>
-</ul>
-<p><img src="ghtop_images/header2.png" class="img-fluid"></p>
-</section>
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Thomas H. Simm </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+<p><img src="../../../posts/header2.png" height="200"></p>
 <section id="statements-and-syntax" class="level1">
 <h1>Statements and syntax</h1>
 <p>Analysis will use the data above- from the open source Chinook Database. This can be accessed via https://mode.com/sql-tutorial/introduction-to-sql/</p>

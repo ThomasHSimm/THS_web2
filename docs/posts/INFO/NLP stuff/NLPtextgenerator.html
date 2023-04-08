@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Thomas H. Simm">
 
-<title>ThomasHSimm – nlptextgenerator</title>
+<title>ThomasHSimm - Using NLP for text generation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -170,7 +171,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"></h1>
+      <h1 class="quarto-secondary-nav-title">Using NLP for text generation</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -219,12 +220,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/NLP stuff/2022-04-25-NLP-Of-TravelTweets.html" class="sidebar-item-text sidebar-link">Natural Language Processing of Travel Tweets</a>
+  <a href="../../../posts/INFO/NLP stuff/NLP-Of-TravelTweets.html" class="sidebar-item-text sidebar-link">Natural Language Processing of Travel Tweets</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/NLP stuff/2022-03-15-NLPtextgenerator.html" class="sidebar-item-text sidebar-link active">Using NLP for text generation</a>
+  <a href="../../../posts/INFO/NLP stuff/NLPtextgenerator.html" class="sidebar-item-text sidebar-link active">Using NLP for text generation</a>
   </div>
 </li>
       </ul>
@@ -314,27 +315,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/tensorflow/2022-09-28-Tensorflow.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet</a>
+  <a href="../../../posts/INFO/tensorflow/Tensorflow.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/tensorflow/2022-10-07-Tensorflow-2.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet 2</a>
+  <a href="../../../posts/INFO/tensorflow/Tensorflow-2.html" class="sidebar-item-text sidebar-link">TensorFlow cheat sheet 2</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/tensorflow/2022-10-10-Tensorflow-Images.html" class="sidebar-item-text sidebar-link">TensorFlow Images cheat sheet</a>
+  <a href="../../../posts/INFO/tensorflow/Tensorflow-Images.html" class="sidebar-item-text sidebar-link">TensorFlow Images cheat sheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/tensorflow/2022-10-10-Tensorflow-CustomLayersModels.html" class="sidebar-item-text sidebar-link">TensorFlow Low-Level cheat sheet</a>
+  <a href="../../../posts/INFO/tensorflow/Tensorflow-CustomLayersModels.html" class="sidebar-item-text sidebar-link">TensorFlow Low-Level cheat sheet</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../posts/INFO/tensorflow/2022-10-10-Tensorflow-NLP.html" class="sidebar-item-text sidebar-link">TensorFlow NLP cheat sheet</a>
+  <a href="../../../posts/INFO/tensorflow/Tensorflow-NLP.html" class="sidebar-item-text sidebar-link">TensorFlow NLP cheat sheet</a>
   </div>
 </li>
       </ul>
@@ -507,9 +508,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#using-nlp-for-text-generation" id="toc-using-nlp-for-text-generation" class="nav-link active" data-scroll-target="#using-nlp-for-text-generation">Using NLP for text generation</a>
-  <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
   <li><a href="#nlp" id="toc-nlp" class="nav-link" data-scroll-target="#nlp">NLP</a></li>
   </ul></li>
@@ -521,27 +520,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#create-model-and-run" id="toc-create-model-and-run" class="nav-link" data-scroll-target="#create-model-and-run">Create model and Run</a></li>
   </ul></li>
   <li><a href="#model-text-generation" id="toc-model-text-generation" class="nav-link" data-scroll-target="#model-text-generation">Model Text Generation</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><p><img src="../../../posts/header2.png" height="200"></p>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Using NLP for text generation</h1>
+<p class="subtitle lead">Using FastAI to build a NLP text generator</p>
+</div>
 
 
 
-<section id="using-nlp-for-text-generation" class="level1">
-<h1>Using NLP for text generation</h1>
-<blockquote class="blockquote">
-<p>Using FastAI to build a NLP text generator</p>
-</blockquote>
-<ul>
-<li>toc: true</li>
-<li>badges: true</li>
-<li>comments: true</li>
-<li>categories: [NLP, Neural networks,FastAI, Python]</li>
-</ul>
-<p><img src="ghtop_images/header2.png" class="img-fluid"></p>
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Thomas H. Simm </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+<p><img src="../../../posts/header2.png" height="200"></p>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <section id="nlp" class="level3">
@@ -679,7 +687,6 @@ Can not get rid of this spot ? When one sees England here , he next is sure to b
 <pre><code>Poor me , poor me , poor me another drink , I 'll burn out King Lear 's grave . Thou art too dear to me ; i am perfect i am least of all . I 'll go live i ' th ' middle , and there will i not live in this .</code></pre>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
