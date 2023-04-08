@@ -2,8 +2,10 @@
 title: "TH Simm Python Pages"
 ---
 
-## Communicating code and data
-- [Presentation](https://thomashsimm.quarto.pub/thomashsimm/posts/Communicating_Code/PresentationOfCommunicatingCode.html#/title-slide)
+## Thomas H. Simm
+
+Data Scientist / Materials Scientist / Physicist
+
 
 
 ## Links
