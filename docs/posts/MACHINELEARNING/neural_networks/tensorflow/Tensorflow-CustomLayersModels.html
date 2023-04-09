@@ -662,7 +662,7 @@ vars(my_class_obj) = {'var1': 1}
 </ol>
 <p>The values for the parameters can be explicitly set using functions like <code>tf.random_normal_initializer()</code> and sepcifying a shape.</p>
 <p>The key to <code>call</code> is defining how the parts in <code>build</code> and <code>__init__</code> are put together to create the computation of the layer.</p>
-<p>Also note that in the call the format is the same as for the <a href="https://thomashsimm.com/tensorflow/2022/09/28/Tensorflow.html#Functional-API">functional API</a>, where the previous layer is added at the end of the next layer.</p>
+<p>Also note that in the call the format is the same as for the <a href="https://thomashsimm.com/posts/MACHINELEARNING/neural_networks/tensorflow/1_Tensorflow.html#Functional-API">functional API</a>, where the previous layer is added at the end of the next layer.</p>
 <p>All the variables (weights and biases) can also be accesed with <code>layer_class.variables</code>.</p>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a custom layer</span></span>
@@ -895,7 +895,7 @@ and biases [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
 <p><img src="Tensorflow-CustomLayersModels_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<p>Define the model class (see also <a href="https://thomashsimm.com/tensorflow/low-level/2022/10/10/Tensorflow-CustomLayersModels.html">TensorFlow Low-Level cheat sheet</a>)</p>
+<p>Define the model class (see also <a href="https://thomashsimm.com/posts/MACHINELEARNING/neural_networks/tensorflow/Tensorflow-CustomLayersModels.html">TensorFlow Low-Level cheat sheet</a>)</p>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#collapse-hide</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the custom layers and model</span></span>

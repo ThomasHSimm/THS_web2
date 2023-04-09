@@ -600,7 +600,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="dataset-generators" class="level2">
 <h2 class="anchored" data-anchor-id="dataset-generators">Dataset generators</h2>
 <pre><code>Have you ever had to work with a dataset so large that it overwhelmed your machine’s memory? Or maybe you have a complex function that needs to maintain an internal state every time it’s called, but the function is too small to justify creating its own class. In these cases and more, generators and the Python yield statement are here to help</code></pre>
-<p>https://realpython.com/introduction-to-python-generators/</p>
+<p><a href="https://realpython.com/introduction-to-python-generators/">https://realpython.com/introduction-to-python-generators/</a></p>
 <p>How <code>yield</code> works:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> do_yield():</span>
@@ -623,7 +623,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>An example is below. The function takes a path to a file but returns a yield statement, or a data generator, and not a line of the data.</p>
 <p>As above <code>x,y = next(text_datagen)</code> gets the next line of the text.</p>
 <p>This can be used when fitting to the model using <code>model.fit_generator(text_datagen)</code></p>
-<p>See also <a href="https://thomashsimm.com/tensorflow/2022/09/28/Tensorflow.html#Load-images">load images</a>.</p>
+<p>See also <a href="https://thomashsimm.com/posts/MACHINELEARNING/neural_networks/tensorflow/1_Tensorflow.html#Load-images">load images</a>.</p>
 <div class="cell" data-run_control="{&quot;frozen&quot;:true}">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_data(filepath):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(filepath,<span class="st">'r'</span>) <span class="im">as</span> f:</span>
